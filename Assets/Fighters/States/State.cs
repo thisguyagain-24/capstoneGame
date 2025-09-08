@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class State
 {
-    public static readonly State NEUTRAL = new State("Neutral", "5", Position);
-    public static readonly State CROUCH = new State("Crouch", "2", Position);
+    public static readonly State NEUTRAL = new State("Neutral", "5", StateType.Position);
+    public static readonly State CROUCH = new State("Crouch", "2", StateType.Position);
     public static readonly State BACKDASH = new State("Backdash");
     public static readonly State PREJUMP = new State("Prejump");
     public static readonly State AIRBORNE = new State("Airborne");
-    public static readonly State BLOCKING = new State("Blocking", "4", Position);
-    public static readonly State HITSTOP = new State("Hitstop", Control);
-    public static readonly State BLOCKSTUN = new State("Blockstun", Control);
-    public static readonly State HITSTUN = new State("Hitstun", Control);
-    public static readonly State STARTUP = new State("Startup", Control);
+    public static readonly State BLOCKING = new State("Blocking", "4", StateType.Position);
+    public static readonly State HITSTOP = new State("Hitstop", StateType.Control);
+    public static readonly State BLOCKSTUN = new State("Blockstun", StateType.Control);
+    public static readonly State HITSTUN = new State("Hitstun", StateType.Control);
+    public static readonly State STARTUP = new State("Startup", StateType.Control);
     public static readonly State ACTIVE = new State("Active");
     public static readonly State RECOVERY = new State("Recovery");
     public static readonly State GATLING_LIGHT = new State("Light Recovery");
