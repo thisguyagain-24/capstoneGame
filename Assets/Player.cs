@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public int startup;
-    public int active;
-    public int recovery;
+    //public SOMETHING controller?
+    public bool startSide;
+    public Fighter character;
+
     // Start is called before the first frame update
     void Start()
     {

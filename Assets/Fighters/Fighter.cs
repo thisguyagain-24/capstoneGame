@@ -45,7 +45,10 @@ public class Fighter : MonoBehaviour
     public bool hardKnockdown;
     public bool hitstun;
     public bool blockstun;
-    
+    public bool leftSide;
+
+    public FighterMove[] moves;
+
     public void die()
     {
 
