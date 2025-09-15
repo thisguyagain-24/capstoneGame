@@ -14,9 +14,9 @@ public class FighterMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (direction == null || direction <= 0)
+        if (direction <= 0)
         {
-            Console.WriteLine("Move has no direction!");
+            print("Move has no direction!");
         }
     }
 

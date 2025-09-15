@@ -19,4 +19,36 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public void UpPressed(InputAction.CallbackContext cxt){
+
+    }
+    
+    public void DownPressed(InputAction.CallbackContext cxt){
+        
+    }
+    
+    public void LeftPressed(InputAction.CallbackContext cxt){
+
+    }
+    
+    public void RightPressed(InputAction.CallbackContext cxt){
+        
+    }
+
+    public void LightPressed(InputAction.CallbackContext cxt){
+
+    }
+    
+    public void HeavyPressed(InputAction.CallbackContext cxt){
+        
+    }    
+    
+    public void UniversalPressed(InputAction.CallbackContext cxt){
+
+    }
+    
+    public void SpecialPressed(InputAction.CallbackContext cxt){
+        
+    }
 }
