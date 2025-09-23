@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -9,10 +10,19 @@ public class Player : MonoBehaviour
     public bool startSide;
     public Fighter character;
 
+    public PlayerInput pInput;
+
+    public int playerNum = -1;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (pInput is null)
+        {
+            pInput = this.GetComponent<PlayerInput>();
+        }
+        playerNum = pInput.playerIndex;
+        Debug.Log(playerNum);
     }
 
     // Update is called once per frame
@@ -21,6 +31,7 @@ public class Player : MonoBehaviour
 
     }
 
+    #region GameplayInputs
     void OnMove()
     {
 
@@ -48,7 +59,25 @@ public class Player : MonoBehaviour
 
     void OnPause()
     {
+
+    }
+    #endregion
+
+    #region MenuInputs
+    void OnNavigate()
+    {
+
+    }
+
+    void OnSubmit()
+    {
+
+    }
+
+    void OnCancel()
+    {
         
     }
+    #endregion
 
 }

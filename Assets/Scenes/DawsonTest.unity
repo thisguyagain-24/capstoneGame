@@ -214,7 +214,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1919722532
+--- !u!1 &604148970
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,155 +222,77 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1919722533}
-  - component: {fileID: 1919722534}
-  - component: {fileID: 1919722535}
+  - component: {fileID: 604148971}
+  - component: {fileID: 604148972}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerInputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1919722533
+--- !u!4 &604148971
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919722532}
+  m_GameObject: {fileID: 604148970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49800795, y: 0.060054377, z: 0.012973809}
+  m_LocalPosition: {x: -0.078673944, y: 0.08625433, z: 0.04456823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1919722534
+--- !u!114 &604148972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919722532}
+  m_GameObject: {fileID: 604148970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 372642d0441584852b6e25c176b4167f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 8b181525cb77f4cba857bdbf8a2ec911, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 2
+  m_AllowJoining: 1
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_DeviceRegainedEvent:
+  m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919722535}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0137906d-a1ff-4bcb-99a9-f75932e6ec77
-    m_ActionName: Player/LightAttack[/Keyboard/y]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ca5e4f94-e810-4b5e-b81f-c030d563a8f7
-    m_ActionName: Player/HeavyAttack[/Keyboard/u]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7dd6cef7-6bc2-4741-a6b3-ef13b6f5538a
-    m_ActionName: Player/Universal[/Keyboard/h]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: eb06e2d4-58d5-423e-bba3-f3a5c57894df
-    m_ActionName: Player/Special[/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6fbcfbc2-01b7-4759-988f-12b2bf4eb5a9
-    m_ActionName: Player/Pause[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7cc72403-2b9b-41c2-acd9-56788b5a0027
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f42be552-4a44-471d-bbee-4c657023dc98
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 87659fb4-82e0-4bd2-a08e-b8acc5da1e81
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e19b96dc-6279-42e2-a34f-5bd79254b6ea
-    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 631b5fcb-7e38-4d56-8873-515d29bd7242
-    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 210687b4-c3ae-42c8-9d1c-f1d3fc6af133
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f8ec787e-4a01-454a-b065-11b6b41baf8e
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e36002bc-1e01-4109-bd3e-9826387fc434
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7640f710-b35b-4ebe-9867-8a7220ada0fe
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 899c12be-94fd-4a55-8c36-7091f54b790e
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: de3dffc2-dc70-4507-a581-b3fdfb2f393d
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &1919722535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919722532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bba9e9e73b3e4b78ba802a7bfbe0a70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputNumber: 0
-  startSide: 0
-  character: {fileID: 0}
+  m_JoinAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Join
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 03da14bd-ac7f-4fe6-9b8d-18ec5824df8c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7691705891153772950, guid: 8b181525cb77f4cba857bdbf8a2ec911, type: 3}
+  m_PlayerPrefab: {fileID: 4014320855857799934, guid: 754f74f745e1b48558211e33abd137e0, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1919722533}
+  - {fileID: 604148971}
