@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DawsonTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/startMenu.unity
+    guid: 308b9f9246cd8b41ab94f452abc7f5f0
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+    guid: 8b351788f6bdd639b9afcd81315064c9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8d77e7c2b39f344848133df8f7bcf3cc, type: 2}
