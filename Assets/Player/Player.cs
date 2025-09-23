@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     void OnUniversal(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Universal: " + value.Get().ToString());
-        pInput.SwitchCurrentActionMap("UI");
+        //pInput.SwitchCurrentActionMap("UI"); //Switching action maps for test
     }
 
     void OnSpecial(InputValue value)
@@ -84,7 +84,8 @@ public class Player : MonoBehaviour
     void OnCancel(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
-        pInput.SwitchCurrentActionMap("Player");
+        //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
+
     }
     #endregion
 
