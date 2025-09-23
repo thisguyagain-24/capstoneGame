@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
             pInput = this.GetComponent<PlayerInput>();
         }
         playerNum = pInput.playerIndex;
+        Debug.Log(pInput.currentControlScheme);
         Debug.Log(playerNum);
     }
 
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour
     {
 
     }
-
+ 
     #region GameplayInputs
     void OnMove()
     {

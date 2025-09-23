@@ -106,7 +106,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: de3dffc2-dc70-4507-a581-b3fdfb2f393d
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNumber: 0
-  startSide: 0
+  startSide: 1
   character: {fileID: 0}
   pInput: {fileID: 0}
   playerNum: 0
