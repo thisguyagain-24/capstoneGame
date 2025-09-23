@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public Fighter character;
 
     public PlayerInput pInput;
-
     public int playerNum = -1;
 
     // Start is called before the first frame update
@@ -22,8 +21,7 @@ public class Player : MonoBehaviour
             pInput = this.GetComponent<PlayerInput>();
         }
         playerNum = pInput.playerIndex;
-        Debug.Log(pInput.currentControlScheme);
-        Debug.Log(playerNum);
+        Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
     }
 
     // Update is called once per frame
@@ -31,53 +29,62 @@ public class Player : MonoBehaviour
     {
 
     }
- 
+
     #region GameplayInputs
-    void OnMove()
+    void OnMove(InputValue value)
     {
+        Debug.Log("Player " + playerNum + " Input Move: " + value.Get().ToString());
+        
+    }
+
+    void OnLightAttack(InputValue value)
+    {
+        Debug.Log("Player " + playerNum + " Input Light: " + value.Get().ToString());
 
     }
 
-    void OnLight()
+    void OnHeavyAttack(InputValue value)
     {
+        Debug.Log("Player " + playerNum + " Input Heavy: " + value.Get().ToString());
 
     }
 
-    void OnHeavy()
+    void OnUniversal(InputValue value)
     {
+        Debug.Log("Player " + playerNum + " Input Universal: " + value.Get().ToString());
+        pInput.SwitchCurrentActionMap("UI");
+    }
+
+    void OnSpecial(InputValue value)
+    {
+        Debug.Log("Player " + playerNum + " Input Special: " + value.Get().ToString());
 
     }
 
-    void OnUniversal()
+    void OnPause(InputValue value)
     {
-
-    }
-
-    void OnSpecial()
-    {
-
-    }
-
-    void OnPause()
-    {
+        Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
 
     }
     #endregion
 
     #region MenuInputs
-    void OnNavigate()
+    void OnNavigate(InputValue value)
     {
+        Debug.Log("Player " + playerNum + " Input Navigate: " + value.Get().ToString());
 
     }
 
-    void OnSubmit()
+    void OnSubmit(InputValue value)
     {
+        Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
 
     }
 
-    void OnCancel()
+    void OnCancel(InputValue value)
     {
-        
+        Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
+        pInput.SwitchCurrentActionMap("Player");
     }
     #endregion
 
