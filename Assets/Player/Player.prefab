@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1492140207802651556}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: de3dffc2-dc70-4507-a581-b3fdfb2f393d
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
@@ -123,8 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ba36562a11e4e288f1de7cacf0beda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputNumber: 0
-  startSide: 1
-  character: {fileID: 0}
   pInput: {fileID: 0}
   playerNum: 0
+  inputDirection: 0
+  startSide: 1
+  character: {fileID: 0}
+  deadzone: 0.5

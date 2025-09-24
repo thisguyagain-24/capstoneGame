@@ -3,12 +3,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScreenInput : MonoBehaviour
+public class TitleMenu : MonoBehaviour
 {
-    
+    private bool keyPressed = false;
 
-    private void Start()
-    {
-        
+    private void Update()
+    {  
+        if (!keyPressed && Input.anyKeyDown)
+        {
+            keyPressed = true;
+
+            SceneManager.LoadScene("mainMenu");
+        }
     }
 }

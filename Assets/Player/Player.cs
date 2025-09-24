@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    //public SOMETHING controller?
-    public int inputNumber;
-    public bool startSide;
-    public Fighter character;
-
     public PlayerInput pInput;
     public int playerNum = -1;
+
+    public int inputDirection;
+
+    public bool startSide;
+    public Fighter character;
+    public double deadzone = 0.5;
+
+    public TitleMenu t;
+    public MainMenu m;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +27,23 @@ public class Player : MonoBehaviour
         playerNum = pInput.playerIndex;
         
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
+        FindUIDirector();
+        DontDestroyOnLoad(this.GameObject());
     }
+
+    public void FindUIDirector()
+    {
+        try
+        {
+            t = GameObject.Find("Canvas").GetComponent<TitleMenu>();
+        }
+        catch{}
+        try
+        {
+            m = GameObject.Find("EventSystem").GetComponent<MainMenu>();
+        }
+        catch { }
+        }
 
     // Update is called once per frame
     void Update()
@@ -85,8 +106,23 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
         //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
-
+        t?.doIt(); 
     }
     #endregion
+
+    private int ProcessInput(Vector2 input)
+    {
+        if (input.magnitude < deadzone)
+        {
+            return 5;
+        }
+
+        if (pInput.devices[0].name == "Keyboard")
+        {
+
+        }
+
+        return 0;
+    }
 
 }
