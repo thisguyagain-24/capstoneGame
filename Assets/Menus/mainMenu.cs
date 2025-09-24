@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     public GameObject[] menubuttons;
 
-<<<<<<< HEAD
     void VersusSelected() 
     {
 
@@ -42,7 +41,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("startMenu");
 
     }
-=======
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -51,5 +49,4 @@ public class MainMenu : MonoBehaviour
     }
         
 
->>>>>>> e37933b1d4219a90d2dc30737c6df3b8717bb350
 }

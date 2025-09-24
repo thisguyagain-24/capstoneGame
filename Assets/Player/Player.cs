@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
         //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
-        t?.doIt(); 
+        
     }
     #endregion
 
