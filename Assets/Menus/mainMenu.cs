@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class mainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
 
     public GameObject SettingsMenu;
@@ -11,6 +11,7 @@ public class mainMenu : MonoBehaviour
     [SerializeField]
     public GameObject[] menubuttons;
 
+<<<<<<< HEAD
     void VersusSelected() 
     {
 
@@ -41,4 +42,14 @@ public class mainMenu : MonoBehaviour
         SceneManager.LoadScene("startMenu");
 
     }
+=======
+    void Start() {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            p.GetComponent<Player>().FindUIDirector();
+        }
+    }
+        
+
+>>>>>>> e37933b1d4219a90d2dc30737c6df3b8717bb350
 }
