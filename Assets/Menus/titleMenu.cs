@@ -5,15 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreenInput : MonoBehaviour
 {
-    private bool keyPressed = false;
+    
 
-    private void Update()
-    {  
-        if (!keyPressed && Input.anyKeyDown)
-        {
-            keyPressed = true;
-
-            SceneManager.LoadScene("mainMenu");
-        }
+    private void Start()
+    {
+        
     }
 }

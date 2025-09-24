@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (pInput is null)
-        {
-            pInput = this.GetComponent<PlayerInput>();
-        }
+        DontDestroyOnLoad(this.gameObject);
+
+        pInput ??= this.GetComponent<PlayerInput>();
         playerNum = pInput.playerIndex;
+        
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
     }
 
