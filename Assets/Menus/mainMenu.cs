@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
 
     public GameObject SettingsMenu;
@@ -10,5 +10,12 @@ public class mainMenu : MonoBehaviour
     [SerializeField]
     public GameObject[] menubuttons;
 
-    
+    void Start() {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            p.GetComponent<Player>().FindUIDirector();
+        }
+    }
+        
+
 }
