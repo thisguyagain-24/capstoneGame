@@ -10,6 +10,13 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     public GameObject[] menubuttons;
+    
+    void Start() {
+        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            p.GetComponent<Player>().FindUIDirector();
+        }
+    }
 
     void VersusSelected() 
     {
@@ -41,12 +48,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("startMenu");
 
     }
-    void Start() {
-        foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
-        {
-            p.GetComponent<Player>().FindUIDirector();
-        }
-    }
+    
         
 
 }

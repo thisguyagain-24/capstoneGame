@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
+        t?.Load();
     }
 
     public void FindUIDirector()
@@ -106,7 +107,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
         //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
-        
     }
     #endregion
 
