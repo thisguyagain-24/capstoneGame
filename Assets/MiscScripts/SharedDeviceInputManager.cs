@@ -20,7 +20,7 @@ public class SharedDeviceInputManager : UnityEngine.InputSystem.PlayerInputManag
             return;
 
         var device = context.control.device;
-
+ 
         /*
          * We want to allow sharing of keyboard devices, so keyboard devices
          * don't need to be checked here

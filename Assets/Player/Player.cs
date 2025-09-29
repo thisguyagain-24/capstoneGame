@@ -21,11 +21,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (pInput is null)
-        {
-            pInput = this.GetComponent<PlayerInput>();
-        }
+        DontDestroyOnLoad(this.gameObject);
+
+        pInput ??= this.GetComponent<PlayerInput>();
         playerNum = pInput.playerIndex;
+        
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
         //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
-        t?.doIt(); 
+        
     }
     #endregion
 

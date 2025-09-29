@@ -7,26 +7,13 @@ public class TitleMenu : MonoBehaviour
 {
     private bool keyPressed = false;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        /*
+    private void Update()
+    {  
         if (!keyPressed && Input.anyKeyDown)
         {
             keyPressed = true;
 
             SceneManager.LoadScene("mainMenu");
         }
-        */
-    }
-
-    public void doIt()
-    {
-        SceneManager.LoadScene("mainMenu");
-
     }
 }
