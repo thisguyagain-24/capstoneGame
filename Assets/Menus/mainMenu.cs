@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     public GameObject[] menubuttons;
-    
+
+    public int MenuSelected;
+
+
+
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -46,6 +51,57 @@ public class MainMenu : MonoBehaviour
         // play sound effect, play animation, then load title menu
 
         SceneManager.LoadScene("startMenu");
+
+    }
+
+
+
+    public void MenuCursorUp() {
+
+        MenuSelected = Math.Abs((MenuSelected + 1) % menubuttons.Length);
+
+        Debug.Log(MenuSelected.ToString());
+
+    }
+
+    public void MenuCursorDown() {
+
+        MenuSelected = Math.Abs((MenuSelected - 1) % menubuttons.Length);
+
+        Debug.Log(MenuSelected.ToString());
+
+    }
+
+    public void MenuCursorEnter() {
+
+        switch (MenuSelected)
+        {
+            case 0: // versus
+
+                Debug.Log("(guilty gear announcer voice) VERSUS");
+
+                break;
+
+            case 1: // story
+
+                Debug.Log("(guilty gear announcer voice) STORY");
+
+                break;
+
+            case 2: // versus
+
+                Debug.Log("(guilty gear announcer voice) CONFIG");
+
+                break;
+
+            case 3: // versus
+
+                Debug.Log("wait i can actually do somethin here");
+
+                ReturnToTitle();
+
+                break;
+        }
 
     }
     
