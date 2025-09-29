@@ -6,9 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenu : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject MainLogo;
+
+    [SerializeField]
+    public GameObject TapeLogo;
+
+    [SerializeField]
+    public GameObject TapeCanvas;
+
+    [SerializeField]
+    public GameObject SubLogo;
+
     public void Load(){
 
         SceneManager.LoadScene("mainMenu");
+    }
+
+    public void Start() {
+
+        doAnimation();
     }
 
     private void Update()
@@ -21,5 +38,12 @@ public class TitleMenu : MonoBehaviour
             SceneManager.LoadScene("mainMenu");
         }
         */
+    }
+
+    private void doAnimation() {
+
+        MainLogo.transform.localPosition = new Vector3(0,0,0);
+
+
     }
 }
