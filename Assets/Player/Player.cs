@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
     public int inputDirection;
 
     public bool startSide;
-    public Fighter character;
+    public Fighter fighter;
     public double deadzone = 0.5;
 
     public TitleMenu t;
@@ -27,6 +28,10 @@ public class Player : MonoBehaviour
         playerNum = pInput.playerIndex;
         
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
+        Debug.Log(pInput.devices.ToString());
+        Debug.Log(pInput.devices[0].displayName);
+        
+
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
         t?.Load();
@@ -44,7 +49,7 @@ public class Player : MonoBehaviour
             m = GameObject.Find("EventSystem").GetComponent<MainMenu>();
         }
         catch { }
-        }
+    }
 
     // Update is called once per frame
     void Update()
