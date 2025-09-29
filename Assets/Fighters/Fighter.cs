@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class Fighter : MonoBehaviour
+public abstract class Fighter : MonoBehaviour
 {
-    public double maxHealth { get; private set; } = 100;
+    public abstract double maxHealth { get; protected set; }
 
     private double _health;
+
+    public FighterMove[] moves;
 
     [SerializeField]
     public double health
@@ -47,12 +49,8 @@ public class Fighter : MonoBehaviour
     public bool blockstun;
     public bool leftSide;
 
-    public FighterMove[] moves;
 
-    public void die()
-    {
-
-    }
+    public abstract void die();
 
     // Start is called before the first frame update
     void Start()
