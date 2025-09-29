@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
+        t?.Load();
     }
 
     public void FindUIDirector()
