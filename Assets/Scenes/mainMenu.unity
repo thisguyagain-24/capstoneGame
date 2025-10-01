@@ -932,7 +932,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsMenu: {fileID: 0}
-  menubuttons: []
+  menubuttons:
+  - {fileID: 231228970}
+  - {fileID: 125672677}
+  - {fileID: 2143485022}
+  - {fileID: 676725051}
+  MenuSelected: 0
 --- !u!1 &2101866386
 GameObject:
   m_ObjectHideFlags: 0

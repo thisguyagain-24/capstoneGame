@@ -99,6 +99,26 @@ public class Player : MonoBehaviour
     void OnNavigate(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Navigate: " + value.Get().ToString());
+        
+        if (playerNum == 0) {
+
+            if(m is not null){
+
+                if (value.Get<Vector2>() == Vector2.up){
+
+                    m.MenuCursorUp();
+
+                }
+
+                if (value.Get<Vector2>() == Vector2.down){
+
+                    m.MenuCursorDown();
+
+                }
+                
+            }
+
+        }
 
     }
 
@@ -106,6 +126,8 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
 
+        m?.MenuCursorEnter();
+            
     }
 
     void OnCancel(InputValue value)

@@ -40,6 +40,7 @@ public class SharedDeviceInputManager : UnityEngine.InputSystem.PlayerInputManag
          */
         if (device is Keyboard)
         {
+            Debug.Log("INDEX" + playerIndex);
             RebindPlayer(p);
         }
     }
@@ -50,13 +51,13 @@ public class SharedDeviceInputManager : UnityEngine.InputSystem.PlayerInputManag
     /// </summary>
     private string[] controlSchemes = new[]
     {
-            "WASD", "Arrows"
-        };
+        "WASD", "Arrows"
+    };
 
     /// <summary>
     /// Simple player index tracker, so we can assign different control schemes to different players
     /// </summary>
-    private int playerIndex = 0;
+    private static int playerIndex = 0;
 
     /// <summary>
     /// Set the player's control scheme based on their index
