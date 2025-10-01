@@ -6,27 +6,11 @@ using UnityEngine;
 public abstract class Fighter : MonoBehaviour
 {
     public abstract double maxHealth { get; protected set; }
+    private double incomingDamageModifier;
 
-    private double _health;
+    public double health {get; protected set;}
 
     public FighterMove[] moves;
-
-    [SerializeField]
-    public double health
-    {
-        get => _health;
-        set
-        {
-            _health = value;
-            if (_health <= 0)
-            {
-                die();
-            }
-            if (_health > maxHealth) {
-                _health = maxHealth;
-            }
-        }
-    }
 
     public int maxLives;
     public int lives;
@@ -62,5 +46,9 @@ public abstract class Fighter : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void subHealth(double damage){
+        health = health - (damage * incomingDamageModifier);
     }
 }

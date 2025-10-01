@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestKnight : Fighter
 {
     public override double maxHealth { get; protected set; } = 100;
-
+    private double incomingDamageModifier = 1;
 
     // Start is called before the first frame update
     void Start()
