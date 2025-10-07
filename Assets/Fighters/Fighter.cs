@@ -8,7 +8,7 @@ public abstract class Fighter : MonoBehaviour
     public abstract double maxHealth { get; protected set; }
     private double incomingDamageModifier;
 
-    public double health {get; protected set;}
+    public double health { get; protected set; }
 
     public FighterMove[] moves;
 
@@ -39,16 +39,23 @@ public abstract class Fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void subHealth(double damage){
+    public void subHealth(double damage)
+    {
         health = health - (damage * incomingDamageModifier);
+    }
+    
+    public void OnMove(InputValue value)
+    {
+        Debug.Log("Fighter moving!");
+        
     }
 }
