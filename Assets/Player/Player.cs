@@ -26,11 +26,11 @@ public class Player : MonoBehaviour
 
         pInput ??= this.GetComponent<PlayerInput>();
         playerNum = pInput.playerIndex;
-        
+
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
         Debug.Log(pInput.devices.ToString());
         Debug.Log(pInput.devices[0].displayName);
-        
+
 
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         {
             t = GameObject.Find("Canvas").GetComponent<TitleMenu>();
         }
-        catch{}
+        catch { }
         try
         {
             m = GameObject.Find("EventSystem").GetComponent<MainMenu>();
@@ -60,8 +60,9 @@ public class Player : MonoBehaviour
     #region GameplayInputs
     void OnMove(InputValue value)
     {
-        Debug.Log("Player " + playerNum + " Input Move: " + value.Get().ToString());
-        
+        Vector2 FUCK = value.Get<Vector2>();
+        Debug.Log("Player " + playerNum + " Input Move: " + FUCK.ToString());
+        fighter.onMove(GetDirection(FUCK.x, FUCK.y));
     }
 
     void OnLightAttack(InputValue value)
@@ -99,23 +100,23 @@ public class Player : MonoBehaviour
     void OnNavigate(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Navigate: " + value.Get().ToString());
-        
+
         if (playerNum == 0) {
 
-            if(m is not null){
+            if (m is not null) {
 
-                if (value.Get<Vector2>() == Vector2.up){
+                if (value.Get<Vector2>() == Vector2.up) {
 
                     m.MenuCursorUp();
 
                 }
 
-                if (value.Get<Vector2>() == Vector2.down){
+                if (value.Get<Vector2>() == Vector2.down) {
 
                     m.MenuCursorDown();
 
                 }
-                
+
             }
 
         }
@@ -127,13 +128,26 @@ public class Player : MonoBehaviour
         Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
 
         m?.MenuCursorEnter();
-            
+
     }
 
     void OnCancel(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Cancel: " + value.Get().ToString());
         //pInput.SwitchCurrentActionMap("Player"); //Switching action maps for test
+    }
+
+    void OnSwitchInput(InputValue value) {
+        if (pInput.currentActionMap.name == "Player")
+        {
+            Debug.Log("Player " + playerNum + "switching to UI input mode");
+            pInput.SwitchCurrentActionMap("UI");
+        }
+        else
+        {
+            Debug.Log("Player " + playerNum + "switching to Fighter input mode");
+            pInput.SwitchCurrentActionMap("Player");
+        }
     }
     #endregion
 
@@ -152,4 +166,42 @@ public class Player : MonoBehaviour
         return 0;
     }
 
+    public int GetDirection(float x, float y) {
+    double absX = Math.Abs(x);
+    double absY = Math.Abs(y);
+    if (absX < deadzone && absY < deadzone) {
+        // close to center
+        return 5;
+    }
+    if (absX > absY) {
+        // vertical side
+        double half = absX * 0.4142;
+        if (x < 0) {
+            // left side
+            if (y > half) return 1;
+            if (y < -half) return 7;
+            return 4;
+        } else {
+            // right side
+            if (y > half) return 3;
+            if (y < -half) return 9;
+            return 6;
+        }
+    } else {
+        // horisontal side
+        double half = absY * 0.4142;
+        if (y < 0) {
+            // bottom
+            if (x > half) return 3;
+            if (x < -half) return 1;
+            return 2;
+        } else {
+            // top
+            if (x > half) return 9;
+            if (x < -half) return 7;
+            return 8;
+        }
+    }
+    }
 }
+

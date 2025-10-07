@@ -6,9 +6,9 @@ using UnityEngine;
 public abstract class Fighter : MonoBehaviour
 {
     public abstract double maxHealth { get; protected set; }
-    private double incomingDamageModifier;
+    protected double incomingDamageModifier = 1;
 
-    public double health {get; protected set;}
+    public double health { get; protected set; }
 
     public FighterMove[] moves;
 
@@ -20,6 +20,8 @@ public abstract class Fighter : MonoBehaviour
 
     public int maxBurst;
     public int burst;
+
+    public Animator animator;
 
     public bool inAir;
     public bool crouching;
@@ -39,16 +41,23 @@ public abstract class Fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void subHealth(double damage){
+    public void subHealth(double damage)
+    {
         health = health - (damage * incomingDamageModifier);
+    }
+    
+    public virtual void onMove(int dir)
+    {
+        Debug.Log("Fighter moving! This shouldnt happen!");
+        
     }
 }
