@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Fighter : MonoBehaviour
 {
     public abstract double maxHealth { get; protected set; }
-    private double incomingDamageModifier;
+    protected double incomingDamageModifier = 1;
 
     public double health { get; protected set; }
 
@@ -20,6 +20,8 @@ public abstract class Fighter : MonoBehaviour
 
     public int maxBurst;
     public int burst;
+
+    public Animator animator;
 
     public bool inAir;
     public bool crouching;
@@ -53,9 +55,9 @@ public abstract class Fighter : MonoBehaviour
         health = health - (damage * incomingDamageModifier);
     }
     
-    public void OnMove(InputValue value)
+    public virtual void onMove(int dir)
     {
-        Debug.Log("Fighter moving!");
+        Debug.Log("Fighter moving! This shouldnt happen!");
         
     }
 }

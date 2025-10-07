@@ -16,6 +16,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "SwitchInput",
+                    "type": "Button",
+                    "id": "5c43bdcc-b0a7-4d5d-abed-f5728e8e226f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "HeavyAttack",
                     "type": "Button",
                     "id": "ca5e4f94-e810-4b5e-b81f-c030d563a8f7",
@@ -81,6 +90,17 @@
                     "processors": "",
                     "groups": ";Arrows",
                     "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64d1a901-73cf-4f69-8b72-fb314bcff015",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows;WASD",
+                    "action": "SwitchInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -321,6 +341,15 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "87659fb4-82e0-4bd2-a08e-b8acc5da1e81",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchInput",
+                    "type": "Button",
+                    "id": "36239f32-4cdc-42cf-843b-0fe3df6721ce",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -655,6 +684,17 @@
                     "processors": "",
                     "groups": ";Arrows",
                     "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba59084c-8892-4c8c-8b39-f75af0041255",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows;WASD",
+                    "action": "SwitchInput",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
