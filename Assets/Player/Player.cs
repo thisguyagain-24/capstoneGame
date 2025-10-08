@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public TitleMenu t;
     public MainMenu m;
 
+    public GameObject testKnight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +149,15 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Player " + playerNum + "switching to Fighter input mode");
             pInput.SwitchCurrentActionMap("Player");
+        }
+    }
+
+    void OnSpawnKnight(InputValue value)
+    {
+        if (!fighter)
+        {
+
+            fighter = Instantiate(testKnight, this.transform).GetComponent<TestKnight>();
         }
     }
     #endregion
