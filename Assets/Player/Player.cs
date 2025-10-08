@@ -101,21 +101,30 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Navigate: " + value.Get().ToString());
 
+        Vector2 readableValue = value.Get<Vector2>();
+
+        int direction = GetDirection(readableValue.x, readableValue.y);
+
         if (playerNum == 0) {
 
             if (m is not null) {
 
-                if (value.Get<Vector2>() == Vector2.up) {
+                switch (direction) {
 
-                    m.MenuCursorUp();
+                    case 2 or 9:
+
+                        m.MenuCursorUpDown();
+
+                        break;
+
+                    case 4 or 6:
+
+                        m.MenuCursorLeftRight();
+
+                        break;
 
                 }
 
-                if (value.Get<Vector2>() == Vector2.down) {
-
-                    m.MenuCursorDown();
-
-                }
 
             }
 

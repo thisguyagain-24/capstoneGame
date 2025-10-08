@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,9 +11,13 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingsMenu;
 
     [SerializeField]
-    public GameObject[] menubuttons;
+    public GameObject[] row1;
 
-    public int MenuSelected;
+    [SerializeField]
+    public GameObject[] row2;
+
+    public bool RowSelected = false;
+    public bool MenuSelected = false;
 
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
@@ -54,50 +59,67 @@ public class MainMenu : MonoBehaviour
 
 
 
-    public void MenuCursorUp() {
+    public void MenuCursorUpDown() {
 
-        MenuSelected = Math.Abs((MenuSelected + 1) % menubuttons.Length);
-
-        Debug.Log(MenuSelected.ToString());
+        RowSelected = !RowSelected;
 
     }
 
-    public void MenuCursorDown() {
+    public void MenuCursorLeftRight() {
 
-        MenuSelected = Math.Abs((MenuSelected - 1) % menubuttons.Length);
-
-        Debug.Log(MenuSelected.ToString());
+        MenuSelected = !MenuSelected;
 
     }
+
     public void MenuCursorEnter() {
 
-        switch (MenuSelected)
-        {
-            case 0: // versus
+        // god im bad at my job this solution sucks
 
-                Debug.Log("(guilty gear announcer voice) VERSUS");
+        if (RowSelected == false) {
 
-                break;
+            // on top
+            if (MenuSelected == false) {
 
-            case 1: // story
+                // top left
 
-                Debug.Log("(guilty gear announcer voice) STORY");
+                Debug.Log("11");
 
-                break;
+                VersusSelected();
 
-            case 2: //settinhs
+            }
 
-                Debug.Log("(guilty gear announcer voice) CONFIG");
+            if (MenuSelected == true) {
 
-                break;
+                // top right
 
-            case 3: // exit
+                Debug.Log("12");
 
-                Debug.Log("wait i can actually do somethin here");
+                StorySelected();
 
-                ///ReturnToTitle();
+            }
+        } else {
 
-                break;
+            // lower row 
+
+                if (MenuSelected == false) {
+
+                // btm left
+
+                Debug.Log("21");
+
+                SettingsSelected();
+
+            }
+
+            if (MenuSelected == true) {
+
+                // btm right
+
+                Debug.Log("22");
+
+                ReturnToTitle();
+
+            }
         }
 
     }
