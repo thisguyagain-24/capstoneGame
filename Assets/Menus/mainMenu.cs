@@ -14,8 +14,6 @@ public class MainMenu : MonoBehaviour
 
     public int MenuSelected;
 
-
-
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
@@ -71,7 +69,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log(MenuSelected.ToString());
 
     }
-
     public void MenuCursorEnter() {
 
         switch (MenuSelected)
@@ -88,17 +85,17 @@ public class MainMenu : MonoBehaviour
 
                 break;
 
-            case 2: // versus
+            case 2: //settinhs
 
                 Debug.Log("(guilty gear announcer voice) CONFIG");
 
                 break;
 
-            case 3: // versus
+            case 3: // exit
 
                 Debug.Log("wait i can actually do somethin here");
 
-                ReturnToTitle();
+                ///ReturnToTitle();
 
                 break;
         }
