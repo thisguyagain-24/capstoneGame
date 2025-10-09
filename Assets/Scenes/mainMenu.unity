@@ -1680,9 +1680,15 @@ MonoBehaviour:
   - {fileID: 973435234}
   - {fileID: 553069827}
   highlightColor: {r: 1, g: 1, b: 1, a: 0.5}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
   RowSelected: 0
   MenuSelected: 0
   currentSelected: 0
+  menuButtonsConverted:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2102347158
 GameObject:
   m_ObjectHideFlags: 0
