@@ -4,11 +4,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using JetBrains.Annotations;
+using UnityEditor.UI;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     public GameObject SettingsMenu;
+
+
+    [SerializeField]
+    public GameObject[] menuButtons;
 
     [SerializeField]
     public GameObject[] row1;
@@ -16,14 +23,33 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     public GameObject[] row2;
 
+    [SerializeField]
+    public Color highlightColor = new(1, 1, 1, 0.5f);
+
+    public Color baseColor = new(1, 1, 1, 1);
+
     public bool RowSelected = false;
     public bool MenuSelected = false;
+
+    public int currentSelected = 0;
+
+    public SpriteRenderer[]menuButtonsConverted = new SpriteRenderer[4];
 
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
             p.GetComponent<Player>().FindUIDirector();
         }
+
+        for (int i = 0; i < menuButtons.Length; i++) {
+
+            menuButtonsConverted[i] = menuButtons[i].GetComponent<SpriteRenderer>();
+
+            Debug.Log(menuButtonsConverted[i]);
+        }
+
+        PickHighlight();
+
     }
 
     void VersusSelected() 
@@ -58,10 +84,11 @@ public class MainMenu : MonoBehaviour
     }
 
 
-
     public void MenuCursorUpDown() {
 
         RowSelected = !RowSelected;
+
+        PickHighlight();
 
     }
 
@@ -69,11 +96,49 @@ public class MainMenu : MonoBehaviour
 
         MenuSelected = !MenuSelected;
 
+        PickHighlight();
+
     }
 
     public void MenuCursorEnter() {
 
         // god im bad at my job this solution sucks
+
+        PickHighlight();
+
+        switch (currentSelected) {
+
+            case 0:
+
+                VersusSelected();
+
+                break;
+
+            case 1:
+
+                StorySelected();
+
+                break;
+
+            case 2:
+
+                SettingsSelected();
+
+                break;
+
+            case 3:
+
+                ReturnToTitle();
+
+                break;
+
+        }
+
+    }
+    
+    public void PickHighlight() {
+
+        menuButtonsConverted[currentSelected].color = baseColor;
 
         if (RowSelected == false) {
 
@@ -82,9 +147,8 @@ public class MainMenu : MonoBehaviour
 
                 // top left
 
-                Debug.Log("11");
-
-                VersusSelected();
+                currentSelected = 0;
+                
 
             }
 
@@ -92,22 +156,20 @@ public class MainMenu : MonoBehaviour
 
                 // top right
 
-                Debug.Log("12");
-
-                StorySelected();
+                currentSelected = 1;
 
             }
-        } else {
+
+        } 
+        else if (RowSelected == true){
 
             // lower row 
 
-                if (MenuSelected == false) {
+            if (MenuSelected == false) {
 
                 // btm left
 
-                Debug.Log("21");
-
-                SettingsSelected();
+                currentSelected = 2;
 
             }
 
@@ -115,15 +177,14 @@ public class MainMenu : MonoBehaviour
 
                 // btm right
 
-                Debug.Log("22");
-
-                ReturnToTitle();
+                currentSelected = 3;
 
             }
+            
         }
 
+        menuButtonsConverted[currentSelected].color = highlightColor;
+
     }
-    
-        
 
 }

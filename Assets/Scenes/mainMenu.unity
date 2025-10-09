@@ -1668,10 +1668,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsMenu: {fileID: 0}
-  row1: []
-  row2: []
+  menuButtons:
+  - {fileID: 607460480}
+  - {fileID: 674414077}
+  - {fileID: 973435234}
+  - {fileID: 553069827}
+  row1:
+  - {fileID: 607460480}
+  - {fileID: 674414077}
+  row2:
+  - {fileID: 973435234}
+  - {fileID: 553069827}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.5}
   RowSelected: 0
   MenuSelected: 0
+  currentSelected: 0
 --- !u!1 &2102347158
 GameObject:
   m_ObjectHideFlags: 0

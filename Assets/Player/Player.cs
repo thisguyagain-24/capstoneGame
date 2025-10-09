@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
 
                 switch (direction) {
 
-                    case 2 or 9:
+                    case 2 or 8:
 
                         m.MenuCursorUpDown();
 
