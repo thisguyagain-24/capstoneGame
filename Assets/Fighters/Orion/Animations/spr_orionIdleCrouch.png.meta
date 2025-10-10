@@ -1,0 +1,1011 @@
+fileFormatVersion: 2
+guid: 3db53a57c857044ca828e372ba7110fe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7821
+        width: 1632
+        height: 1305
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9934c57b0b934f0d99ffb7d9f97406f
+      internalID: 130065532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_1
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 7797
+        width: 1633
+        height: 1329
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f0d743fb57b4feb83b8cc49a72d6d7
+      internalID: -1284058346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_2
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 7821
+        width: 1623
+        height: 1305
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d07168d1b6c41168dfbbbedf8049a2
+      internalID: 788587578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_3
+      rect:
+        serializedVersion: 2
+        x: 5238
+        y: 7809
+        width: 1624
+        height: 1317
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3769c46960b49afbc427918a88e774
+      internalID: -1383509955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_4
+      rect:
+        serializedVersion: 2
+        x: 6984
+        y: 7809
+        width: 1589
+        height: 1317
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314f2dc67927040fba16fbf21c72bb97
+      internalID: 1103484430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_5
+      rect:
+        serializedVersion: 2
+        x: 8730
+        y: 7821
+        width: 1590
+        height: 1305
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c756e7ba0a174dd0a6d6e32fc7e1331
+      internalID: -209844661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_6
+      rect:
+        serializedVersion: 2
+        x: 10476
+        y: 7833
+        width: 1615
+        height: 1293
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1ab3e9f1b6a4baaa003dcb40119ab7
+      internalID: 740875162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6298
+        width: 1562
+        height: 1307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e005e811486e43759fe985406417be2
+      internalID: 149597076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_8
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 6298
+        width: 1574
+        height: 1307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f15aef0191344c61914f29a74eed128
+      internalID: -998765664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_9
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 6298
+        width: 1587
+        height: 1307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f36b232058564c1daa85200330f4cb6
+      internalID: -1339988902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_10
+      rect:
+        serializedVersion: 2
+        x: 5238
+        y: 6286
+        width: 1600
+        height: 1319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42ed3f8930984b8fad452dd65c33d2d
+      internalID: 1962616523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_11
+      rect:
+        serializedVersion: 2
+        x: 6984
+        y: 6286
+        width: 1601
+        height: 1319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a64c5d674b294025b106d916c886cf7
+      internalID: -356939475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_12
+      rect:
+        serializedVersion: 2
+        x: 8730
+        y: 6298
+        width: 1531
+        height: 1307
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd3708befb9341d1833b31b3733e781
+      internalID: -1091906093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_13
+      rect:
+        serializedVersion: 2
+        x: 10476
+        y: 6275
+        width: 1603
+        height: 1330
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fac0321df9d4189acef2bc50134489
+      internalID: 14763073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4787
+        width: 1597
+        height: 1297
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7567c155d51744f37be442dc2b91e4e6
+      internalID: 127519943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_15
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 4775
+        width: 1622
+        height: 1321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519b9c227053b4301af63dba05be98a4
+      internalID: 116869091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_16
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 4764
+        width: 1611
+        height: 1320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331c0411e3c684362a9d84800f9df890
+      internalID: 394152635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_17
+      rect:
+        serializedVersion: 2
+        x: 5238
+        y: 4775
+        width: 1600
+        height: 1309
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476d42a8a8aef4251a5c6fa73a8e7fad
+      internalID: -2047280664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_18
+      rect:
+        serializedVersion: 2
+        x: 6984
+        y: 4764
+        width: 1589
+        height: 1320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1836ed728fb44d43b29c63912231e00
+      internalID: -816441309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_19
+      rect:
+        serializedVersion: 2
+        x: 8730
+        y: 4764
+        width: 1614
+        height: 1320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad22522553153486981b5a4f651f564b
+      internalID: -2037671396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_20
+      rect:
+        serializedVersion: 2
+        x: 10476
+        y: 4752
+        width: 1544
+        height: 1332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54717b85986c460796ebebe7bdadd6b
+      internalID: -487542421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3264
+        width: 1562
+        height: 1299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa8700043e614055b7595d4c4e4a592
+      internalID: -1906023601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_22
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 3264
+        width: 1563
+        height: 1299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6163549554bff4f77ae8516fc483e912
+      internalID: -1437225196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_23
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 3241
+        width: 1611
+        height: 1322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf0c88bb900747fd98d6b23de9d5af5
+      internalID: -1709218250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_24
+      rect:
+        serializedVersion: 2
+        x: 5238
+        y: 3264
+        width: 1612
+        height: 1299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2011f7e80f1a6448897eace7e7095fe2
+      internalID: 504126796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_25
+      rect:
+        serializedVersion: 2
+        x: 6984
+        y: 3264
+        width: 1578
+        height: 1311
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89415ea7d7f64310b558ed84e5f851b
+      internalID: 827676108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_26
+      rect:
+        serializedVersion: 2
+        x: 8730
+        y: 3264
+        width: 1567
+        height: 1299
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c5c570ef8e6481ca8773c749b5f000
+      internalID: -258370681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_27
+      rect:
+        serializedVersion: 2
+        x: 10476
+        y: 3241
+        width: 1556
+        height: 1322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f9b454f420a4c0f8ed6f6feafea292
+      internalID: -1152832328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1718
+        width: 1550
+        height: 1324
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b195d8f1ed12048fe951c4c92650e2a4
+      internalID: 1528413973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_29
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1742
+        width: 1574
+        height: 1300
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd1c17089cdb407daeb9b11f384ae16
+      internalID: 2000966939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_30
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 1730
+        width: 1540
+        height: 1312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863a6e8ff182143579a6ad56121851a4
+      internalID: -2121532051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_31
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 1730
+        width: 1529
+        height: 1312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e93303f5f79c4bc4b3838fadd712f63
+      internalID: -1490252996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_32
+      rect:
+        serializedVersion: 2
+        x: 6984
+        y: 1730
+        width: 1519
+        height: 1312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ac54b1a315b40028edc11522bac5f1
+      internalID: -1548404011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_33
+      rect:
+        serializedVersion: 2
+        x: 8730
+        y: 1730
+        width: 1508
+        height: 1312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548a610c814e64bc6b5766c2f338ef4d
+      internalID: -1788705432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_34
+      rect:
+        serializedVersion: 2
+        x: 10476
+        y: 1730
+        width: 1556
+        height: 1312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab04299f852b4ab899d76c2f9a8074e
+      internalID: 241696092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 219
+        width: 1597
+        height: 1302
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373a2f0c0b8344e7b941f08ecbc19162
+      internalID: -464621668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_36
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 207
+        width: 1586
+        height: 1314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e06cdb396e2468888e5209c7b1dc5a
+      internalID: 1367750536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_37
+      rect:
+        serializedVersion: 2
+        x: 3492
+        y: 207
+        width: 1611
+        height: 1314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf8f4f0837824119a3f891909e25694
+      internalID: -1600041554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionIdleCrouch_38
+      rect:
+        serializedVersion: 2
+        x: 5238
+        y: 207
+        width: 1577
+        height: 1314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30503cdfdf0a74d7aa9b0a6863d3bc09
+      internalID: 1469733614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spr_orionIdleCrouch_0: 130065532
+      spr_orionIdleCrouch_1: -1284058346
+      spr_orionIdleCrouch_10: 1962616523
+      spr_orionIdleCrouch_11: -356939475
+      spr_orionIdleCrouch_12: -1091906093
+      spr_orionIdleCrouch_13: 14763073
+      spr_orionIdleCrouch_14: 127519943
+      spr_orionIdleCrouch_15: 116869091
+      spr_orionIdleCrouch_16: 394152635
+      spr_orionIdleCrouch_17: -2047280664
+      spr_orionIdleCrouch_18: -816441309
+      spr_orionIdleCrouch_19: -2037671396
+      spr_orionIdleCrouch_2: 788587578
+      spr_orionIdleCrouch_20: -487542421
+      spr_orionIdleCrouch_21: -1906023601
+      spr_orionIdleCrouch_22: -1437225196
+      spr_orionIdleCrouch_23: -1709218250
+      spr_orionIdleCrouch_24: 504126796
+      spr_orionIdleCrouch_25: 827676108
+      spr_orionIdleCrouch_26: -258370681
+      spr_orionIdleCrouch_27: -1152832328
+      spr_orionIdleCrouch_28: 1528413973
+      spr_orionIdleCrouch_29: 2000966939
+      spr_orionIdleCrouch_3: -1383509955
+      spr_orionIdleCrouch_30: -2121532051
+      spr_orionIdleCrouch_31: -1490252996
+      spr_orionIdleCrouch_32: -1548404011
+      spr_orionIdleCrouch_33: -1788705432
+      spr_orionIdleCrouch_34: 241696092
+      spr_orionIdleCrouch_35: -464621668
+      spr_orionIdleCrouch_36: 1367750536
+      spr_orionIdleCrouch_37: -1600041554
+      spr_orionIdleCrouch_38: 1469733614
+      spr_orionIdleCrouch_4: 1103484430
+      spr_orionIdleCrouch_5: -209844661
+      spr_orionIdleCrouch_6: 740875162
+      spr_orionIdleCrouch_7: 149597076
+      spr_orionIdleCrouch_8: -998765664
+      spr_orionIdleCrouch_9: -1339988902
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
