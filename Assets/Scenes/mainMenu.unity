@@ -173,8 +173,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 41.53721
-  orthographic: 0
+  field of view: 90
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 553069827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65, y: -65, z: 0}
+  m_LocalPosition: {x: 65, y: -65, z: -1}
   m_LocalScale: {x: 13.2822, y: 13.2822, z: 0.66411}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -458,7 +458,7 @@ Transform:
   m_GameObject: {fileID: 607460480}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65, y: 65, z: 0}
+  m_LocalPosition: {x: -65, y: 65, z: -1}
   m_LocalScale: {x: 13.2822, y: 13.2822, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -542,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 674414077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65, y: 65, z: 0}
+  m_LocalPosition: {x: 65, y: 65, z: -1}
   m_LocalScale: {x: 13.2822, y: 13.2822, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -626,7 +626,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680997021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102.63214}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.10019486, y: 0.10019486, z: 0.10019486}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e45441e9c06006f684ac30523933208, type: 2}
   m_sharedMaterial: {fileID: 5048723827668915361, guid: 6e45441e9c06006f684ac30523933208, type: 2}
@@ -844,7 +844,7 @@ Transform:
   m_GameObject: {fileID: 973435234}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65, y: -65, z: 0}
+  m_LocalPosition: {x: -65, y: -65, z: -1}
   m_LocalScale: {x: 13.2822, y: 13.2822, z: 0.66411}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -995,7 +995,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 361817778}
-  m_PlaneDistance: 99
+  m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1005,7 +1005,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -24412031
-  m_SortingOrder: 1
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!1 &1271942188
 GameObject:
@@ -1033,7 +1033,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271942188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102.63214}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.10019486, y: 0.10019486, z: 0.10019486}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1365,7 +1365,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825088712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102.83253}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.10019486, y: 0.10019486, z: 0.10019486}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -389.48157, y: 19.784437, z: -239.02328, w: -205.54068}
+  m_margin: {x: -378.6767, y: 19.784437, z: -226.00201, w: -205.54068}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1499,7 +1499,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884224238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102.83253}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.10019486, y: 0.10019486, z: 0.10019486}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1668,12 +1668,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsMenu: {fileID: 0}
-  menubuttons:
+  menuButtons:
   - {fileID: 607460480}
   - {fileID: 674414077}
   - {fileID: 973435234}
   - {fileID: 553069827}
+  row1:
+  - {fileID: 607460480}
+  - {fileID: 674414077}
+  row2:
+  - {fileID: 973435234}
+  - {fileID: 553069827}
+  highlightColor: {r: 1, g: 1, b: 1, a: 0.5}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  RowSelected: 0
   MenuSelected: 0
+  currentSelected: 0
+  menuButtonsConverted:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2102347158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1782,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 361817778}
-  m_PlaneDistance: 99
+  m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
