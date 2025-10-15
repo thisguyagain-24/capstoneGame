@@ -55,6 +55,8 @@ public class MainMenu : MonoBehaviour
     void VersusSelected() 
     {
 
+        Debug.Log("versus selected");
+
         // play sound effect, play animation, then load versus scene
 
         // hmmmmm sfx and animation can probably be in their own reusable function once im putting those in
@@ -64,12 +66,16 @@ public class MainMenu : MonoBehaviour
     void StorySelected() 
     {
 
+        Debug.Log("story selected");
+
         // popup that tells you its not ready yet
 
     }
 
     void SettingsSelected() 
     {
+
+        Debug.Log("settings selected");
 
         // load settings menu
 
@@ -140,6 +146,8 @@ public class MainMenu : MonoBehaviour
 
         menuButtonsConverted[currentSelected].color = baseColor;
 
+        menuButtonsConverted[currentSelected].transform.localScale = new Vector3(13,13,0);
+
         if (RowSelected == false) {
 
             // on top
@@ -184,6 +192,8 @@ public class MainMenu : MonoBehaviour
         }
 
         menuButtonsConverted[currentSelected].color = highlightColor;
+
+        menuButtonsConverted[currentSelected].transform.localScale = new Vector3(10,10,0);
 
     }
 

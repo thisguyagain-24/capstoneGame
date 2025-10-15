@@ -27,7 +27,14 @@ public class TitleMenu : MonoBehaviour
 
     public void Load(){
 
+        DoSwitchAnimation();
+
         SceneManager.LoadScene("mainMenu");
+    }
+
+    public void DoSwitchAnimation() {
+
+
     }
 
     public void Start() {
