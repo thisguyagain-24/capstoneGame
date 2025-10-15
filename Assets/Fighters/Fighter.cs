@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using Unity.VisualScripting;
+using UnityEditor;
 
 public abstract class Fighter : MonoBehaviour
 {
     public abstract double maxHealth { get; protected set; }
+    public int inputDirection;
+
     protected double incomingDamageModifier = 1;
 
     public double health { get; protected set; }
@@ -35,6 +39,7 @@ public abstract class Fighter : MonoBehaviour
     public bool blockstun;
     public bool leftSide;
 
+    public GameObject movementSprites;
 
     public abstract void die();
 
@@ -54,10 +59,17 @@ public abstract class Fighter : MonoBehaviour
     {
         health = health - (damage * incomingDamageModifier);
     }
-    
+
     public virtual void onMove(int dir)
     {
         Debug.Log("Fighter moving! This shouldnt happen!");
-        
     }
+
+    public abstract void doneMove();
+
+    public abstract void onLight();
+    public abstract void onHeavy();
+    public abstract void onUniversal();
+    public abstract void onSpecial();
 }
+
