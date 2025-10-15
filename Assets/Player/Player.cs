@@ -70,25 +70,26 @@ public class Player : MonoBehaviour
     void OnLightAttack(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Light: " + value.Get().ToString());
-
+        fighter.onLight();
     }
 
     void OnHeavyAttack(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Heavy: " + value.Get().ToString());
-
+        fighter.onHeavy();
     }
 
     void OnUniversal(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Universal: " + value.Get().ToString());
+        fighter.onUniversal();
         //pInput.SwitchCurrentActionMap("UI"); //Switching action maps for test
     }
 
     void OnSpecial(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Special: " + value.Get().ToString());
-
+        fighter.onSpecial();
     }
 
     void OnPause(InputValue value)
