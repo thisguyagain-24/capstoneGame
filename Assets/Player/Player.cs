@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
         if (!fighter)
         {
 
-            fighter = Instantiate(testKnight, this.transform).GetComponent<TestKnight>();
+            fighter = Instantiate(testKnight, this.transform).GetComponent<Fighter>();
         }
     }
     #endregion
