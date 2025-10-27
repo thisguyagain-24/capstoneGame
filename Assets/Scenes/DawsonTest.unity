@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5032868784596961167, guid: 51c8e8a8e111440768f5ea91296a466d, type: 3}
       propertyPath: m_MaxPlayerCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6215391595429077966, guid: 51c8e8a8e111440768f5ea91296a466d, type: 3}
       propertyPath: m_LocalPosition.x

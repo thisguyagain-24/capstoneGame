@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  hitboxes: []
+  hurtboxes:
+  - {fileID: 8341777365374028545}
 --- !u!1 &793100029672926783
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +159,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02637145, y: -0.16143277}
@@ -303,6 +306,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
+  hitboxes:
+  - {fileID: 6405363517550728732}
+  hurtboxes:
+  - {fileID: 3531946750492057129}
+  - {fileID: 8783234572148807579}
 --- !u!1 &3428578530218663497
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +456,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.18838438}
@@ -525,7 +533,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.29691017, y: 0.061292514}
@@ -814,7 +822,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.18838438}
@@ -896,6 +904,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
+  hitboxes:
+  - {fileID: 793100029672926783}
+  hurtboxes:
+  - {fileID: 5147949923657737025}
+  - {fileID: 5983431824982495829}
 --- !u!1 &5497993424649905951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1054,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.038997084, y: -0.15236527}
@@ -1202,7 +1215,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02637145, y: -0.16143277}
@@ -1375,7 +1388,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0104386695, y: 0.17056762}
@@ -1452,7 +1465,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.17432536}
@@ -1533,6 +1546,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  hitboxes: []
+  hurtboxes:
+  - {fileID: 8470172102814742548}
+  - {fileID: 3587652842425623308}
 --- !u!1 &8783234572148807579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,7 +1611,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.038997084, y: -0.15236527}

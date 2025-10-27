@@ -51,15 +51,41 @@ public class FighterMove : MonoBehaviour
         fighter = this.GetComponentInParent<Fighter>();
         foreach (MoveFrame mf in keys)
         {
-            foreach (BoxCollider2D box in mf.gameObject.transform.GetChild(0).GetComponentsInChildren<BoxCollider2D>())
+            foreach(GameObject o in mf.hitboxes)
             {
-                hitboxes.Append(box.gameObject);
+                o.layer = getPlayerHitboxLayer();
+                hitboxes.Append(o);
             }
-            foreach (BoxCollider2D box in mf.gameObject.transform.GetChild(1).GetComponentsInChildren<BoxCollider2D>()) 
+            foreach (GameObject o in mf.hurtboxes)
             {
-                hurtboxes.Append(box.gameObject);
+                o.layer = getPlayerHurtboxLayer();
+                hurtboxes.Append(o);
             }
             mf.gameObject.SetActive(false);
+        }
+    }
+
+    private int getPlayerHurtboxLayer()
+    {
+        if (fighter.playerNum == 0)
+        {
+            return LayerMask.NameToLayer("Player1Hurtbox");
+        }
+        else
+        {
+            return LayerMask.NameToLayer("Player2Hurtbox");
+        }
+    }
+    
+    private int getPlayerHitboxLayer()
+    {
+        if (fighter.playerNum == 0)
+        {
+            return LayerMask.NameToLayer("Player1Hitbox");
+        }
+        else
+        {
+            return LayerMask.NameToLayer("Player2Hitbox");
         }
     }
 
@@ -72,7 +98,6 @@ public class FighterMove : MonoBehaviour
             active = true;
             keys[0].gameObject.SetActive(true);
             Debug.Log("STARTING");
-
         }
     }
 
@@ -88,6 +113,7 @@ public class FighterMove : MonoBehaviour
     public void IterateFrames(){
         framesElapsed += Time.deltaTime*60;
         Debug.Log(framesElapsed);
+        checkCollision();
         if(keys[currentKey].duration <= framesElapsed)
         {
             framesElapsed -= keys[currentKey].duration;
@@ -109,6 +135,11 @@ public class FighterMove : MonoBehaviour
         {
             keys[currentKey].gameObject.SetActive(true);
         }
+    }
+
+    public void checkCollision()
+    {
+        
     }
 
     public void GetFrames()
