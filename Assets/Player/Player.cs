@@ -166,8 +166,8 @@ public class Player : MonoBehaviour
     {
         if (!fighter)
         {
-
             fighter = Instantiate(testKnight, this.transform).GetComponent<Fighter>();
+            fighter.playerNum = playerNum;
         }
     }
     #endregion

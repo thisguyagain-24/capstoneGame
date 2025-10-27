@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381744009268196291}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8837565929027966296}
   - component: {fileID: 2924923555642093288}
   - component: {fileID: 4624171028569854237}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5164091274885986836}
   - component: {fileID: 1699445491827929096}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8283080785667318562}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2363189131719166916}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 3328072227905907282}
   - component: {fileID: 4363772235144996773}
   - component: {fileID: 5926928092294116130}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8444694142807403593}
   - component: {fileID: 298389262083541537}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6337522873757657070}
   - component: {fileID: 788877456190299460}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2977028153943362607}
   - component: {fileID: 5096131688078973029}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5605629170316831671}
   - component: {fileID: 3909922394436729193}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,13 @@ MonoBehaviour:
   hitstop: 0
   hitstun: 2
   blockstun: 10
-  keys: []
+  keys:
+  - {fileID: 4624171028569854237}
+  - {fileID: 5926928092294116130}
+  - {fileID: 4372907114945988267}
+  - {fileID: 7050474142678503322}
+  hitboxes: []
+  hurtboxes: []
   currentKey: 0
   framesElapsed: 0
   active: 0
@@ -607,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437272549111547234}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5909123849705213817}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6290632822550027482}
   - component: {fileID: 2103444453450214792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346387306404763289}
   - component: {fileID: 8163617935416553081}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +841,7 @@ GameObject:
   - component: {fileID: 9182470849975552988}
   - component: {fileID: 2317820437071118026}
   - component: {fileID: 4372907114945988267}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4571307884188331071}
   - component: {fileID: 4694603302134665955}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5609945591276120342}
   - component: {fileID: 256946584125049451}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675404053531736362}
   - component: {fileID: 2507337838292314591}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5035946287555598076}
   - component: {fileID: 601748358981794472}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415065369219926656}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586676905227010216}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937388669361656501}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3890998948377126597}
   - component: {fileID: 956828600516132696}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8532625951064022106}
   - component: {fileID: 5889215259693097616}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1473,7 +1479,7 @@ GameObject:
   - component: {fileID: 4257369434499130018}
   - component: {fileID: 2109090628313603698}
   - component: {fileID: 7050474142678503322}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547238907413247458}
   - component: {fileID: 1308125151223265740}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

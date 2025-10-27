@@ -32,6 +32,10 @@ public class FighterMove : MonoBehaviour
     public int blockstun;
 
     public MoveFrame[] keys;
+
+    public GameObject[] hitboxes;
+    public GameObject[] hurtboxes;
+    
     public int currentKey;
     public float framesElapsed;
     public bool active;
@@ -45,19 +49,31 @@ public class FighterMove : MonoBehaviour
         }
         active = false;
         fighter = this.GetComponentInParent<Fighter>();
-        foreach(MoveFrame mf in keys)
+        foreach (MoveFrame mf in keys)
         {
+            foreach (BoxCollider2D box in mf.gameObject.transform.GetChild(0).GetComponentsInChildren<BoxCollider2D>())
+            {
+                hitboxes.Append(box.gameObject);
+            }
+            foreach (BoxCollider2D box in mf.gameObject.transform.GetChild(1).GetComponentsInChildren<BoxCollider2D>()) 
+            {
+                hurtboxes.Append(box.gameObject);
+            }
             mf.gameObject.SetActive(false);
         }
     }
 
     public void StartMove()
     {
-        currentKey = 0;
-        framesElapsed = 0;
-        active = true;
-        keys[0].gameObject.SetActive(true);
-        Debug.Log("STARTING");
+        if (!active)
+        {
+            currentKey = 0;
+            framesElapsed = 0;
+            active = true;
+            keys[0].gameObject.SetActive(true);
+            Debug.Log("STARTING");
+
+        }
     }
 
     // Update is called once per frame
