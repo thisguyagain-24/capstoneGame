@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2958377416964620577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 878a70c37e3d84e8e9ebbd73635ea3c7, type: 3}
+  m_Script: {fileID: 11500000, guid: f2344e45922f9419786751e7673e31ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputDirection: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   tension: 0
   maxBurst: 0
   burst: 0
-  animator: {fileID: 7928871342359774883}
+  animator: {fileID: 0}
   inAir: 0
   crouching: 0
   neutral: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   hitstun: 0
   blockstun: 0
   leftSide: 0
-  movementSprites: {fileID: 4337976832011868246}
+  movementSprites: {fileID: 0}
 --- !u!1 &4337976832011868246
 GameObject:
   m_ObjectHideFlags: 0

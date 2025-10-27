@@ -4,17 +4,15 @@ using System.Linq.Expressions;
 using UnityEngine;
 using Unity.VisualScripting;
 using UnityEditor;
+using System.Linq;
 
-public abstract class Fighter : MonoBehaviour
+public class Fighter : MonoBehaviour
 {
-    public abstract double maxHealth { get; protected set; }
-    public int inputDirection;
+    public double maxHealth;
+    public double currHealth;
+    
+    public double incomingDamageModifier = 1;
 
-    protected double incomingDamageModifier = 1;
-
-    public double health { get; protected set; }
-
-    public FighterMove[] moves;
 
     public int maxLives;
     public int lives;
@@ -27,6 +25,7 @@ public abstract class Fighter : MonoBehaviour
 
     public Animator animator;
 
+    public int inputDirection;
     public bool inAir;
     public bool crouching;
     public bool neutral;
@@ -40,8 +39,12 @@ public abstract class Fighter : MonoBehaviour
     public bool leftSide;
 
     public GameObject movementSprites;
+    public FighterMove[] moves;
 
-    public abstract void die();
+    public void die()
+    {
+        
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -57,19 +60,101 @@ public abstract class Fighter : MonoBehaviour
 
     public void subHealth(double damage)
     {
-        health = health - (damage * incomingDamageModifier);
+        currHealth = currHealth - (damage * incomingDamageModifier);
     }
 
-    public virtual void onMove(int dir)
+    public void onMove(int dir)
     {
-        Debug.Log("Fighter moving! This shouldnt happen!");
+        inputDirection = dir;
+        Debug.Log("KNIGHT MOVING WITH " + dir);
+        if (dir == 5)
+        {
+            //this is bad dont do this
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", true);
+
+        }
+        if (dir.In(1, 2, 3))
+        {
+            animator.SetBool("Crouch", true);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", false);
+        }
+        else if (dir.In(3, 6, 9))
+        {
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", true);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", false);
+        }
+        else if (dir.In(1, 4, 7))
+        {
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", true);
+            animator.SetBool("Neutral", false);
+        }
+
     }
 
-    public abstract void doneMove();
+    public void GetMoves()
+    {
+        moves = this.GetComponentsInChildren<FighterMove>();
+    }
 
-    public abstract void onLight();
-    public abstract void onHeavy();
-    public abstract void onUniversal();
-    public abstract void onSpecial();
+    public void onLight()
+    {
+        Debug.Log("TK Light");
+        foreach (FighterMove fm in moves)
+        {
+            if (fm.btn == FighterMove.AttackButton.L)
+            {
+                Debug.Log("Found a L move");
+                if (fm.inputDirection.Contains(inputDirection))
+                {
+                    Debug.Log("Found matching move");
+                    movementSprites.SetActive(false);
+                    fm.StartMove();
+                }
+            }
+        }
+    }
+
+    public void doneMove()
+    {
+        movementSprites.SetActive(true);
+    }
+
+    public void onHeavy()
+    {
+        
+    }
+
+    public void onUniversal()
+    {
+        
+    }
+
+    public void onSpecial()
+    {
+        
+    }
+}
+
+[CustomEditor(typeof(Fighter))]
+// ^ This is the script we are making a custom editor for.
+public class FighterEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+        if (GUILayout.Button("RefreshMoves"))
+        {
+            target.GetComponent<Fighter>().GetMoves();
+        }
+    }
 }
 
