@@ -129,6 +129,9 @@ MonoBehaviour:
   startSide: 1
   fighter: {fileID: 0}
   deadzone: 0.5
-  t: {fileID: 0}
-  m: {fileID: 0}
+  titleMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
+  charSelectMenu: {fileID: 0}
+  characters:
+  - {fileID: 2958377416964620577, guid: d47e161d0c7944151a3aa9e23db2ad5c, type: 3}
   testKnight: {fileID: 2958377416964620577, guid: d47e161d0c7944151a3aa9e23db2ad5c, type: 3}
