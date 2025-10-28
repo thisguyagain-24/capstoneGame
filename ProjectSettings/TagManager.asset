@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MenuButtons
   layers:
   - Default
   - TransparentFX
@@ -11,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Player1Hitbox
-  - Player2Hitbox
+  - Player1
+  - Player2
   - Pushbox
-  - Player1Hurtbox
-  - Player2Hurtbox
+  - 
+  - 
   - 
   - 
   - 

@@ -233,6 +233,7 @@ MonoBehaviour:
   - {fileID: 1453150602}
   rowSelected: 0
   colSelected: 0
+  player: {fileID: 0}
 --- !u!4 &321624373
 Transform:
   m_ObjectHideFlags: 0
@@ -654,7 +655,7 @@ GameObject:
   - component: {fileID: 568973039}
   m_Layer: 5
   m_Name: button1
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -908,7 +909,7 @@ GameObject:
   - component: {fileID: 1182086528}
   m_Layer: 5
   m_Name: button2
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1237,7 +1238,7 @@ GameObject:
   - component: {fileID: 1453150603}
   m_Layer: 5
   m_Name: button4
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1566,7 +1567,7 @@ GameObject:
   - component: {fileID: 1894104891}
   m_Layer: 5
   m_Name: button3
-  m_TagString: Untagged
+  m_TagString: MenuButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
