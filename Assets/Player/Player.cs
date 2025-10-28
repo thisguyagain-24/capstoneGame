@@ -21,9 +21,10 @@ public class Player : MonoBehaviour
     public TitleMenu titleMenu;
     public MainMenu mainMenu;
     public CharSelect charSelectMenu;
-    public List<GameObject> characters;
 
     public GameObject testKnight;
+    public List<GameObject> characters;
+
 
     // Start is called before the first frame update
     void Start()
@@ -206,19 +207,22 @@ public class Player : MonoBehaviour
     {
         if (!fighter)
         {
-            fighter = Instantiate(testKnight, this.transform).GetComponent<Fighter>();
+            fighter = Instantiate(testKnight, transform).GetComponent<Fighter>();
+            fighter.transform.SetParent(transform);
             fighter.playerNum = playerNum;
         }
     }
     #endregion
 
     public void MakeCharacter(int characternum) {
-
-        if (!fighter)
-        {
-            fighter = Instantiate(characters[characternum], this.transform).GetComponent<Fighter>();
-            fighter.playerNum = playerNum;
-        }
+        OnSpawnKnight(new InputValue());
+        /*
+            if (!fighter)
+            {
+                fighter = Instantiate(characters.ToArray()[0], this.transform).GetComponent<Fighter>();
+                fighter.playerNum = playerNum;
+            }
+            */
     }
 
     private int ProcessInput(Vector2 input)

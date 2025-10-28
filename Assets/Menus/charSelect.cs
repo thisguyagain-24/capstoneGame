@@ -101,7 +101,7 @@ public class CharSelect : MonoBehaviour
 
     public void MenuCursorEnter() {
         if(player)
-        player.MakeCharacter(selectedButton);
+        player.MakeCharacter(0);
 
 
     }
