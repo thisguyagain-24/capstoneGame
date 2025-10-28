@@ -42,7 +42,7 @@ public class CharSelect : MonoBehaviour
 
         UsableButtonsArray[1, 1] = 4;
 
-        Debug.Log(player);
+        //Debug.Log(player);
 
         //Debug.Log(UsableButtonsArray);
 
@@ -97,7 +97,11 @@ public class CharSelect : MonoBehaviour
         } else {
             selectedButton = 3;
         }
+    }
 
+    public void MenuCursorEnter() {
+        if(player)
+        player.MakeCharacter(selectedButton);
 
 
     }

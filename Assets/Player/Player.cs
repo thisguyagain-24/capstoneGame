@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public TitleMenu titleMenu;
     public MainMenu mainMenu;
     public CharSelect charSelectMenu;
+    public List<GameObject> characters;
 
     public GameObject testKnight;
 
@@ -163,7 +164,17 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
 
-        mainMenu?.MenuCursorEnter();
+        if (mainMenu) {
+
+            mainMenu?.MenuCursorEnter();
+
+        } else if (charSelectMenu) {
+
+            charSelectMenu?.MenuCursorEnter();
+
+        }
+
+        
 
     }
 
@@ -195,6 +206,15 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+
+    public void MakeCharacter(int characternum) {
+
+        if (!fighter)
+        {
+            fighter = Instantiate(characters[characternum], this.transform).GetComponent<Fighter>();
+            fighter.playerNum = playerNum;
+        }
+    }
 
     private int ProcessInput(Vector2 input)
     {
