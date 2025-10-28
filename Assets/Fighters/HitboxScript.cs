@@ -6,11 +6,17 @@ using UnityEngine;
 public class HitboxScript : MonoBehaviour
 {
     public FighterMove move;
+    public MoveFrame frame;
 
     void Start()
     {
-        if(!move){
+        if (!move)
+        {
             move = gameObject.GetComponentInParent<FighterMove>();
+        }
+        if (!frame)
+        {
+            frame = gameObject.GetComponentInParent<MoveFrame>();
         }
     }
 
@@ -20,20 +26,20 @@ public class HitboxScript : MonoBehaviour
         This will always be true FOR CURRENT MOVES.
         Entities such as projectiles or summons may be different?
         */
-        if (move) 
+        if (move)
         {
-            Debug.Log(move.name);
-            Debug.Log(move.transform.name);
+            if (frame.active)
+            {
+                string hitbox = concatParentNames(this.transform.name, this.transform);
+                hitbox = string.Join("/", ReverseArr(hitbox.Split('/')));
+
+                string hurtbox = concatParentNames(collision.transform.name, collision.transform);
+                hurtbox = string.Join("/", ReverseArr(hurtbox.Split('/')));
+
+                Debug.Log(hitbox + " HAS HIT " + hurtbox);
+                move.processHit(frame);
+            }
         }
-
-        //string is originally reversed, need to split and reverse it
-        string hitbox = concatParentNames(this.transform.name, this.transform);
-        hitbox = string.Join("/", ReverseArr(hitbox.Split('/')));
-
-        string hurtbox = concatParentNames(collision.transform.name, collision.transform);
-        hurtbox = string.Join("/", ReverseArr(hurtbox.Split('/')));
-        
-        Debug.Log(hitbox + " HAS HIT " + hurtbox);
     }
 
     private string concatParentNames(string name, Transform t)

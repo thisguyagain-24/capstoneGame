@@ -98,6 +98,8 @@ MonoBehaviour:
   hitboxes: []
   hurtboxes:
   - {fileID: 8341777365374028545}
+  uniqueHitNumber: 0
+  active: 0
 --- !u!1 &793100029672926783
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {fileID: 0}
+  frame: {fileID: 0}
 --- !u!1 &1752475854992989049
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +328,8 @@ MonoBehaviour:
   hurtboxes:
   - {fileID: 3531946750492057129}
   - {fileID: 8783234572148807579}
+  uniqueHitNumber: 0
+  active: 0
 --- !u!1 &3428578530218663497
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +928,8 @@ MonoBehaviour:
   hurtboxes:
   - {fileID: 5147949923657737025}
   - {fileID: 5983431824982495829}
+  uniqueHitNumber: 0
+  active: 0
 --- !u!1 &5497993424649905951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {fileID: 0}
+  frame: {fileID: 0}
 --- !u!1 &6839623020982344781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1586,8 @@ MonoBehaviour:
   hurtboxes:
   - {fileID: 8470172102814742548}
   - {fileID: 3587652842425623308}
+  uniqueHitNumber: 0
+  active: 0
 --- !u!1 &8783234572148807579
 GameObject:
   m_ObjectHideFlags: 0

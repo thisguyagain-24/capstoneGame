@@ -10,6 +10,8 @@ public class MoveFrame : MonoBehaviour
     public int duration;
     public GameObject[] hitboxes;
     public GameObject[] hurtboxes;
+    public int uniqueHitNumber;
+    public bool active;
 
     void Start()
     {

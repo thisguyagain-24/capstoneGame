@@ -30,9 +30,8 @@ public class Player : MonoBehaviour
         playerNum = pInput.playerIndex;
 
         Debug.Log("Player " + playerNum + " Joined with Control Scheme: " + pInput.currentControlScheme);
-        Debug.Log(pInput.devices.ToString());
-        Debug.Log(pInput.devices[0].displayName);
-
+        //Debug.Log(pInput.devices.ToString());
+        //Debug.Log(pInput.devices[0].displayName);
 
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
