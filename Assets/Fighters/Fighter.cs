@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using System.Linq;
 using UnityEditor.Experimental.GraphView;
+using System;
 
 public class Fighter : MonoBehaviour
 {
@@ -52,12 +53,16 @@ public class Fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        inputDirection = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(inputDirection == 0)
+        {
+            Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");           
+        }
         if (inputDirection == 5)
         {
             //this is bad dont do this

@@ -97,7 +97,7 @@ public class FighterMove : MonoBehaviour
             framesElapsed = 0;
             active = true;
             keys[0].gameObject.SetActive(true);
-            Debug.Log("STARTING");
+            Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
         }
     }
 
@@ -112,7 +112,7 @@ public class FighterMove : MonoBehaviour
     
     public void IterateFrames(){
         framesElapsed += Time.deltaTime*60;
-        Debug.Log(framesElapsed);
+        //Debug.Log(framesElapsed);
         checkCollision();
         if(keys[currentKey].duration <= framesElapsed)
         {
@@ -125,7 +125,7 @@ public class FighterMove : MonoBehaviour
     {
         keys[currentKey].gameObject.SetActive(false);
         currentKey++;
-        Debug.Log("MOVING TO KEYFRAME " + currentKey);
+        Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
         if(currentKey >= keys.Length)
         {
             fighter.doneMove();
