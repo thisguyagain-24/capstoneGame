@@ -97,6 +97,10 @@ public class FighterMove : MonoBehaviour
             framesElapsed = 0;
             active = true;
             keys[0].gameObject.SetActive(true);
+            foreach(MoveFrame mf in keys)
+            {
+                mf.active = true;
+            }
             Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
         }
     }
@@ -113,7 +117,6 @@ public class FighterMove : MonoBehaviour
     public void IterateFrames(){
         framesElapsed += Time.deltaTime*60;
         //Debug.Log(framesElapsed);
-        checkCollision();
         if(keys[currentKey].duration <= framesElapsed)
         {
             framesElapsed -= keys[currentKey].duration;
@@ -137,9 +140,19 @@ public class FighterMove : MonoBehaviour
         }
     }
 
-    public void checkCollision()
+    public void processHit(MoveFrame frame)
     {
-        
+
+        disableFrames(frame.uniqueHitNumber);
+    }
+    
+    private void disableFrames(int hitNum)
+    {
+        foreach(MoveFrame mf in gameObject.GetComponentsInChildren<MoveFrame>(true).Where(mf => mf.uniqueHitNumber == hitNum))
+        {
+            Debug.Log(mf.name + " getting disabled");
+            mf.active = false;
+        }
     }
 
     public void GetFrames()
