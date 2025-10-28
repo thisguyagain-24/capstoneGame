@@ -12,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Player1
-  - Player2
+  - Player1Hitbox
+  - Player2Hitbox
   - Pushbox
-  - 
-  - 
+  - Player1Hurtbox
+  - Player2Hurtbox
   - 
   - 
   - 

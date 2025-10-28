@@ -7,6 +7,8 @@ using UnityEditor;
 using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using System;
+using System.Security.Cryptography;
+using Unity.Mathematics;
 
 public class Fighter : MonoBehaviour
 {
@@ -14,7 +16,6 @@ public class Fighter : MonoBehaviour
     public double currHealth;
     
     public double incomingDamageModifier = 1;
-
 
     public int playerNum;
 
@@ -44,24 +45,54 @@ public class Fighter : MonoBehaviour
 
     public GameObject movementSprites;
     public FighterMove[] moves;
+    public FighterMove activeMove;
+    
+    public GameObject defaultHurtbox;
+    public GameObject hitStunObj;
 
-    public void die()
+    public bool inHitstop;
+    public float hitstopDuration;
+    public float hitstopFramesElapsed;
+
+    public Fighter opponent;
+
+    public void Die()
     {
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         inputDirection = 5;
+        defaultHurtbox.layer = getPlayerHurtboxLayer();
+        hitStunObj.transform.GetChild(1).gameObject.layer = getPlayerHurtboxLayer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(inputDirection == 0)
+        if (inHitstop)
         {
-            Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");           
+            IterateHitstop();
+        }
+        if (!opponent)
+        {
+            foreach(Fighter f in GameObject.FindObjectsByType<Fighter>(FindObjectsSortMode.None))
+            {
+                if(f != this)
+                {
+                    opponent = f;
+                }
+            }
+        }
+        else
+        {
+            CheckSide();
+        }
+        if (inputDirection == 0)
+        {
+            Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");
         }
         if (inputDirection == 5)
         {
@@ -98,16 +129,51 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    public void subHealth(double damage)
+    public void EnableHitstun(float stopDur, float stunDir)
+    {
+        if (activeMove)
+        {
+            foreach(MoveFrame o in activeMove.keys)
+            {
+                o.gameObject.SetActive(false);
+            }
+            
+            activeMove.active = false;
+            activeMove = null;
+        }
+        movementSprites.SetActive(false);
+        hitStunObj.SetActive(true);
+        EnableHitstop(stopDur + stunDir);
+    }
+
+    public void EnableHitstop(float _dur)
+    {
+        inHitstop = true;
+        hitstopFramesElapsed = 0;
+        hitstopDuration = _dur;
+    }
+
+    public void IterateHitstop()
+    {
+        hitstopFramesElapsed += Time.deltaTime * 60;
+        //Debug.Log(hitstopFramesElapsed + " / " + hitstopDuration);
+        if (hitstopDuration <= hitstopFramesElapsed)
+        {
+            inHitstop = false;
+            hitStunObj.SetActive(false);
+            EndForcedAnim();
+        }
+    }
+
+    public void SubHealth(double damage)
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
     }
 
-    public void onMove(int dir)
+    public void OnMove(int dir)
     {
+        Debug.Log("SHMOVIN");
         inputDirection = dir;
-        
-
     }
 
     public void GetMoves()
@@ -115,44 +181,97 @@ public class Fighter : MonoBehaviour
         moves = this.GetComponentsInChildren<FighterMove>();
     }
 
-    public void onLight()
+    public void OnLight()
     {
-        Debug.Log("TK Light");
-        foreach (FighterMove fm in moves)
-        {
-            if (fm.btn == FighterMove.AttackButton.L)
+        if (!inHitstop){
+            Debug.Log("TK Light");
+            foreach (FighterMove fm in moves)
             {
-                Debug.Log("Found a L move");
-                if (fm.inputDirection.Contains(inputDirection))
+                if (fm.btn == FighterMove.AttackButton.L)
                 {
-                    Debug.Log("Found matching move");
-                    movementSprites.SetActive(false);
-                    fm.StartMove();
+                    Debug.Log("Found a L move");
+                    if (fm.inputDirection.Contains(inputDirection))
+                    {
+                        Debug.Log("Found matching move");
+                        movementSprites.SetActive(false);
+                        activeMove = fm;
+                        fm.StartMove();
+                        return;
+                    }
                 }
             }
         }
     }
 
-    public void doneMove()
+    public void DoneMove()
     {
-        movementSprites.SetActive(true);
+        activeMove = null;
+        EndForcedAnim();
     }
 
-    public void onHeavy()
+    public void EndForcedAnim()
+    {
+        if (!activeMove)
+        {
+            movementSprites.SetActive(true);
+        }
+    }
+
+    public void OnHeavy()
     {
         
     }
 
-    public void onUniversal()
+    public void OnUniversal()
     {
         
     }
 
-    public void onSpecial()
+    public void OnSpecial()
     {
-        
+
     }
+
+    public void CheckSide()
+    {
+        if (opponent)
+        {
+            if (opponent.transform.position.x > transform.position.x)
+            {
+                //Debug.Log("LEFT SIDE");
+                Vector3 flipped = transform.localScale;
+                flipped.x = math.abs(flipped.x);
+                transform.localScale = flipped;
+                leftSide = true;
+            }
+            else
+            {
+                //Debug.Log("RIGHT SIDE");
+                Vector3 flipped = transform.localScale;
+                flipped.x = math.abs(flipped.x) * -1;
+                transform.localScale = flipped;
+                leftSide = false;
+            }
+ 
+        }
+    }
+
+    public int getPlayerHurtboxLayer()
+    {
+        if (playerNum == 0)
+        {
+            return LayerMask.NameToLayer("Player1Hurtbox");
+        }
+        else
+        {
+            return LayerMask.NameToLayer("Player2Hurtbox");
+        }
+    }
+    
+    
 }
+
+
 
 [CustomEditor(typeof(Fighter))]
 // ^ This is the script we are making a custom editor for.

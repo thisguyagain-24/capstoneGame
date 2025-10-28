@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public int inputDirection;
 
     public bool startSide;
+    public bool currentSide;
     public Fighter fighter;
     public double deadzone = 0.5;
 
@@ -77,34 +78,38 @@ public class Player : MonoBehaviour
     #region GameplayInputs
     void OnMove(InputValue value)
     {
-        Vector2 FUCK = value.Get<Vector2>();
-        Debug.Log("Player " + playerNum + " Input Move: " + FUCK.ToString());
-        fighter.onMove(GetDirection(FUCK.x, FUCK.y));
+        Vector2 inVec = value.Get<Vector2>();
+        Debug.Log("Player " + playerNum + " Input Move: " + inVec.ToString());
+        if (currentSide)
+        {
+            inVec.x *= -1;
+        }
+        fighter.OnMove(GetDirection(inVec.x, inVec.y));
     }
 
     void OnLightAttack(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Light: " + value.Get().ToString());
-        fighter.onLight();
+        fighter.OnLight();
     }
 
     void OnHeavyAttack(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Heavy: " + value.Get().ToString());
-        fighter.onHeavy();
+        fighter.OnHeavy();
     }
 
     void OnUniversal(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Universal: " + value.Get().ToString());
-        fighter.onUniversal();
+        fighter.OnUniversal();
         //pInput.SwitchCurrentActionMap("UI"); //Switching action maps for test
     }
 
     void OnSpecial(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Special: " + value.Get().ToString());
-        fighter.onSpecial();
+        fighter.OnSpecial();
     }
 
     void OnPause(InputValue value)
@@ -232,41 +237,41 @@ public class Player : MonoBehaviour
     }
 
     public int GetDirection(float x, float y) {
-    double absX = Math.Abs(x);
-    double absY = Math.Abs(y);
-    if (absX < deadzone && absY < deadzone) {
-        // close to center
-        return 5;
-    }
-    if (absX > absY) {
-        // vertical side
-        double half = absX * 0.4142;
-        if (x < 0) {
-            // left side
-            if (y > half) return 1;
-            if (y < -half) return 7;
-            return 4;
-        } else {
-            // right side
-            if (y > half) return 3;
-            if (y < -half) return 9;
-            return 6;
+        double absX = Math.Abs(x);
+        double absY = Math.Abs(y);
+        if (absX < deadzone && absY < deadzone) {
+            // close to center
+            return 5;
         }
-    } else {
-        // horisontal side
-        double half = absY * 0.4142;
-        if (y < 0) {
-            // bottom
-            if (x > half) return 3;
-            if (x < -half) return 1;
-            return 2;
+        if (absX > absY) {
+            // vertical side
+            double half = absX * 0.4142;
+            if (x < 0) {
+                // left side
+                if (y > half) return 1;
+                if (y < -half) return 7;
+                return 4;
+            } else {
+                // right side
+                if (y > half) return 3;
+                if (y < -half) return 9;
+                return 6;
+            }
         } else {
-            // top
-            if (x > half) return 9;
-            if (x < -half) return 7;
-            return 8;
+            // horisontal side
+            double half = absY * 0.4142;
+            if (y < 0) {
+                // bottom
+                if (x > half) return 3;
+                if (x < -half) return 1;
+                return 2;
+            } else {
+                // top
+                if (x > half) return 9;
+                if (x < -half) return 7;
+                return 8;
+            }
         }
-    }
     }
 }
 

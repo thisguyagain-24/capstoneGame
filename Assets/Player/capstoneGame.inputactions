@@ -108,7 +108,18 @@
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Arrows;WASD",
+                    "groups": ";WASD",
+                    "action": "SwitchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "322afbeb-e7ce-4851-b31b-0e7255cf310b",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
                     "action": "SwitchInput",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -328,7 +339,18 @@
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";WASD;Arrows",
+                    "groups": ";WASD",
+                    "action": "SpawnKnight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f94aa00e-e445-4906-bd0b-63d600addcf8",
+                    "path": "<Keyboard>/numpad7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
                     "action": "SpawnKnight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -713,7 +735,18 @@
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Arrows;WASD",
+                    "groups": ";WASD",
+                    "action": "SwitchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e44f7d0-3acf-495a-bef8-7f9d67b36858",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
                     "action": "SwitchInput",
                     "isComposite": false,
                     "isPartOfComposite": false

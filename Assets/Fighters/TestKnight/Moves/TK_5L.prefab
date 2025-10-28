@@ -618,8 +618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputDirection: 040000000500000006000000070000000800000009000000
   btn: 0
-  hitstop: 0
-  hitstun: 2
+  hitstop: 10
+  hitstun: 10
   blockstun: 10
   keys:
   - {fileID: 4624171028569854237}
