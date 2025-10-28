@@ -133,7 +133,11 @@ public class Fighter : MonoBehaviour
     {
         if (activeMove)
         {
-            activeMove.keys[activeMove.currentKey].gameObject.SetActive(false);
+            foreach(MoveFrame o in activeMove.keys)
+            {
+                o.gameObject.SetActive(false);
+            }
+            
             activeMove.active = false;
             activeMove = null;
         }
@@ -168,6 +172,7 @@ public class Fighter : MonoBehaviour
 
     public void OnMove(int dir)
     {
+        Debug.Log("SHMOVIN");
         inputDirection = dir;
     }
 

@@ -8,6 +8,7 @@ public class HitboxScript : MonoBehaviour
     public FighterMove move;
     public MoveFrame frame;
     public BoxCollider2D _collider;
+    public string hurtboxString;
 
     void Start()
     {
@@ -22,6 +23,14 @@ public class HitboxScript : MonoBehaviour
         if (!_collider)
         {
             _collider = gameObject.GetComponent<BoxCollider2D>();
+        }
+        if(move?.GetComponentInParent<Fighter>().playerNum == 0)
+        {
+            hurtboxString = "Player2Hurtbox";
+        }
+        else
+        {
+            hurtboxString = "Player1Hurtbox";
         }
     }
 
