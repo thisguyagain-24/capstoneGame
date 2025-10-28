@@ -58,25 +58,13 @@ public class FighterMove : MonoBehaviour
             }
             foreach (GameObject o in mf.hurtboxes)
             {
-                o.layer = getPlayerHurtboxLayer();
+                o.layer = fighter.getPlayerHurtboxLayer();
                 hurtboxes.Append(o);
             }
             mf.gameObject.SetActive(false);
         }
     }
 
-    private int getPlayerHurtboxLayer()
-    {
-        if (fighter.playerNum == 0)
-        {
-            return LayerMask.NameToLayer("Player1Hurtbox");
-        }
-        else
-        {
-            return LayerMask.NameToLayer("Player2Hurtbox");
-        }
-    }
-    
     private int getPlayerHitboxLayer()
     {
         if (fighter.playerNum == 0)
@@ -97,7 +85,7 @@ public class FighterMove : MonoBehaviour
             framesElapsed = 0;
             active = true;
             keys[0].gameObject.SetActive(true);
-            foreach(MoveFrame mf in keys)
+            foreach (MoveFrame mf in keys)
             {
                 mf.active = true;
             }
@@ -110,12 +98,15 @@ public class FighterMove : MonoBehaviour
     {
         if (active)
         {
-            IterateFrames();
+            if (!fighter.inHitstop)
+            {
+                IterateFrames();
+            }
         }
     }
-    
+
     public void IterateFrames(){
-        framesElapsed += Time.deltaTime*60;
+        framesElapsed += Time.deltaTime * 60;
         //Debug.Log(framesElapsed);
         if(keys[currentKey].duration <= framesElapsed)
         {
@@ -131,7 +122,7 @@ public class FighterMove : MonoBehaviour
         Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
         if(currentKey >= keys.Length)
         {
-            fighter.doneMove();
+            fighter.DoneMove();
             active = false;
         }
         else
@@ -142,7 +133,8 @@ public class FighterMove : MonoBehaviour
 
     public void processHit(MoveFrame frame)
     {
-
+        fighter.EnableHitstop(hitstop);
+        fighter.opponent?.EnableHitstun(hitstop, hitstun);
         disableFrames(frame.uniqueHitNumber);
     }
     

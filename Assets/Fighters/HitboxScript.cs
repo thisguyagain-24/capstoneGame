@@ -7,6 +7,7 @@ public class HitboxScript : MonoBehaviour
 {
     public FighterMove move;
     public MoveFrame frame;
+    public BoxCollider2D _collider;
 
     void Start()
     {
@@ -18,18 +19,68 @@ public class HitboxScript : MonoBehaviour
         {
             frame = gameObject.GetComponentInParent<MoveFrame>();
         }
+        if (!_collider)
+        {
+            _collider = gameObject.GetComponent<BoxCollider2D>();
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        /* 
-        This will always be true FOR CURRENT MOVES.
-        Entities such as projectiles or summons may be different?
-        */
-        if (move)
+        if (frame)
         {
             if (frame.active)
             {
+                foreach (Collider2D col in Physics2D.OverlapBoxAll(new Vector2(_collider.transform.position.x, _collider.transform.position.y) + _collider.offset, _collider.size, _collider.transform.rotation.y, LayerMask.GetMask("Player2Hurtbox"))){
+                    if (col)
+                    {
+                        SOMETHINGHAPPENED(col);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void SOMETHINGHAPPENED(Collider2D col)
+    {
+        Debug.Log("SOMETHING");
+        if (move)
+        {
+            Debug.Log("32");
+            if (frame.active)
+            {
+                if (col.transform.parent.name == "Hitboxes")
+                {
+                    Debug.Log("CLASH");
+                }
+
+                string hitbox = concatParentNames(this.transform.name, this.transform);
+                hitbox = string.Join("/", ReverseArr(hitbox.Split('/')));
+
+                string hurtbox = concatParentNames(col.transform.name, col.transform);
+                hurtbox = string.Join("/", ReverseArr(hurtbox.Split('/')));
+
+                Debug.Log(hitbox + " HAS HIT " + hurtbox);
+                move.processHit(frame);
+            }
+        }
+    }
+
+/*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("29");
+        if (move)
+        {
+            Debug.Log("32");
+            if (frame.active)
+            {
+                if (collision.transform.parent.name == "Hitboxes")
+                {
+                    Debug.Log("CLASH");
+                }
+
                 string hitbox = concatParentNames(this.transform.name, this.transform);
                 hitbox = string.Join("/", ReverseArr(hitbox.Split('/')));
 
@@ -41,7 +92,7 @@ public class HitboxScript : MonoBehaviour
             }
         }
     }
-
+*/
     private string concatParentNames(string name, Transform t)
     {
         if (t.parent)
