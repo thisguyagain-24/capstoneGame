@@ -14,16 +14,14 @@ public class MainMenu : MonoBehaviour
     public GameObject SettingsMenu;
 
 
-    [SerializeField]
     public GameObject[] menuButtons;
 
-    [SerializeField]
+    //public GameObject[][] btns;
+
     public GameObject[] row1;
 
-    [SerializeField]
     public GameObject[] row2;
 
-    [SerializeField]
     public Color highlightColor = new(1, 1, 1, 0.5f);
 
     public Color baseColor = new(1, 1, 1, 1);
@@ -33,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public int currentSelected = 0;
 
-    public SpriteRenderer[]menuButtonsConverted = new SpriteRenderer[4];
+    public SpriteRenderer[] menuButtonsConverted = new SpriteRenderer[4];
 
     void Start() {
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
@@ -56,6 +54,8 @@ public class MainMenu : MonoBehaviour
     {
 
         Debug.Log("versus selected");
+
+        SceneManager.LoadScene("charSelect");
 
         // play sound effect, play animation, then load versus scene
 
@@ -113,88 +113,60 @@ public class MainMenu : MonoBehaviour
         PickHighlight();
 
         switch (currentSelected) {
-
             case 0:
-
                 VersusSelected();
-
                 break;
-
             case 1:
-
                 StorySelected();
-
                 break;
-
             case 2:
-
                 SettingsSelected();
-
                 break;
-
             case 3:
-
                 ReturnToTitle();
-
                 break;
-
         }
-
     }
-    
+
     public void PickHighlight() {
 
-        menuButtonsConverted[currentSelected].color = baseColor;
+/*         if (menuButtonsConverted[0] == null) {
 
+            return; 
+            
+        } */
+
+        menuButtonsConverted[currentSelected].color = baseColor;
         menuButtonsConverted[currentSelected].transform.localScale = new Vector3(13,13,0);
 
-        if (RowSelected == false) {
-
-            // on top
-            if (MenuSelected == false) {
-
-                // top left
-
-                currentSelected = 0;
-                
-
-            }
-
-            if (MenuSelected == true) {
-
-                // top right
-
-                currentSelected = 1;
-
-            }
-
-        } 
-        else if (RowSelected == true){
-
-            // lower row 
-
-            if (MenuSelected == false) {
-
-                // btm left
-
-                currentSelected = 2;
-
-            }
-
-            if (MenuSelected == true) {
-
-                // btm right
-
-                currentSelected = 3;
-
-            }
-            
-        }
+        UpdateSelection();
 
         menuButtonsConverted[currentSelected].color = highlightColor;
-
         menuButtonsConverted[currentSelected].transform.localScale = new Vector3(10,10,0);
-
     }
 
+    private void UpdateSelection(){
+        if (!RowSelected) {
+            // on top
+            if (!MenuSelected) {
+                // top left
+                currentSelected = 0;
+            } 
+            else {
+                // top right
+                currentSelected = 1;
+            }
+        } 
+        else{
+            // lower row 
+            if (!MenuSelected) {
+                // btm left
+                currentSelected = 2;
+            }
+            else {
+                // btm right
+                currentSelected = 3;
+            }
+        }
+    }
 }

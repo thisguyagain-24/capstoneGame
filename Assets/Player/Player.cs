@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,8 +17,9 @@ public class Player : MonoBehaviour
     public Fighter fighter;
     public double deadzone = 0.5;
 
-    public TitleMenu t;
-    public MainMenu m;
+    public TitleMenu titleMenu;
+    public MainMenu mainMenu;
+    public CharSelect charSelectMenu;
 
     public GameObject testKnight;
 
@@ -36,21 +38,34 @@ public class Player : MonoBehaviour
 
         FindUIDirector();
         DontDestroyOnLoad(this.GameObject());
-        t?.Load();
+        titleMenu?.Load();
     }
 
     public void FindUIDirector()
     {
         try
         {
-            t = GameObject.Find("Canvas").GetComponent<TitleMenu>();
+            titleMenu = GameObject.Find("Canvas").GetComponent<TitleMenu>();
         }
-        catch { }
+        catch
+        { 
+             
+        }
         try
         {
-            m = GameObject.Find("EventSystem").GetComponent<MainMenu>();
+            mainMenu = GameObject.Find("EventSystem").GetComponent<MainMenu>();
         }
-        catch { }
+        catch 
+        { 
+            
+        }
+        try
+        {
+            charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
+        }
+        catch { 
+            
+        }
     }
 
     // Update is called once per frame
@@ -110,28 +125,38 @@ public class Player : MonoBehaviour
 
         if (playerNum == 0) {
 
-            if (m is not null) {
+            if (mainMenu)
+            {
 
-                switch (direction) {
+                switch (direction)
+                {
 
                     case 2 or 8:
 
-                        m.MenuCursorUpDown();
+                        mainMenu?.MenuCursorUpDown();
 
                         break;
 
                     case 4 or 6:
 
-                        m.MenuCursorLeftRight();
+                        mainMenu?.MenuCursorLeftRight();
 
                         break;
 
                 }
+            } 
+            
+            if (charSelectMenu)
+            {
+                Debug.Log(direction);
 
+                charSelectMenu?.UpdateSelected(direction);
 
             }
 
+
         }
+
 
     }
 
@@ -139,7 +164,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
 
-        m?.MenuCursorEnter();
+        mainMenu?.MenuCursorEnter();
 
     }
 
