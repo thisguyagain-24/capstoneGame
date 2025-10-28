@@ -5,6 +5,8 @@ using UnityEngine;
 using Unity.VisualScripting;
 using UnityEditor;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
+using System;
 
 public class Fighter : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class Fighter : MonoBehaviour
     
     public double incomingDamageModifier = 1;
 
+
+    public int playerNum;
 
     public int maxLives;
     public int lives;
@@ -49,13 +53,49 @@ public class Fighter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        inputDirection = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(inputDirection == 0)
+        {
+            Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");           
+        }
+        if (inputDirection == 5)
+        {
+            //this is bad dont do this
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", true);
+        }
+        else
+        {
+            Debug.Log("KNIGHT MOVING WITH " + inputDirection);
+        }
+        if (inputDirection.In(1, 2, 3))
+        {
+            animator.SetBool("Crouch", true);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", false);
+        }
+        else if (inputDirection.In(3, 6, 9))
+        {
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", true);
+            animator.SetBool("Back", false);
+            animator.SetBool("Neutral", false);
+        }
+        else if (inputDirection.In(1, 4, 7))
+        {
+            animator.SetBool("Crouch", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Back", true);
+            animator.SetBool("Neutral", false);
+        }
     }
 
     public void subHealth(double damage)
@@ -66,37 +106,7 @@ public class Fighter : MonoBehaviour
     public void onMove(int dir)
     {
         inputDirection = dir;
-        Debug.Log("KNIGHT MOVING WITH " + dir);
-        if (dir == 5)
-        {
-            //this is bad dont do this
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", true);
-
-        }
-        if (dir.In(1, 2, 3))
-        {
-            animator.SetBool("Crouch", true);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", false);
-        }
-        else if (dir.In(3, 6, 9))
-        {
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", true);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", false);
-        }
-        else if (dir.In(1, 4, 7))
-        {
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", true);
-            animator.SetBool("Neutral", false);
-        }
+        
 
     }
 

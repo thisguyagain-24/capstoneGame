@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public static class Util
 {
@@ -20,5 +21,22 @@ public static class Util
         }
 
         return values.Contains(o);
+    }
+
+    public static void GetChildrenWithTag(Transform parent, string tag, List<GameObject> list)
+    {
+        if (parent == null || string.IsNullOrEmpty(tag) == true)
+        {
+            throw new System.ArgumentNullException();
+        }
+
+        foreach (Transform child in parent)
+        {
+            if (child.gameObject.tag == tag)
+            {
+                list.Add(child.gameObject);
+            }
+            GetChildrenWithTag(child, tag, list);
+        }
     }
 }

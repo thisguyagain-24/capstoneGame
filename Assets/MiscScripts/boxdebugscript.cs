@@ -36,9 +36,9 @@ public class boxdebugscript : MonoBehaviour
         {
             //Debug.Log("DRAWING DRAWING HITBOXES");
             Gizmos.color = new Color(0.8f, 0.05f, 0.05f, 0.2f);
-            Gizmos.DrawCube(c.transform.localPosition + c.transform.parent.localPosition + (Vector3)c.offset, c.size);
+            Gizmos.DrawCube(c.transform.localPosition + (Vector3)c.offset, c.size);
             Gizmos.color = new Color(0.8f, 0.05f, 0.05f, 0.4f);
-            Gizmos.DrawWireCube(c.transform.localPosition + c.transform.parent.localPosition + (Vector3)c.offset, c.size);
+            Gizmos.DrawWireCube(c.transform.localPosition + (Vector3)c.offset, c.size);
 
         }
     }
@@ -50,9 +50,9 @@ public class boxdebugscript : MonoBehaviour
         {
             //Debug.Log("DRAWING HURTBOXES");
             Gizmos.color = new Color(0.05f, 0.2f, 0.8f, 0.2f);
-            Gizmos.DrawCube(c.transform.localPosition + c.transform.parent.localPosition + (Vector3)c.offset, c.size);
+            Gizmos.DrawCube(c.transform.localPosition + (Vector3)c.offset, c.size);
             Gizmos.color = new Color(0.05f, 0.2f, 0.8f, 0.4f);
-            Gizmos.DrawWireCube(c.transform.localPosition + c.transform.parent.localPosition + (Vector3)c.offset, c.size);
+            Gizmos.DrawWireCube(c.transform.localPosition + (Vector3)c.offset, c.size);
         }
     }
 }

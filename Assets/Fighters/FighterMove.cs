@@ -32,6 +32,10 @@ public class FighterMove : MonoBehaviour
     public int blockstun;
 
     public MoveFrame[] keys;
+
+    public GameObject[] hitboxes;
+    public GameObject[] hurtboxes;
+    
     public int currentKey;
     public float framesElapsed;
     public bool active;
@@ -45,19 +49,56 @@ public class FighterMove : MonoBehaviour
         }
         active = false;
         fighter = this.GetComponentInParent<Fighter>();
-        foreach(MoveFrame mf in keys)
+        foreach (MoveFrame mf in keys)
         {
+            foreach(GameObject o in mf.hitboxes)
+            {
+                o.layer = getPlayerHitboxLayer();
+                hitboxes.Append(o);
+            }
+            foreach (GameObject o in mf.hurtboxes)
+            {
+                o.layer = getPlayerHurtboxLayer();
+                hurtboxes.Append(o);
+            }
             mf.gameObject.SetActive(false);
+        }
+    }
+
+    private int getPlayerHurtboxLayer()
+    {
+        if (fighter.playerNum == 0)
+        {
+            return LayerMask.NameToLayer("Player1Hurtbox");
+        }
+        else
+        {
+            return LayerMask.NameToLayer("Player2Hurtbox");
+        }
+    }
+    
+    private int getPlayerHitboxLayer()
+    {
+        if (fighter.playerNum == 0)
+        {
+            return LayerMask.NameToLayer("Player1Hitbox");
+        }
+        else
+        {
+            return LayerMask.NameToLayer("Player2Hitbox");
         }
     }
 
     public void StartMove()
     {
-        currentKey = 0;
-        framesElapsed = 0;
-        active = true;
-        keys[0].gameObject.SetActive(true);
-        Debug.Log("STARTING");
+        if (!active)
+        {
+            currentKey = 0;
+            framesElapsed = 0;
+            active = true;
+            keys[0].gameObject.SetActive(true);
+            Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
+        }
     }
 
     // Update is called once per frame
@@ -71,7 +112,8 @@ public class FighterMove : MonoBehaviour
     
     public void IterateFrames(){
         framesElapsed += Time.deltaTime*60;
-        Debug.Log(framesElapsed);
+        //Debug.Log(framesElapsed);
+        checkCollision();
         if(keys[currentKey].duration <= framesElapsed)
         {
             framesElapsed -= keys[currentKey].duration;
@@ -83,7 +125,7 @@ public class FighterMove : MonoBehaviour
     {
         keys[currentKey].gameObject.SetActive(false);
         currentKey++;
-        Debug.Log("MOVING TO KEYFRAME " + currentKey);
+        Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
         if(currentKey >= keys.Length)
         {
             fighter.doneMove();
@@ -93,6 +135,11 @@ public class FighterMove : MonoBehaviour
         {
             keys[currentKey].gameObject.SetActive(true);
         }
+    }
+
+    public void checkCollision()
+    {
+        
     }
 
     public void GetFrames()

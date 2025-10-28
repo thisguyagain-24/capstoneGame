@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381744009268196291}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8837565929027966296}
   - component: {fileID: 2924923555642093288}
   - component: {fileID: 4624171028569854237}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +95,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  hitboxes: []
+  hurtboxes:
+  - {fileID: 8341777365374028545}
 --- !u!1 &793100029672926783
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5164091274885986836}
   - component: {fileID: 1699445491827929096}
-  m_Layer: 0
+  - component: {fileID: 8025346454314688271}
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +160,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02637145, y: -0.16143277}
@@ -172,6 +176,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35443103, y: 0.3771345}
   m_EdgeRadius: 0
+--- !u!114 &8025346454314688271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793100029672926783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ba9a59f275d46859bc5d3feadc8b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 0}
 --- !u!1 &1752475854992989049
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8283080785667318562}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2363189131719166916}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +265,7 @@ GameObject:
   - component: {fileID: 3328072227905907282}
   - component: {fileID: 4363772235144996773}
   - component: {fileID: 5926928092294116130}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,6 +320,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
+  hitboxes:
+  - {fileID: 6405363517550728732}
+  hurtboxes:
+  - {fileID: 3531946750492057129}
+  - {fileID: 8783234572148807579}
 --- !u!1 &3428578530218663497
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8444694142807403593}
   - component: {fileID: 298389262083541537}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6337522873757657070}
   - component: {fileID: 788877456190299460}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +470,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.18838438}
@@ -474,7 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2977028153943362607}
   - component: {fileID: 5096131688078973029}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +547,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.29691017, y: 0.061292514}
@@ -551,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5605629170316831671}
   - component: {fileID: 3909922394436729193}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +616,13 @@ MonoBehaviour:
   hitstop: 0
   hitstun: 2
   blockstun: 10
-  keys: []
+  keys:
+  - {fileID: 4624171028569854237}
+  - {fileID: 5926928092294116130}
+  - {fileID: 4372907114945988267}
+  - {fileID: 7050474142678503322}
+  hitboxes: []
+  hurtboxes: []
   currentKey: 0
   framesElapsed: 0
   active: 0
@@ -607,7 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437272549111547234}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5909123849705213817}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 4531330914216536054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -673,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6290632822550027482}
   - component: {fileID: 2103444453450214792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346387306404763289}
   - component: {fileID: 8163617935416553081}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +836,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.18838438}
@@ -835,7 +863,7 @@ GameObject:
   - component: {fileID: 9182470849975552988}
   - component: {fileID: 2317820437071118026}
   - component: {fileID: 4372907114945988267}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,6 +918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
+  hitboxes:
+  - {fileID: 793100029672926783}
+  hurtboxes:
+  - {fileID: 5147949923657737025}
+  - {fileID: 5983431824982495829}
 --- !u!1 &5497993424649905951
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4571307884188331071}
   - component: {fileID: 4694603302134665955}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5609945591276120342}
   - component: {fileID: 256946584125049451}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1068,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.038997084, y: -0.15236527}
@@ -1061,7 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675404053531736362}
   - component: {fileID: 2507337838292314591}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1178,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5035946287555598076}
   - component: {fileID: 601748358981794472}
-  m_Layer: 0
+  - component: {fileID: 1116227286468420658}
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1230,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.02637145, y: -0.16143277}
@@ -1212,6 +1246,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35443103, y: 0.3771345}
   m_EdgeRadius: 0
+--- !u!114 &1116227286468420658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405363517550728732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ba9a59f275d46859bc5d3feadc8b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 0}
 --- !u!1 &6839623020982344781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415065369219926656}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1284,7 @@ Transform:
   m_GameObject: {fileID: 6839623020982344781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0010000714, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1254,7 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586676905227010216}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937388669361656501}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3890998948377126597}
   - component: {fileID: 956828600516132696}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1416,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0104386695, y: 0.17056762}
@@ -1395,7 +1442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8532625951064022106}
   - component: {fileID: 5889215259693097616}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1493,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.17432536}
@@ -1473,7 +1520,7 @@ GameObject:
   - component: {fileID: 4257369434499130018}
   - component: {fileID: 2109090628313603698}
   - component: {fileID: 7050474142678503322}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TK_5L_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,6 +1574,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  hitboxes: []
+  hurtboxes:
+  - {fileID: 8470172102814742548}
+  - {fileID: 3587652842425623308}
 --- !u!1 &8783234572148807579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547238907413247458}
   - component: {fileID: 1308125151223265740}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1639,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.038997084, y: -0.15236527}

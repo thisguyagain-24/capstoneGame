@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,910 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_0
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9811413faebc740f384f33d7e09bc088
+      internalID: 1805483486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_1
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3661aae567eb54d5180b61a22d2c9263
+      internalID: -1392661026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_2
+      rect:
+        serializedVersion: 2
+        x: 4458
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4f67acfb4b9476a9ec259463061bba
+      internalID: 1294199670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_3
+      rect:
+        serializedVersion: 2
+        x: 6204
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee3236b4b59a4d94a298d69dc6412e2
+      internalID: 903459424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_4
+      rect:
+        serializedVersion: 2
+        x: 7950
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b591fa09c80a540269890e3855fccd58
+      internalID: -1432057800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_5
+      rect:
+        serializedVersion: 2
+        x: 9696
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b3ebef5c2df41f8b214142e8a9209a
+      internalID: 660797654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_6
+      rect:
+        serializedVersion: 2
+        x: 11442
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1ee2dbe0c424d0a87f600943d6fc51
+      internalID: -407147401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_7
+      rect:
+        serializedVersion: 2
+        x: 13188
+        y: 1458
+        width: 26
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffe8a76465344386bf8c9db73369be6
+      internalID: -1678961143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 188
+        width: 784
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32aa1c2693fc49dfab6674901966a79
+      internalID: 705503212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_9
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 188
+        width: 784
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4c71ba31da84d5ab0ef8ce41722956
+      internalID: 1919357301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_10
+      rect:
+        serializedVersion: 2
+        x: 3953
+        y: 188
+        width: 688
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f732eec6edef4bd7baf6370a5b0b31b
+      internalID: 632461976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_11
+      rect:
+        serializedVersion: 2
+        x: 5699
+        y: 188
+        width: 784
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a501a0e265524a05b43dc23e880354a
+      internalID: -879119259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_12
+      rect:
+        serializedVersion: 2
+        x: 7445
+        y: 188
+        width: 784
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d6becf0f6804f76869ae0f3066cbf0
+      internalID: 1413473555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_13
+      rect:
+        serializedVersion: 2
+        x: 9191
+        y: 188
+        width: 647
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337caf0e4a97a412898436b8d229fdfe
+      internalID: -409200274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_14
+      rect:
+        serializedVersion: 2
+        x: 9910
+        y: 702
+        width: 7
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c0f2bb88a2e46d9917c0f3d97c4a5b
+      internalID: -1005020022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_15
+      rect:
+        serializedVersion: 2
+        x: 10937
+        y: 188
+        width: 647
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f0d1303f9e34c7f95405dad95abf3f
+      internalID: 553153149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_16
+      rect:
+        serializedVersion: 2
+        x: 11656
+        y: 702
+        width: 7
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9db379acc34e464e98af7585f6b9544
+      internalID: 729934102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_17
+      rect:
+        serializedVersion: 2
+        x: 12683
+        y: 188
+        width: 647
+        height: 776
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790fb55888096434f8910be707e99e24
+      internalID: -180407080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_18
+      rect:
+        serializedVersion: 2
+        x: 13402
+        y: 702
+        width: 7
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90e46d60e80444d58bbff8e8649599f
+      internalID: -1628920633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_19
+      rect:
+        serializedVersion: 2
+        x: 9869
+        y: 618
+        width: 17
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3213352a225426f860627bdea59b2d
+      internalID: 435690658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_20
+      rect:
+        serializedVersion: 2
+        x: 11615
+        y: 618
+        width: 17
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc7cca06edcf4e97828b4abd69522b3
+      internalID: 719893929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_21
+      rect:
+        serializedVersion: 2
+        x: 13361
+        y: 618
+        width: 17
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a23c8a4e6f86442896ad56e3c5d697f
+      internalID: -265493540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_22
+      rect:
+        serializedVersion: 2
+        x: 9833
+        y: 257
+        width: 18
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee9664a454e84ed795e1a80f774e60f
+      internalID: -179133902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_23
+      rect:
+        serializedVersion: 2
+        x: 11579
+        y: 257
+        width: 18
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92adc2963cc9443e58f2b797f11940e3
+      internalID: 1302442368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_24
+      rect:
+        serializedVersion: 2
+        x: 13325
+        y: 257
+        width: 18
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4d1c83d5b5f42e88b5ff38ca0f94dc
+      internalID: -174398069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_25
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13295a0b51d94f848e6ee7b463ce9ae
+      internalID: -1209526184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_26
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73e69a1e99354c2ebc397f38e126899
+      internalID: -1401099284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_27
+      rect:
+        serializedVersion: 2
+        x: 3741
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fad1c15b8a464f46bd12c7c97839f71
+      internalID: -2096402362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_28
+      rect:
+        serializedVersion: 2
+        x: 5487
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c74576974014c39ae47a045ae931c2
+      internalID: 1454589076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_29
+      rect:
+        serializedVersion: 2
+        x: 7233
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30d5e86f127147d2a7f0852cc9f5f12
+      internalID: 5901399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_30
+      rect:
+        serializedVersion: 2
+        x: 8979
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aa0fafdde494d2f883773d002c68be
+      internalID: 269058926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_31
+      rect:
+        serializedVersion: 2
+        x: 10725
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ed4bef0fcce498ea6f3c0233845e0d
+      internalID: 1274464304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_32
+      rect:
+        serializedVersion: 2
+        x: 12471
+        y: 235
+        width: 27
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87764d1382b741b38b331d148d52257
+      internalID: -827840361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_33
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46907fe283d6746f3948557aa44ec8cd
+      internalID: -544591831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_34
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7f0b5a03f8e4fd19d327a0bafe5eaf
+      internalID: 1300530539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_35
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659735420774140e78ae282eb1eba402
+      internalID: 752093190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_36
+      rect:
+        serializedVersion: 2
+        x: 5674
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dab5a1fe8764b97aa4ef315253ded1
+      internalID: 1489038890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_37
+      rect:
+        serializedVersion: 2
+        x: 7420
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3532a76ce38a4bbbaf948e8b664c98a
+      internalID: 96100260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_38
+      rect:
+        serializedVersion: 2
+        x: 9166
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acda39c3607b4484fa5ca7134d1e267e
+      internalID: -365017269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_39
+      rect:
+        serializedVersion: 2
+        x: 10912
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ba866957c944f689dde92c13d4581c
+      internalID: -122665282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_40
+      rect:
+        serializedVersion: 2
+        x: 12658
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07894f07c10314647ba140259951378c
+      internalID: 1765755798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_41
+      rect:
+        serializedVersion: 2
+        x: 5725
+        y: 1353
+        width: 1366
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736380fcbd5ea44e08a34aa12ffffbc5
+      internalID: -928578974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_orionCrouchBlock_42
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1271
+        width: 13331
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67dbeb6f184741af85b485e5d9f0cbb
+      internalID: 1832362891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +1048,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_orionCrouchBlock_0: 1805483486
+      spr_orionCrouchBlock_1: -1392661026
+      spr_orionCrouchBlock_10: 632461976
+      spr_orionCrouchBlock_11: -879119259
+      spr_orionCrouchBlock_12: 1413473555
+      spr_orionCrouchBlock_13: -409200274
+      spr_orionCrouchBlock_14: -1005020022
+      spr_orionCrouchBlock_15: 553153149
+      spr_orionCrouchBlock_16: 729934102
+      spr_orionCrouchBlock_17: -180407080
+      spr_orionCrouchBlock_18: -1628920633
+      spr_orionCrouchBlock_19: 435690658
+      spr_orionCrouchBlock_2: 1294199670
+      spr_orionCrouchBlock_20: 719893929
+      spr_orionCrouchBlock_21: -265493540
+      spr_orionCrouchBlock_22: -179133902
+      spr_orionCrouchBlock_23: 1302442368
+      spr_orionCrouchBlock_24: -174398069
+      spr_orionCrouchBlock_25: -1209526184
+      spr_orionCrouchBlock_26: -1401099284
+      spr_orionCrouchBlock_27: -2096402362
+      spr_orionCrouchBlock_28: 1454589076
+      spr_orionCrouchBlock_29: 5901399
+      spr_orionCrouchBlock_3: 903459424
+      spr_orionCrouchBlock_30: 269058926
+      spr_orionCrouchBlock_31: 1274464304
+      spr_orionCrouchBlock_32: -827840361
+      spr_orionCrouchBlock_33: -544591831
+      spr_orionCrouchBlock_34: 1300530539
+      spr_orionCrouchBlock_35: 752093190
+      spr_orionCrouchBlock_36: 1489038890
+      spr_orionCrouchBlock_37: 96100260
+      spr_orionCrouchBlock_38: -365017269
+      spr_orionCrouchBlock_39: -122665282
+      spr_orionCrouchBlock_4: -1432057800
+      spr_orionCrouchBlock_40: 1765755798
+      spr_orionCrouchBlock_41: -928578974
+      spr_orionCrouchBlock_42: 1832362891
+      spr_orionCrouchBlock_5: 660797654
+      spr_orionCrouchBlock_6: -407147401
+      spr_orionCrouchBlock_7: -1678961143
+      spr_orionCrouchBlock_8: 705503212
+      spr_orionCrouchBlock_9: 1919357301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
