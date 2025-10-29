@@ -109,11 +109,11 @@ public class CharSelect : MonoBehaviour
 
 
 
-            players[0].fighter.transform.localPosition = new Vector3(-350, -200, 1);
+            players[0].fighter.transform.localPosition = new Vector3(-300, -200, 1);
 
             players[0].fighter.transform.localScale = new Vector3(500, 500, 0);
 
-            players[1].fighter.transform.localPosition = new Vector3(350, -200, 1);
+            players[1].fighter.transform.localPosition = new Vector3(-200, -200, 1);
 
             players[1].fighter.transform.localScale = new Vector3(500, 500, 0);
 
