@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd33ef52b417846f8a0e2efe14937c1a
+guid: db878980bda314b3495b5c4bd47725b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,91 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spr_orionCrouch_3
-      rect:
-        serializedVersion: 2
-        x: 5596
-        y: 167
-        width: 906
-        height: 970
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 965704d82780d491eb1a3bd4b842f7a5
-      internalID: -1890938998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_orionCrouch_4
-      rect:
-        serializedVersion: 2
-        x: 7296
-        y: 183
-        width: 965
-        height: 955
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb75e19296ba84d57aa5ad4c2eef30b1
-      internalID: -1344754250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_orionCrouch_5
-      rect:
-        serializedVersion: 2
-        x: 10806
-        y: 164
-        width: 993
-        height: 868
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51114644928874aa7bf517be8a37489a
-      internalID: 1698855947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_orionCrouch_6
-      rect:
-        serializedVersion: 2
-        x: 12532
-        y: 135
-        width: 1012
-        height: 925
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18797051bb9684582b630779a24e9de5
-      internalID: -356315338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -229,14 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      spr_orionCrouch_0: -764259552
-      spr_orionCrouch_1: -531431146
-      spr_orionCrouch_2: -1962000094
-      spr_orionCrouch_3: -1890938998
-      spr_orionCrouch_4: -1344754250
-      spr_orionCrouch_5: 1698855947
-      spr_orionCrouch_6: -356315338
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

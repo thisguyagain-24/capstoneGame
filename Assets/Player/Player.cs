@@ -207,7 +207,7 @@ public class Player : MonoBehaviour
     {
         if (!fighter)
         {
-            fighter = Instantiate(testKnight, transform).GetComponent<Fighter>();
+            fighter = Instantiate(characters[playerNum], transform).GetComponent<Fighter>();
             fighter.transform.SetParent(transform);
             fighter.playerNum = playerNum;
         }

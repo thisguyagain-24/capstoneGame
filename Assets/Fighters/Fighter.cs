@@ -244,6 +244,7 @@ public class Fighter : MonoBehaviour
             Debug.Log("TK Light");
             foreach (FighterMove fm in moves)
             {
+                Debug.Log(fm.btn);
                 if (fm.btn == FighterMove.AttackButton.L)
                 {
                     Debug.Log("Found a L move");
