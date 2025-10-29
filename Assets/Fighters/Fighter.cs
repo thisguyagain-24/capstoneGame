@@ -28,22 +28,48 @@ public class Fighter : MonoBehaviour
     public int maxBurst;
     public int burst;
 
+    public float forwardWalkSpeed;
+    public float backWalkSpeed;
+
     public Animator animator;
 
     public int inputDirection;
+    
+    [HideInInspector]
     public bool inAir;
+
+    [HideInInspector]
     public bool crouching;
+
+    [HideInInspector]
     public bool neutral;
+
+    [HideInInspector]
     public bool startup;
+
+    [HideInInspector]
     public bool active;
+
+    [HideInInspector]
     public bool recovery;
+
+    [HideInInspector]
     public bool softKnockdown;
+
+    [HideInInspector]
     public bool hardKnockdown;
+
+    [HideInInspector]
     public bool hitstun;
+
+    [HideInInspector]
     public bool blockstun;
+
     public bool leftSide;
 
     public GameObject movementSprites;
+    public Rigidbody2D rb;
+
     public FighterMove[] moves;
     public FighterMove activeMove;
     
@@ -53,7 +79,7 @@ public class Fighter : MonoBehaviour
     public bool inHitstop;
     public float hitstopDuration;
     public float hitstopFramesElapsed;
-
+    
     public Fighter opponent;
 
     public void Die()
@@ -97,10 +123,7 @@ public class Fighter : MonoBehaviour
         if (inputDirection == 5)
         {
             //this is bad dont do this
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", true);
+            Neutral();   
         }
         else
         {
@@ -108,36 +131,70 @@ public class Fighter : MonoBehaviour
         }
         if (inputDirection.In(1, 2, 3))
         {
-            animator.SetBool("Crouch", true);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", false);
+            Crouch();
         }
-        else if (inputDirection.In(3, 6, 9))
+        else if (inputDirection.In(6, 9))
         {
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", true);
-            animator.SetBool("Back", false);
-            animator.SetBool("Neutral", false);
+            WalkForward();
         }
-        else if (inputDirection.In(1, 4, 7))
+        else if (inputDirection.In(4, 7))
         {
-            animator.SetBool("Crouch", false);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Back", true);
-            animator.SetBool("Neutral", false);
+            WalkBack();
         }
+    }
+
+    public void Neutral()
+    {
+        animator.SetBool("Crouch", false);
+        animator.SetBool("Walk", false);
+        animator.SetBool("Back", false);
+        animator.SetBool("Neutral", true);
+    }
+
+    public void Crouch()
+    {
+        animator.SetBool("Crouch", true);
+        animator.SetBool("Walk", false);
+        animator.SetBool("Back", false);
+        animator.SetBool("Neutral", false);
+    }
+
+    public void WalkForward()
+    {
+        /*
+        Vector3 moveDir = (transform.position - opponent.transform.position).normalized * transform.localScale.y * forwardWalkSpeed;
+        moveDir *= Time.deltaTime * 60;
+        Debug.Log(moveDir);
+        rb.MovePosition(transform.position + moveDir);
+        */
+        animator.SetBool("Crouch", false);
+        animator.SetBool("Walk", true);
+        animator.SetBool("Back", false);
+        animator.SetBool("Neutral", false);
+    }
+    
+    public void WalkBack()
+    {
+        /*
+        Vector3 moveDir = (transform.position - opponent.transform.position).normalized * transform.localScale.y * backWalkSpeed;
+        moveDir *= Time.deltaTime * 60;
+        rb.velocity.Set(moveDir.x, moveDir.y);   
+        */
+        animator.SetBool("Crouch", false);
+        animator.SetBool("Walk", false);
+        animator.SetBool("Back", true);
+        animator.SetBool("Neutral", false);
     }
 
     public void EnableHitstun(float stopDur, float stunDir)
     {
         if (activeMove)
         {
-            foreach(MoveFrame o in activeMove.keys)
+            foreach (MoveFrame o in activeMove.keys)
             {
                 o.gameObject.SetActive(false);
             }
-            
+
             activeMove.active = false;
             activeMove = null;
         }

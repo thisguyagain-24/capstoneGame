@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
     {
         Vector2 inVec = value.Get<Vector2>();
         Debug.Log("Player " + playerNum + " Input Move: " + inVec.ToString());
-        if (currentSide)
+        if (!fighter.leftSide)
         {
             inVec.x *= -1;
         }

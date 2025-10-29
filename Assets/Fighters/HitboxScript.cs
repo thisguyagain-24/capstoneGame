@@ -40,7 +40,7 @@ public class HitboxScript : MonoBehaviour
         {
             if (frame.active)
             {
-                foreach (Collider2D col in Physics2D.OverlapBoxAll(new Vector2(_collider.transform.position.x, _collider.transform.position.y) + _collider.offset, _collider.size, _collider.transform.rotation.y, LayerMask.GetMask("Player2Hurtbox"))){
+                foreach (Collider2D col in Physics2D.OverlapBoxAll(new Vector2(_collider.transform.position.x, _collider.transform.position.y) + (_collider.offset * _collider.transform.lossyScale), _collider.size * _collider.transform.lossyScale, _collider.transform.rotation.y, LayerMask.GetMask("Player2Hurtbox"))){
                     if (col)
                     {
                         SOMETHINGHAPPENED(col);

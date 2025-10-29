@@ -107,8 +107,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.69, y: 3.69, z: 3.69}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3.88, y: 3.88, z: 3.88}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3779122281512252868}
   - {fileID: 8518635064760936312}
@@ -137,6 +137,8 @@ MonoBehaviour:
   tension: 0
   maxBurst: 0
   burst: 0
+  forwardWalkSpeed: 10
+  backWalkSpeed: 10
   animator: {fileID: 7928871342359774883}
   inputDirection: 0
   inAir: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
   blockstun: 0
   leftSide: 0
   movementSprites: {fileID: 4337976832011868246}
+  rb: {fileID: 3694808128071681748}
   moves:
   - {fileID: 986748744704767398}
   activeMove: {fileID: 0}
@@ -159,6 +162,7 @@ MonoBehaviour:
   inHitstop: 0
   hitstopDuration: 0
   hitstopFramesElapsed: 0
+  opponent: {fileID: 0}
 --- !u!50 &3694808128071681748
 Rigidbody2D:
   serializedVersion: 4
