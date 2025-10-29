@@ -25,13 +25,15 @@ public class CharSelect : MonoBehaviour
 
     public int selectedButton = 0;
 
-    public Player player;
+    public Player[] players = new Player[2];
 
     public void Start() {
 
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
-            p.GetComponent<Player>().FindUIDirector();
+            Player _p = p.GetComponent<Player>();
+            _p.FindUIDirector();
+            players[_p.playerNum] = _p;
         }
 
         UsableButtonsArray[0, 0] = 1;
@@ -42,7 +44,7 @@ public class CharSelect : MonoBehaviour
 
         UsableButtonsArray[1, 1] = 4;
 
-        Debug.Log(player);
+        //Debug.Log(player);
 
         //Debug.Log(UsableButtonsArray);
 
@@ -97,7 +99,31 @@ public class CharSelect : MonoBehaviour
         } else {
             selectedButton = 3;
         }
+    }
 
+    public void MenuCursorEnter(int playerNum) {
+        
+        players[playerNum].MakeCharacter(0);
+
+        if (players[0].fighter && players[1].fighter) {
+
+
+
+            players[0].fighter.transform.localPosition = new Vector3(-350, -200, 1);
+
+            players[0].fighter.transform.localScale = new Vector3(500, 500, 0);
+
+            players[1].fighter.transform.localPosition = new Vector3(350, -200, 1);
+
+            players[1].fighter.transform.localScale = new Vector3(500, 500, 0);
+
+            players[0].pInput.SwitchCurrentActionMap("Player");
+
+            players[1].pInput.SwitchCurrentActionMap("Player");
+
+            SceneManager.LoadScene("fightScene");
+
+        }
 
 
     }
