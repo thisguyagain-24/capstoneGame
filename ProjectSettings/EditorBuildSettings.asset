@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/charSelect.unity
     guid: 83cdd344011b8e4f68aa262190305302
+  - enabled: 1
+    path: Assets/Scenes/fightScene.unity
+    guid: e6aa0573b72f7a0d69f1ae3768acd5f1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8d77e7c2b39f344848133df8f7bcf3cc, type: 2}

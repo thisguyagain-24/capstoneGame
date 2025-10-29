@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
 
         } else if (charSelectMenu) {
 
-            charSelectMenu?.MenuCursorEnter();
+            charSelectMenu?.MenuCursorEnter(playerNum);
 
         }
 
