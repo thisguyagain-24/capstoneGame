@@ -116,7 +116,6 @@ public class Player : MonoBehaviour
     void OnPause(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
-
     }
     #endregion
 
@@ -130,58 +129,35 @@ public class Player : MonoBehaviour
         int direction = GetDirection(readableValue.x, readableValue.y);
 
         if (playerNum == 0) {
-
             if (mainMenu)
             {
-
                 switch (direction)
                 {
-
                     case 2 or 8:
-
                         mainMenu?.MenuCursorUpDown();
-
                         break;
-
                     case 4 or 6:
-
                         mainMenu?.MenuCursorLeftRight();
-
                         break;
-
                 }
             } 
             
             if (charSelectMenu)
             {
                 Debug.Log(direction);
-
                 charSelectMenu?.UpdateSelected(direction);
-
             }
-
-
         }
-
-
     }
 
     void OnSubmit(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Submit: " + value.Get().ToString());
-
         if (mainMenu) {
-
             mainMenu?.MenuCursorEnter();
-
         } else if (charSelectMenu) {
-
             charSelectMenu?.MenuCursorEnter(playerNum);
-
         }
-
-        
-
     }
 
     void OnCancel(InputValue value)

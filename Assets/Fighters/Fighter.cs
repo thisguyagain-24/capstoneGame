@@ -241,7 +241,7 @@ public class Fighter : MonoBehaviour
     public void OnLight()
     {
         if (!inHitstop){
-            Debug.Log("TK Light");
+            Debug.Log("P" + playerNum + " Light");
             foreach (FighterMove fm in moves)
             {
                 Debug.Log(fm.btn);
@@ -277,7 +277,25 @@ public class Fighter : MonoBehaviour
 
     public void OnHeavy()
     {
-        
+        if (!inHitstop){
+            Debug.Log("P" + playerNum + " Heavy");
+            foreach (FighterMove fm in moves)
+            {
+                Debug.Log(fm.btn);
+                if (fm.btn == FighterMove.AttackButton.H)
+                {
+                    Debug.Log("Found an H move");
+                    if (fm.inputDirection.Contains(inputDirection))
+                    {
+                        Debug.Log("Found matching move");
+                        movementSprites.SetActive(false);
+                        activeMove = fm;
+                        fm.StartMove();
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public void OnUniversal()

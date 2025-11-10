@@ -192,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {fileID: 0}
   frame: {fileID: 0}
+  _collider: {fileID: 0}
+  hurtboxString: 
 --- !u!1 &1752475854992989049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {fileID: 0}
   frame: {fileID: 0}
+  _collider: {fileID: 0}
+  hurtboxString: 
 --- !u!1 &6839623020982344781
 GameObject:
   m_ObjectHideFlags: 0
