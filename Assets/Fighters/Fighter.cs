@@ -82,9 +82,7 @@ public class Fighter : MonoBehaviour
     
     public Fighter opponent;
 
-    // hi sorry 
-
-    public GameObject fightSceneManager;
+    public FightSceneManager fightSceneManager;
 
     public void Die()
     {
@@ -226,9 +224,11 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    public void SubHealth(double damage)
+    public void SubHealth(double damage, int playerNum)
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
+
+        fightSceneManager.PlayerDamageUpdate(currHealth, playerNum);
     }
 
     public void OnMove(int dir)
@@ -352,7 +352,7 @@ public class Fighter : MonoBehaviour
 
     public void FindFightSceneManager(){
 
-        fightSceneManager = GameObject.Find("fightSceneManager");
+        fightSceneManager = GameObject.Find("fightSceneManager").GetComponent<FightSceneManager>();
         Debug.Log("found fightSceneManager " + fightSceneManager);
 
     }
