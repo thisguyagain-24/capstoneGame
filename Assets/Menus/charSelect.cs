@@ -34,6 +34,8 @@ public class CharSelect : MonoBehaviour
             Player _p = p.GetComponent<Player>();
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
+
+            
         }
 
         UsableButtonsArray[0, 0] = 1;
@@ -106,8 +108,6 @@ public class CharSelect : MonoBehaviour
         players[playerNum].MakeCharacter(0);
 
         if (players[0].fighter && players[1].fighter) {
-
-
 
             players[0].fighter.transform.localPosition = new Vector3(-150, -310, 1);
 
