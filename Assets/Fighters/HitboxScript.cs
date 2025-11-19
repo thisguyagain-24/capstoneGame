@@ -8,6 +8,7 @@ public class HitboxScript : MonoBehaviour
     public FighterMove move;
     public MoveFrame frame;
     public BoxCollider2D _collider;
+    public double damage;
     public string hurtboxString;
 
     void Start()
@@ -40,7 +41,14 @@ public class HitboxScript : MonoBehaviour
         {
             if (frame.active)
             {
-                foreach (Collider2D col in Physics2D.OverlapBoxAll(new Vector2(_collider.transform.position.x, _collider.transform.position.y) + (_collider.offset * _collider.transform.lossyScale), _collider.size * _collider.transform.lossyScale, _collider.transform.rotation.y, LayerMask.GetMask(hurtboxString))){
+                foreach (Collider2D col in Physics2D.OverlapBoxAll(
+                    new Vector2(
+                        _collider.transform.position.x, 
+                        _collider.transform.position.y)
+                        + (_collider.offset * _collider.transform.lossyScale),
+                    _collider.size * Util.Vec3toAbsVec2(_collider.transform.lossyScale), 
+                    _collider.transform.rotation.y, 
+                    LayerMask.GetMask(hurtboxString))){
                     if (col)
                     {
                         SOMETHINGHAPPENED(col);
@@ -71,7 +79,7 @@ public class HitboxScript : MonoBehaviour
                 hurtbox = string.Join("/", ReverseArr(hurtbox.Split('/')));
 
                 Debug.Log(hitbox + " HAS HIT " + hurtbox);
-                move.processHit(frame);
+                move.processHit(frame, damage);
             }
         }
     }

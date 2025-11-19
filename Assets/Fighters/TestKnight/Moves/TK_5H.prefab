@@ -536,6 +536,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
+  damage: 5
   hurtboxString: 
 --- !u!1 &2889959392966331534
 GameObject:
@@ -940,6 +941,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
+  damage: 5
   hurtboxString: 
 --- !u!1 &4872419618147430347
 GameObject:
@@ -1295,6 +1297,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
+  damage: 5
   hurtboxString: 
 --- !u!1 &5602124385152062331
 GameObject:
@@ -1389,6 +1392,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
+  damage: 5
   hurtboxString: 
 --- !u!1 &6098260793710878050
 GameObject:
@@ -2008,6 +2012,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
+  damage: 5
   hurtboxString: 
 --- !u!1 &7885320204786360591
 GameObject:
