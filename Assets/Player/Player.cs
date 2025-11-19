@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public GameObject testKnight;
     public List<GameObject> characters;
 
+    public string currControlSceheme;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        currControlSceheme = pInput.currentActionMap.name;
     }
 
     #region GameplayInputs
@@ -186,6 +187,7 @@ public class Player : MonoBehaviour
             fighter = Instantiate(characters[playerNum], transform).GetComponent<Fighter>();
             fighter.transform.SetParent(transform);
             fighter.playerNum = playerNum;
+            fighter.tag = "fighter";
         }
     }
     #endregion

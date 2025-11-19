@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1992 1582">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="121.37" cy="148.65" fx="121.37" fy="148.65" r="61.24" gradientTransform="translate(12.44)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d4d4d"/>
+      <stop offset=".64" stop-color="#2f2c2c"/>
+      <stop offset="1" stop-color="#231f20"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_4" data-name="Layer 4">
+    <polygon class="cls-2" points="166.17 112.71 902.32 112.71 852.02 159.85 192.46 159.45 166.17 112.71"/>
+    <polygon class="cls-2" points="179.45 159.85 571.82 159.85 545.01 184.97 193.47 184.76 179.45 159.85"/>
+  </g>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <path d="M133.81,219.12c-38.86,0-70.47-31.61-70.47-70.47s31.61-70.47,70.47-70.47,70.47,31.61,70.47,70.47-31.61,70.47-70.47,70.47Z"/>
+      <path d="M133.81,78.68c38.58,0,69.97,31.39,69.97,69.97s-31.39,69.97-69.97,69.97-69.97-31.39-69.97-69.97,31.39-69.97,69.97-69.97M133.81,77.68c-39.2,0-70.97,31.78-70.97,70.97s31.78,70.97,70.97,70.97,70.97-31.78,70.97-70.97-31.78-70.97-70.97-70.97h0Z"/>
+    </g>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <circle class="cls-1" cx="133.81" cy="148.65" r="61.24"/>
+  </g>
+</svg>

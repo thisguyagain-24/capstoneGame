@@ -82,6 +82,10 @@ public class Fighter : MonoBehaviour
     
     public Fighter opponent;
 
+    // hi sorry 
+
+    public GameObject fightSceneManager;
+
     public void Die()
     {
 
@@ -342,8 +346,20 @@ public class Fighter : MonoBehaviour
         {
             return LayerMask.NameToLayer("Player2Hurtbox");
         }
-    }    
+    }
+
+    // hi im sorry for infesting your lovely code i need a function here
+
+    public void FindFightSceneManager(){
+
+        fightSceneManager = GameObject.Find("fightSceneManager");
+        Debug.Log("found fightSceneManager " + fightSceneManager);
+
+    }
+    
+    
 }
+
 
 
 
