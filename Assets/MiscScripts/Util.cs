@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Unity.Mathematics;
 
 public static class Util
 {
@@ -38,5 +39,24 @@ public static class Util
             }
             GetChildrenWithTag(child, tag, list);
         }
+    }
+
+    public static int BoolToNegativePositiveOne(bool b)
+    {
+        if (b)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public static Vector2 Vec3toAbsVec2(Vector3 v)
+    {
+        Vector3 absScale3 = math.abs(v);
+        Vector2 absScale2 = new Vector2(absScale3.x, absScale3.y);
+        return absScale2;
     }
 }

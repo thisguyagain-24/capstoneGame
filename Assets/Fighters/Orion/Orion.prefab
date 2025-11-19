@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2344e45922f9419786751e7673e31ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currHealth: 0
+  maxHealth: 100
+  currHealth: 100
   incomingDamageModifier: 1
   playerNum: 0
   maxLives: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
   tension: 0
   maxBurst: 0
   burst: 0
-  forwardWalkSpeed: 1
-  backWalkSpeed: 1
+  forwardWalkSpeed: 1.5
+  backWalkSpeed: 1.5
   animator: {fileID: 7928871342359774883}
   inputDirection: 0
   inAir: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 100
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

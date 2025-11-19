@@ -104,6 +104,7 @@ public class Fighter : MonoBehaviour
         }
         if (!opponent)
         {
+            leftSide = true;
             foreach(Fighter f in GameObject.FindObjectsByType<Fighter>(FindObjectsSortMode.None))
             {
                 if(f != this)
@@ -122,12 +123,11 @@ public class Fighter : MonoBehaviour
         }
         if (inputDirection == 5)
         {
-            //this is bad dont do this
             Neutral();   
         }
         else
         {
-            Debug.Log("KNIGHT MOVING WITH " + inputDirection);
+            //Debug.Log("KNIGHT MOVING WITH " + inputDirection);
         }
         if (inputDirection.In(1, 2, 3))
         {
@@ -161,12 +161,12 @@ public class Fighter : MonoBehaviour
 
     public void WalkForward()
     {
-        /*
-        Vector3 moveDir = (transform.position - opponent.transform.position).normalized * transform.localScale.y * forwardWalkSpeed;
-        moveDir *= Time.deltaTime * 60;
-        Debug.Log(moveDir);
-        rb.MovePosition(transform.position + moveDir);
-        */
+        Vector2 moveDir = leftSide ? Vector2.right : Vector2.left;
+        Debug.Log("Before scale " + moveDir);
+        moveDir *= forwardWalkSpeed * Time.deltaTime * 60;
+        Debug.Log("After scale " + moveDir);
+        rb.MovePosition(rb.position + moveDir);
+
         animator.SetBool("Crouch", false);
         animator.SetBool("Walk", true);
         animator.SetBool("Back", false);
@@ -175,11 +175,12 @@ public class Fighter : MonoBehaviour
     
     public void WalkBack()
     {
-        /*
-        Vector3 moveDir = (transform.position - opponent.transform.position).normalized * transform.localScale.y * backWalkSpeed;
-        moveDir *= Time.deltaTime * 60;
-        rb.velocity.Set(moveDir.x, moveDir.y);   
-        */
+        Vector2 moveDir = leftSide ? Vector2.left : Vector2.right;
+        Debug.Log("Before scale " + moveDir);
+        moveDir *= backWalkSpeed * Time.deltaTime * 60;
+        Debug.Log("After scale " + moveDir);
+        rb.MovePosition(rb.position + moveDir);
+        
         animator.SetBool("Crouch", false);
         animator.SetBool("Walk", false);
         animator.SetBool("Back", true);
@@ -328,7 +329,6 @@ public class Fighter : MonoBehaviour
                 transform.localScale = flipped;
                 leftSide = false;
             }
- 
         }
     }
 
@@ -342,9 +342,7 @@ public class Fighter : MonoBehaviour
         {
             return LayerMask.NameToLayer("Player2Hurtbox");
         }
-    }
-    
-    
+    }    
 }
 
 
