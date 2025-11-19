@@ -244,7 +244,7 @@ public class Fighter : MonoBehaviour
 
     public void OnLight()
     {
-        if (!inHitstop){
+        if (!inHitstop && !(activeMove ? activeMove.active : false)){
             Debug.Log("P" + playerNum + " Light");
             foreach (FighterMove fm in moves)
             {
@@ -281,7 +281,7 @@ public class Fighter : MonoBehaviour
 
     public void OnHeavy()
     {
-        if (!inHitstop){
+        if (!inHitstop && !(activeMove ? activeMove.active : false)){
             Debug.Log("P" + playerNum + " Heavy");
             foreach (FighterMove fm in moves)
             {
