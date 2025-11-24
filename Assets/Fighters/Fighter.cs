@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
-using Unity.VisualScripting;
-using UnityEditor;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using System;
-using System.Security.Cryptography;
 using Unity.Mathematics;
 
 public class Fighter : MonoBehaviour
@@ -225,7 +221,7 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    public void SubHealth(double damage, int playerNum)
+    public void SubHealth(double damage)
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
 
@@ -363,17 +359,5 @@ public class Fighter : MonoBehaviour
 
 
 
-[CustomEditor(typeof(Fighter))]
-// ^ This is the script we are making a custom editor for.
-public class FighterEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-        if (GUILayout.Button("RefreshMoves"))
-        {
-            target.GetComponent<Fighter>().GetMoves();
-        }
-    }
-}
+
 

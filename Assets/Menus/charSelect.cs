@@ -1,15 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
-using UnityEditor.UI;
-using UnityEngine.UI;
-using UnityEngine.TextCore.Text;
-using Unity.VisualScripting;
-using UnityEditor.EditorTools;
-using JetBrains.Annotations;
-using UnityEngine.InputSystem.iOS;
 
 public class CharSelect : MonoBehaviour
 {
@@ -45,7 +36,7 @@ public class CharSelect : MonoBehaviour
         UsableButtonsArray[1, 0] = 3;
 
         UsableButtonsArray[1, 1] = 4;
-
+        
         //Debug.Log(player);
 
         //Debug.Log(UsableButtonsArray);

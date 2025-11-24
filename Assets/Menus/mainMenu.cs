@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using System;
-using JetBrains.Annotations;
-using UnityEditor.UI;
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
