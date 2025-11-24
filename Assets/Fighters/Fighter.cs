@@ -161,7 +161,7 @@ public class Fighter : MonoBehaviour
     {
         Vector2 moveDir = leftSide ? Vector2.right : Vector2.left;
         Debug.Log("Before scale " + moveDir);
-        moveDir *= forwardWalkSpeed * Time.deltaTime * 60;
+        moveDir *= forwardWalkSpeed * (float)Math.Min(0.05f, Time.deltaTime * 60);
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
 
@@ -175,7 +175,7 @@ public class Fighter : MonoBehaviour
     {
         Vector2 moveDir = leftSide ? Vector2.left : Vector2.right;
         Debug.Log("Before scale " + moveDir);
-        moveDir *= backWalkSpeed * Time.deltaTime * 60;
+        moveDir *= backWalkSpeed * (float)Math.Min(0.05f, Time.deltaTime * 60);
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
         
@@ -225,7 +225,7 @@ public class Fighter : MonoBehaviour
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
 
-        fightSceneManager.PlayerDamageUpdate(currHealth, playerNum);
+        fightSceneManager?.PlayerDamageUpdate(currHealth, playerNum);
     }
 
     public void OnMove(int dir)

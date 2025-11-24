@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: e4e74120172c94f26925f450decaab31
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: final-walk-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 41
+        width: 770
+        height: 1049
+      alignment: 9
+      pivot: {x: 0.43323165, y: 0.02296783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea50885b2c834281829569acd56a703
+      internalID: 669142317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 41
+        width: 779
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.44720247, y: 0.020546641}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25166d4d88cc042908e922097c32d7be
+      internalID: 1192346293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 60
+        width: 732
+        height: 1034
+      alignment: 9
+      pivot: {x: 0.3854777, y: 0.0046268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1321baff11bb422ea0b03002200877f
+      internalID: -72524359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 55
+        width: 674
+        height: 1039
+      alignment: 9
+      pivot: {x: 0.3359578, y: 0.014877716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87eb41a9521643d98cdaa757693ff54
+      internalID: 1417854405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 41
+        width: 753
+        height: 1053
+      alignment: 9
+      pivot: {x: 0.39452705, y: 0.022416262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0689b0a99b16d4b4e8ae314d5cb2b6d9
+      internalID: 1948358474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 4599
+        y: 41
+        width: 727
+        height: 1053
+      alignment: 9
+      pivot: {x: 0.40348217, y: 0.022695761}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8186d4d75f240f897f82f9ceec8781
+      internalID: 312030313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_6
+      rect:
+        serializedVersion: 2
+        x: 5514
+        y: 41
+        width: 708
+        height: 1053
+      alignment: 9
+      pivot: {x: 0.38475803, y: 0.024245448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c7cc384573042bc958fc98f2c0390c
+      internalID: -97408544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_9
+      rect:
+        serializedVersion: 2
+        x: 6449
+        y: 41
+        width: 672
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.3543011, y: 0.023409016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37238f75f523471f8b8fdf37219f1ca
+      internalID: 307648910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_12
+      rect:
+        serializedVersion: 2
+        x: 7355
+        y: 41
+        width: 664
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.34517294, y: 0.023409016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6734728a32af249e9b2e0951b02f7575
+      internalID: 1625892107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_15
+      rect:
+        serializedVersion: 2
+        x: 8255
+        y: 41
+        width: 656
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.3457731, y: 0.023409016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096594b645f5945ac89cfe58c1811c9e
+      internalID: 127978052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walk-sprite_16
+      rect:
+        serializedVersion: 2
+        x: 9079
+        y: 36
+        width: 761
+        height: 1063
+      alignment: 9
+      pivot: {x: 0.39278474, y: 0.025650814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0403674a50a3944d78672a63a88fdfab
+      internalID: 815985988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      final-walk-sprite_0: 669142317
+      final-walk-sprite_1: 1192346293
+      final-walk-sprite_10: -1513140964
+      final-walk-sprite_11: 1434584302
+      final-walk-sprite_12: 1625892107
+      final-walk-sprite_13: -904069156
+      final-walk-sprite_14: 1293587113
+      final-walk-sprite_15: 127978052
+      final-walk-sprite_16: 815985988
+      final-walk-sprite_17: 1320539707
+      final-walk-sprite_18: -1571714367
+      final-walk-sprite_19: 887234809
+      final-walk-sprite_2: -72524359
+      final-walk-sprite_20: -77473838
+      final-walk-sprite_21: -1477000477
+      final-walk-sprite_22: -165326269
+      final-walk-sprite_23: 1577348549
+      final-walk-sprite_24: 1738346640
+      final-walk-sprite_25: 475528614
+      final-walk-sprite_26: -1531868991
+      final-walk-sprite_27: 245315947
+      final-walk-sprite_28: -1264688256
+      final-walk-sprite_29: -1507323999
+      final-walk-sprite_3: 1417854405
+      final-walk-sprite_30: -21940496
+      final-walk-sprite_31: -46033407
+      final-walk-sprite_32: -1596296544
+      final-walk-sprite_4: 1948358474
+      final-walk-sprite_5: 312030313
+      final-walk-sprite_6: -97408544
+      final-walk-sprite_7: -2054397435
+      final-walk-sprite_8: -1954803073
+      final-walk-sprite_9: 307648910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
