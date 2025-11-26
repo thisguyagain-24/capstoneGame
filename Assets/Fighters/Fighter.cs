@@ -61,6 +61,8 @@ public class Fighter : MonoBehaviour
     [HideInInspector]
     public bool blockstun;
 
+    public bool blocking;
+
     public bool leftSide;
 
     public GameObject movementSprites;
@@ -138,6 +140,10 @@ public class Fighter : MonoBehaviour
         else if (inputDirection.In(4, 7))
         {
             WalkBack();
+        }
+
+        if(inputDirection.In(1,4,7)){
+
         }
     }
 
