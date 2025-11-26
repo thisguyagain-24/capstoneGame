@@ -8,15 +8,15 @@ using UnityEngine;
 public class FightSceneManager : MonoBehaviour
 {
 
+    public GameObject[] healthBarSprite = new GameObject[2];
+
     public Fighter[] fighters = new Fighter[2];
-
-    public double[] fightersInitHealth = { 1, 1 };
-
-    public double[] fightersCurrentHealth = { 1, 1 };
 
     public readonly int rounds = 2;
 
     public int roundsElapsed = 0;
+
+    public double healthBarScale;
 
     // Start is called before the first frame update
     void Start()
@@ -30,20 +30,11 @@ public class FightSceneManager : MonoBehaviour
             _f.FindFightSceneManager();
 
         }
-
-        for (int i = 0; i < fighters.Length; i++)
-        {
-            fightersInitHealth[i] = fighters[i].maxHealth;
-        }
-
-
-
+        healthBarScale = healthBarSprite[0].transform.localScale.x;
 
     }
 // switch to getting fighter itself later
-    public void PlayerDamageUpdate(double updatedHealth, int playerNum) {
-
-        fightersCurrentHealth[playerNum] = updatedHealth;
+    public void PlayerDamageUpdate(int playerNum) {
 
         UpdateGUIHealth(playerNum);
 
@@ -51,7 +42,9 @@ public class FightSceneManager : MonoBehaviour
 
     public void UpdateGUIHealth(int playerNum) {
 
-        
+        double healthPercent = fighters[playerNum].currHealth / fighters[playerNum].maxHealth;
+
+        healthBarSprite[playerNum].transform.localScale = new Vector3((float)healthPercent,1,1) * (float)healthBarScale;
 
     }
 

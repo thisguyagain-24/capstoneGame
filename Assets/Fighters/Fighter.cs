@@ -225,7 +225,7 @@ public class Fighter : MonoBehaviour
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
 
-        fightSceneManager?.PlayerDamageUpdate(currHealth, playerNum);
+        fightSceneManager?.PlayerDamageUpdate(playerNum);
     }
 
     public void OnMove(int dir)
