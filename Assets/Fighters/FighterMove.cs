@@ -131,6 +131,7 @@ public class FighterMove : MonoBehaviour
 
     public void processHit(MoveFrame frame, double _damage)
     {
+        
         fighter.EnableHitstop(hitstop);
         fighter.opponent?.EnableHitstun(hitstop, hitstun);
         fighter.opponent?.SubHealth(_damage);

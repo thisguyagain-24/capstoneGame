@@ -184,6 +184,7 @@ public class Player : MonoBehaviour
         {
             fighter = Instantiate(characters[playerNum], transform).GetComponent<Fighter>();
             fighter.transform.SetParent(transform);
+            fighter.transform.localScale = new Vector3(4,4,4);
             fighter.playerNum = playerNum;
             fighter.tag = "fighter";
         }
