@@ -302,8 +302,8 @@ public class Fighter : MonoBehaviour
 
     public void DoneMove()
     {
-        EndForcedAnim();
         activeMove = null;
+        EndForcedAnim();
     }
 
     public void OnUniversal(){}

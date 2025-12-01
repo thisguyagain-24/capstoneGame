@@ -101,6 +101,7 @@ public class FighterMove : MonoBehaviour
     }
 
     public void IterateFrames(){
+        Debug.Log("Iterate P" + fighter.playerNum);
         framesElapsed += Time.deltaTime * 60;
         //Debug.Log(framesElapsed);
         if(keys[currentKey].duration <= framesElapsed)
