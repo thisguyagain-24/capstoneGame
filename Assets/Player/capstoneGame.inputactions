@@ -104,6 +104,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5e929f4f-6525-4182-976b-d716fd8d7e4e",
+                    "path": "<Keyboard>/quote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "64d1a901-73cf-4f69-8b72-fb314bcff015",
                     "path": "<Keyboard>/p",
                     "interactions": "",

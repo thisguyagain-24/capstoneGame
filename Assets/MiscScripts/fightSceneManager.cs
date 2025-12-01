@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using JetBrains.Annotations;
+using Unity.Burst;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 
 public class FightSceneManager : MonoBehaviour
 {
+    public GameObject[] healthBarSprite = new GameObject[2];
+
+    public GameObject[] healthBarOuter = new GameObject[2];
+
+    public GameObject[] healthBarInner = new GameObject[2];
 
     public Fighter[] fighters = new Fighter[2];
-
-    public double[] fightersInitHealth = { 1, 1 };
-
-    public double[] fightersCurrentHealth = { 1, 1 };
 
     public readonly int rounds = 2;
 
     public int roundsElapsed = 0;
+
+    public double healthBarScale;
 
     // Start is called before the first frame update
     void Start()
@@ -30,20 +35,14 @@ public class FightSceneManager : MonoBehaviour
             _f.FindFightSceneManager();
 
         }
+        
+        healthBarScale = healthBarSprite[0].transform.localScale.x;
 
-        for (int i = 0; i < fighters.Length; i++)
-        {
-            fightersInitHealth[i] = fighters[i].maxHealth;
-        }
-
-
-
+        
 
     }
 // switch to getting fighter itself later
-    public void PlayerDamageUpdate(double updatedHealth, int playerNum) {
-
-        fightersCurrentHealth[playerNum] = updatedHealth;
+    public void PlayerDamageUpdate(int playerNum) {
 
         UpdateGUIHealth(playerNum);
 
@@ -51,8 +50,21 @@ public class FightSceneManager : MonoBehaviour
 
     public void UpdateGUIHealth(int playerNum) {
 
-        
+        Transform barEnd = healthBarOuter[playerNum].transform;
+        Transform barMid = healthBarSprite[playerNum].transform;
 
+        double healthPercent = fighters[playerNum].currHealth / fighters[playerNum].maxHealth;
+
+        barMid.localScale = new Vector3((float)healthPercent,1,1) * (float)healthBarScale;
+
+        barEnd.localPosition = new Vector3(barMid.localPosition.x + barMid.GetComponent<SpriteRenderer>().bounds.size.x, barEnd.localPosition.y, barEnd.localPosition.z);
+
+    }
+
+    public void GuiHealthDie(int playerNum) {
+        healthBarSprite[playerNum].SetActive(false);
+        healthBarInner[playerNum].SetActive(false);
+        healthBarOuter[playerNum].SetActive(false);
     }
 
     // Update is called once per frame

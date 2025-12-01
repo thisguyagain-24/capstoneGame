@@ -72,6 +72,8 @@ public class Fighter : MonoBehaviour
     public void Die()
     {
 
+        fightSceneManager.GuiHealthDie(playerNum);
+
     }
 
     // Start is called before the first frame update
@@ -231,11 +233,20 @@ public class Fighter : MonoBehaviour
     public void SubHealth(double damage)
     {
         currHealth = currHealth - (damage * incomingDamageModifier);
-        fightSceneManager?.PlayerDamageUpdate(currHealth, playerNum);
 
         if(currHealth <= 0){
+            currHealth = 0;
             Die();
         }
+
+        fightSceneManager?.PlayerDamageUpdate(playerNum);
+
+    }
+
+    public void OnMove(int dir)
+    {
+        Debug.Log("SHMOVIN");
+        inputDirection = dir;
     }
 
     public void GetMoves()
