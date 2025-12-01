@@ -94,12 +94,9 @@ public class FighterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        if (active && !fighter.inForcedAnim)
         {
-            if (!fighter.inHitstop)
-            {
-                IterateFrames();
-            }
+            IterateFrames();
         }
     }
 
@@ -129,13 +126,45 @@ public class FighterMove : MonoBehaviour
         }
     }
 
-    public void processHit(MoveFrame frame, double _damage)
+    public void processHit(Hitbox hb)
     {
-        //if(fighter.opponent?.blocking)
-        fighter.EnableHitstop(hitstop);
+        impact(hb);
+        if(fighter.opponent?.hiBlocking == false && fighter.opponent?.lowBlocking == false)
+        {
+            moveHit(hb);
+        }
+        else
+        {
+            if(hb.guard == Hitbox.guardType.low && fighter.opponent?.lowBlocking == false)
+            {
+                moveHit(hb);
+            }
+            else if(hb.guard == Hitbox.guardType.high && fighter.opponent?.hiBlocking == false)
+            {
+                moveHit(hb);
+            }
+            else
+            {
+                moveBlock(hb);
+            }
+        }  
+    }
+
+    public void impact(Hitbox hb)
+    {
+        fighter.EnableForcedAnim(hitstop);
+        disableFrames(hb.frame.uniqueHitNumber);
+    }
+
+    public void moveHit(Hitbox hb)
+    {
+        fighter.opponent?.SubHealth(hb.damage);
         fighter.opponent?.EnableHitstun(hitstop, hitstun);
-        fighter.opponent?.SubHealth(_damage);
-        disableFrames(frame.uniqueHitNumber);
+    }
+
+    public void moveBlock(Hitbox hb)
+    {
+        fighter.opponent?.EnableBlockstun(hitstop, blockstun);
     }
     
     private void disableFrames(int hitNum)

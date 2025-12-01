@@ -30,9 +30,6 @@ public class Fighter : MonoBehaviour
     public Animator animator;
 
     public int inputDirection;
-    
-    [HideInInspector]
-    public bool inAir;
 
     [HideInInspector]
     public bool crouching;
@@ -44,24 +41,13 @@ public class Fighter : MonoBehaviour
     public bool startup;
 
     [HideInInspector]
-    public bool active;
-
-    [HideInInspector]
-    public bool recovery;
-
-    [HideInInspector]
-    public bool softKnockdown;
-
-    [HideInInspector]
-    public bool hardKnockdown;
-
-    [HideInInspector]
     public bool hitstun;
 
     [HideInInspector]
     public bool blockstun;
 
-    public bool blocking;
+    public bool hiBlocking;
+    public bool lowBlocking;
 
     public bool leftSide;
 
@@ -73,10 +59,11 @@ public class Fighter : MonoBehaviour
     
     public GameObject defaultHurtbox;
     public GameObject hitStunObj;
+    public GameObject blockStunObj;
 
-    public bool inHitstop;
-    public float hitstopDuration;
-    public float hitstopFramesElapsed;
+    public bool inForcedAnim;
+    public float forcedAnimDuration;
+    public float forcedAnimElapsed;
     
     public Fighter opponent;
 
@@ -95,55 +82,80 @@ public class Fighter : MonoBehaviour
         hitStunObj.transform.GetChild(1).gameObject.layer = getPlayerHurtboxLayer();
     }
 
+    public void FindFightSceneManager()
+    {
+        fightSceneManager = GameObject.Find("fightSceneManager").GetComponent<FightSceneManager>();
+        Debug.Log("found fightSceneManager " + fightSceneManager);
+    }
+
+    public void OnMovementInput(int dir)
+    {
+        //Debug.Log("SHMOVIN");
+        inputDirection = dir;
+    }
+
+    private void findOpponent()
+    {
+        leftSide = true;
+        foreach(Fighter f in GameObject.FindObjectsByType<Fighter>(FindObjectsSortMode.None))
+        {
+            if(f != this)
+            {
+                opponent = f;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (inHitstop)
-        {
-            IterateHitstop();
-        }
         if (!opponent)
         {
-            leftSide = true;
-            foreach(Fighter f in GameObject.FindObjectsByType<Fighter>(FindObjectsSortMode.None))
-            {
-                if(f != this)
-                {
-                    opponent = f;
-                }
-            }
+            findOpponent();
+        }
+
+        if (inForcedAnim)
+        {
+            IterateForcedAnim();
         }
         else
         {
             CheckSide();
-        }
-        if (inputDirection == 0)
-        {
-            Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");
-        }
-        if (inputDirection == 5)
-        {
-            Neutral();   
-        }
-        else
-        {
-            //Debug.Log("KNIGHT MOVING WITH " + inputDirection);
-        }
-        if (inputDirection.In(1, 2, 3))
-        {
-            Crouch();
-        }
-        else if (inputDirection.In(6, 9))
-        {
-            WalkForward();
-        }
-        else if (inputDirection.In(4, 7))
-        {
-            WalkBack();
-        }
+            if (inputDirection == 0)
+            {
+                Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");
+            }
+            else if (inputDirection == 5)
+            {
+                Neutral();   
+            }
+            else if (inputDirection.In(1, 2, 3))
+            {
+                Crouch();
+            }
+            else if (inputDirection.In(6, 9))
+            {
+                WalkForward();
+            }
+            else if (inputDirection.In(4, 7))
+            {
+                WalkBack();
+            }
+            
+            if(inputDirection == 1){
+                lowBlocking = true;
+            }
+            else{
+                lowBlocking = false;
+            }
 
-        if(inputDirection.In(1,4,7)){
-
+            if (inputDirection.In(4, 7))
+            {
+                hiBlocking = true;
+            }
+            else
+            {
+                hiBlocking = false;
+            }
         }
     }
 
@@ -165,7 +177,6 @@ public class Fighter : MonoBehaviour
 
     public void WalkForward()
     {
-        //Vector2 moveDir = leftSide ? Vector2.right : Vector2.left;
         Vector2 moveDir = Vector2.right;
         
         Debug.Log("Before scale " + moveDir);
@@ -194,130 +205,6 @@ public class Fighter : MonoBehaviour
         animator.SetBool("Neutral", false);
     }
 
-    public void EnableHitstun(float stopDur, float stunDir)
-    {
-        if (activeMove)
-        {
-            foreach (MoveFrame o in activeMove.keys)
-            {
-                o.gameObject.SetActive(false);
-            }
-
-            activeMove.active = false;
-            activeMove = null;
-        }
-        movementSprites.SetActive(false);
-        hitStunObj.SetActive(true);
-        EnableHitstop(stopDur + stunDir);
-    }
-
-    public void EnableHitstop(float _dur)
-    {
-        inHitstop = true;
-        hitstopFramesElapsed = 0;
-        hitstopDuration = _dur;
-    }
-
-    public void IterateHitstop()
-    {
-        hitstopFramesElapsed += Time.deltaTime * 60;
-        //Debug.Log(hitstopFramesElapsed + " / " + hitstopDuration);
-        if (hitstopDuration <= hitstopFramesElapsed)
-        {
-            inHitstop = false;
-            hitStunObj.SetActive(false);
-            EndForcedAnim();
-        }
-    }
-
-    public void SubHealth(double damage)
-    {
-        currHealth = currHealth - (damage * incomingDamageModifier);
-
-        fightSceneManager?.PlayerDamageUpdate(currHealth, playerNum);
-    }
-
-    public void OnMove(int dir)
-    {
-        Debug.Log("SHMOVIN");
-        inputDirection = dir;
-    }
-
-    public void GetMoves()
-    {
-        moves = this.GetComponentsInChildren<FighterMove>();
-    }
-
-    public void OnLight()
-    {
-        if (!inHitstop && !(activeMove ? activeMove.active : false)){
-            Debug.Log("P" + playerNum + " Light");
-            foreach (FighterMove fm in moves)
-            {
-                Debug.Log(fm.btn);
-                if (fm.btn == FighterMove.AttackButton.L)
-                {
-                    Debug.Log("Found a L move");
-                    if (fm.inputDirection.Contains(inputDirection))
-                    {
-                        Debug.Log("Found matching move");
-                        movementSprites.SetActive(false);
-                        activeMove = fm;
-                        fm.StartMove();
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-    public void DoneMove()
-    {
-        activeMove = null;
-        EndForcedAnim();
-    }
-
-    public void EndForcedAnim()
-    {
-        if (!activeMove)
-        {
-            movementSprites.SetActive(true);
-        }
-    }
-
-    public void OnHeavy()
-    {
-        if (!inHitstop && !(activeMove ? activeMove.active : false)){
-            Debug.Log("P" + playerNum + " Heavy");
-            foreach (FighterMove fm in moves)
-            {
-                Debug.Log(fm.btn);
-                if (fm.btn == FighterMove.AttackButton.H)
-                {
-                    Debug.Log("Found an H move");
-                    if (fm.inputDirection.Contains(inputDirection))
-                    {
-                        Debug.Log("Found matching move");
-                        movementSprites.SetActive(false);
-                        activeMove = fm;
-                        fm.StartMove();
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-    public void OnUniversal()
-    {
-        
-    }
-
-    public void OnSpecial()
-    {
-
-    }
-
     public void CheckSide()
     {
         if (opponent)
@@ -341,6 +228,77 @@ public class Fighter : MonoBehaviour
         }
     }
 
+    public void SubHealth(double damage)
+    {
+        currHealth = currHealth - (damage * incomingDamageModifier);
+        fightSceneManager?.PlayerDamageUpdate(currHealth, playerNum);
+
+        if(currHealth <= 0){
+            Die();
+        }
+    }
+
+    public void GetMoves()
+    {
+        moves = this.GetComponentsInChildren<FighterMove>();
+    }
+
+    public void OnLight()
+    {
+        if (!inForcedAnim && !(activeMove ? activeMove.active : false)){
+            //Debug.Log("P" + playerNum + " Light");
+            foreach (FighterMove fm in moves)
+            {
+                //Debug.Log(fm.btn);
+                if (fm.btn == FighterMove.AttackButton.L)
+                {
+                    //Debug.Log("Found a L move");
+                    if (fm.inputDirection.Contains(inputDirection))
+                    {
+                        //Debug.Log("Found matching move");
+                        movementSprites.SetActive(false);
+                        activeMove = fm;
+                        fm.StartMove();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnHeavy()
+    {
+        if (!inForcedAnim && !(activeMove ? activeMove.active : false)){
+            Debug.Log("P" + playerNum + " Heavy");
+            foreach (FighterMove fm in moves)
+            {
+                Debug.Log(fm.btn);
+                if (fm.btn == FighterMove.AttackButton.H)
+                {
+                    Debug.Log("Found an H move");
+                    if (fm.inputDirection.Contains(inputDirection))
+                    {
+                        Debug.Log("Found matching move");
+                        movementSprites.SetActive(false);
+                        activeMove = fm;
+                        fm.StartMove();
+                        return;
+                    }   
+                }   
+            }   
+        }   
+    }
+
+    public void DoneMove()
+    {
+        EndForcedAnim();
+        activeMove = null;
+    }
+
+    public void OnUniversal(){}
+
+    public void OnSpecial(){}
+
     public int getPlayerHurtboxLayer()
     {
         if (playerNum == 0)
@@ -353,16 +311,68 @@ public class Fighter : MonoBehaviour
         }
     }
 
-    // hi im sorry for infesting your lovely code i need a function here
+    public void DisableActiveMove()
+    {
+        if (activeMove)
+        {
+            foreach (MoveFrame o in activeMove.keys)
+            {
+                o.gameObject.SetActive(false);
+            }
+            activeMove.active = false;
+            activeMove = null;
+        }
+    }
 
-    public void FindFightSceneManager(){
-
-        fightSceneManager = GameObject.Find("fightSceneManager").GetComponent<FightSceneManager>();
-        Debug.Log("found fightSceneManager " + fightSceneManager);
-
+    public void EnableHitstun(float stopDur, float stunDir)
+    {
+        DisableActiveMove();
+        movementSprites.SetActive(false);
+        hitStunObj.SetActive(true);
+        EnableForcedAnim(stopDur + stunDir);
     }
     
-    
+    public void EnableBlockstun(float stopDur, float stunDir)
+    {
+        DisableActiveMove();
+        movementSprites.SetActive(false);
+        blockStunObj.SetActive(true);
+        EnableForcedAnim(stopDur + stunDir);
+    }
+
+    public void EnableForcedAnim(float _dur)
+    {
+        inForcedAnim = true;
+        forcedAnimElapsed = 0;
+        forcedAnimDuration = _dur;
+    }
+
+    public void IterateForcedAnim()
+    {
+        forcedAnimElapsed += Math.Min(0.05f, Time.deltaTime * 60);
+        //Debug.Log(hitstopFramesElapsed + " / " + hitstopDuration);
+        if (forcedAnimDuration <= forcedAnimElapsed)
+        {
+            EndForcedAnim();
+        }
+    }
+
+    public void EndForcedAnim()
+    {
+        inForcedAnim = false;
+        if (!activeMove) 
+        {
+            //Ending stun as receiving player
+            hitStunObj.SetActive(false);
+            blockStunObj.SetActive(false);
+            movementSprites.SetActive(true);
+        }
+        else
+        {
+            //Ending hitstop as attacking player is done automatically
+            
+        }
+    }
 }
 
 

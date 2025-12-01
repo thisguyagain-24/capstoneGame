@@ -194,6 +194,7 @@ MonoBehaviour:
   frame: {fileID: 0}
   _collider: {fileID: 0}
   damage: 10
+  guard: 2
   hurtboxString: 
 --- !u!1 &1752475854992989049
 GameObject:
@@ -1272,6 +1273,7 @@ MonoBehaviour:
   frame: {fileID: 0}
   _collider: {fileID: 0}
   damage: 10
+  guard: 2
   hurtboxString: 
 --- !u!1 &6839623020982344781
 GameObject:
