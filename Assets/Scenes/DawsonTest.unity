@@ -845,6 +845,7 @@ MonoBehaviour:
   frame: {fileID: 0}
   _collider: {fileID: 0}
   damage: 0
+  guard: 0
   hurtboxString: 
 --- !u!1 &1657738841
 GameObject:
@@ -1009,6 +1010,7 @@ MonoBehaviour:
   frame: {fileID: 0}
   _collider: {fileID: 0}
   damage: 0
+  guard: 0
   hurtboxString: 
 --- !u!4 &1711531408
 Transform:

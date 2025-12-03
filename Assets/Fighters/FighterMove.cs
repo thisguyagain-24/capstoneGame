@@ -87,7 +87,7 @@ public class FighterMove : MonoBehaviour
             {
                 mf.active = true;
             }
-            Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
+            //Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
         }
     }
 
@@ -101,7 +101,7 @@ public class FighterMove : MonoBehaviour
     }
 
     public void IterateFrames(){
-        Debug.Log("Iterate P" + fighter.playerNum);
+        //Debug.Log("Iterate P" + fighter.playerNum);
         framesElapsed += Time.deltaTime * 60;
         //Debug.Log(framesElapsed);
         if(keys[currentKey].duration <= framesElapsed)
@@ -115,7 +115,7 @@ public class FighterMove : MonoBehaviour
     {
         keys[currentKey].gameObject.SetActive(false);
         currentKey++;
-        Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
+        //Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
         if(currentKey >= keys.Length)
         {
             fighter.DoneMove();

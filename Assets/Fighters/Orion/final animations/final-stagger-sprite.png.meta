@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4794349de9e5747de8b18b646de2a7db
+guid: 29787bccf54fb4358ab859e270f69860
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,85 +136,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final-crouch-sprite_0
+      name: final-stagger-sprite_0
       rect:
         serializedVersion: 2
         x: 223
-        y: 60
+        y: 59
         width: 768
-        height: 1081
+        height: 1082
       alignment: 9
-      pivot: {x: 0.42822918, y: 0.0172965}
+      pivot: {x: 0.43155432, y: 0.023171438}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0f53c1c01934698b2fd8d170834c3e
-      internalID: -681009938
+      spriteID: 24572e527c0a640f59e7d49f323c750c
+      internalID: -801132833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final-crouch-sprite_1
+      name: final-stagger-sprite_1
       rect:
         serializedVersion: 2
-        x: 1383
-        y: 60
-        width: 730
-        height: 1010
+        x: 1395
+        y: 90
+        width: 707
+        height: 1063
       alignment: 9
-      pivot: {x: 0.45740682, y: 0.016907917}
+      pivot: {x: 0.45332614, y: -0.013116329}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00508bcf8291341d4a8461b3089841f3
-      internalID: -15075012
+      spriteID: 540fa12d73b7e43e881ddd07e9c13b33
+      internalID: -1439870688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final-crouch-sprite_2
+      name: final-stagger-sprite_2
       rect:
         serializedVersion: 2
-        x: 2534
-        y: 62
-        width: 781
-        height: 1041
+        x: 2510
+        y: 83
+        width: 628
+        height: 1080
       alignment: 9
-      pivot: {x: 0.438751, y: 0.017508434}
+      pivot: {x: 0.58345336, y: -0.0014448025}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 663d840ea6c274134857750d8193ab16
-      internalID: -1190819288
+      spriteID: 7481db88c222e429b88b7d4189bee49a
+      internalID: 1895517528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final-crouch-sprite_4
+      name: final-stagger-sprite_3
       rect:
         serializedVersion: 2
-        x: 3709
-        y: 62
-        width: 733
-        height: 734
+        x: 3669
+        y: 59
+        width: 628
+        height: 1107
       alignment: 9
-      pivot: {x: 0.44452944, y: 0.024250997}
+      pivot: {x: 0.58345336, y: 0.01604583}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb98e8b1a73a4a3f82a67ccdda5f4eb
-      internalID: -1107472216
+      spriteID: 07116db991ce844e98ca419531d19a35
+      internalID: -569559809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-stagger-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 4780
+        y: 56
+        width: 676
+        height: 1107
+      alignment: 9
+      pivot: {x: 0.6119847, y: 0.019552747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655c0eac6a071469a8bcea5b2007cd13
+      internalID: -2043036440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-stagger-sprite_5
+      rect:
+        serializedVersion: 2
+        x: 5895
+        y: 59
+        width: 720
+        height: 1067
+      alignment: 9
+      pivot: {x: 0.6374919, y: 0.017914375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66374cae5a5894b6ba092537cda0afd1
+      internalID: -298784760
       vertices: []
       indices: 
       edges: []
@@ -230,12 +272,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      final-crouch-sprite_0: -681009938
-      final-crouch-sprite_1: -15075012
-      final-crouch-sprite_2: -1190819288
-      final-crouch-sprite_3: 92915608
-      final-crouch-sprite_4: -1107472216
-      final-crouch-sprite_5: 408481045
+      final-stagger-sprite_0: -801132833
+      final-stagger-sprite_1: -1439870688
+      final-stagger-sprite_2: 1895517528
+      final-stagger-sprite_3: -569559809
+      final-stagger-sprite_4: -2043036440
+      final-stagger-sprite_5: -298784760
+      final-stagger-sprite_6: 1569433935
+      final-stagger-sprite_7: 2059476914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

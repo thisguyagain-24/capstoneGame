@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 
 public class Fighter : MonoBehaviour
 {
@@ -82,6 +83,9 @@ public class Fighter : MonoBehaviour
         inputDirection = 5;
         defaultHurtbox.layer = getPlayerHurtboxLayer();
         hitStunObj.transform.GetChild(1).gameObject.layer = getPlayerHurtboxLayer();
+        blockStunObj.transform.GetChild(1).gameObject.layer = getPlayerHurtboxLayer();
+        hitStunObj.SetActive(false);
+        blockStunObj.SetActive(false);
     }
 
     public void FindFightSceneManager()
@@ -256,6 +260,7 @@ public class Fighter : MonoBehaviour
 
     public void OnLight()
     {
+        //SetAltColors(true);
         if (!inForcedAnim && !(activeMove ? activeMove.active : false)){
             //Debug.Log("P" + playerNum + " Light");
             foreach (FighterMove fm in moves)
@@ -382,6 +387,15 @@ public class Fighter : MonoBehaviour
         {
             //Ending hitstop as attacking player is done automatically
             
+        }
+    }
+
+    public void SetAltColors(bool invert){
+        float _invert = invert ? 1 : 0;
+        SpriteRenderer[] renderers = this.GetComponentsInChildren<SpriteRenderer>(true);
+        foreach(SpriteRenderer r in renderers)
+        {
+            r.material.SetFloat("_InvertColors", _invert);
         }
     }
 }
