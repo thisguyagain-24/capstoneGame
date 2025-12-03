@@ -70,11 +70,11 @@ public class Fighter : MonoBehaviour
 
     public FightSceneManager fightSceneManager;
 
+    public float knockbackStrength;
+
     public void Die()
     {
-
-        fightSceneManager.GuiHealthDie(playerNum);
-
+        fightSceneManager?.GuiHealthDie(playerNum);
     }
 
     // Start is called before the first frame update
@@ -185,7 +185,6 @@ public class Fighter : MonoBehaviour
     {
         Vector2 moveDir = Vector2.right;
         
-        Debug.Log("Before scale " + moveDir);
         moveDir *= forwardWalkSpeed * (float)Math.Min(0.05f, Time.deltaTime * 60) * transform.lossyScale.x;
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
@@ -200,7 +199,6 @@ public class Fighter : MonoBehaviour
     {
         //Vector2 moveDir = leftSide ? Vector2.left : Vector2.right;
         Vector2 moveDir = Vector2.left;
-        Debug.Log("Before scale " + moveDir);
         moveDir *= backWalkSpeed * (float)Math.Min(0.05f, Time.deltaTime * 60) * transform.lossyScale.x;
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
@@ -366,11 +364,27 @@ public class Fighter : MonoBehaviour
     public void IterateForcedAnim()
     {
         forcedAnimElapsed += Math.Min(0.05f, Time.deltaTime * 60);
+        if(knockbackStrength != 0)
+        {
+            IterateKnockback();
+        }
         //Debug.Log(hitstopFramesElapsed + " / " + hitstopDuration);
         if (forcedAnimDuration <= forcedAnimElapsed)
         {
             EndForcedAnim();
+
+            knockbackStrength = 0;
         }
+    }
+
+    private void IterateKnockback()
+    {
+        Vector2 moveDir = Vector2.left;
+        float lerped = forcedAnimElapsed/forcedAnimElapsed;
+        moveDir *= lerped * (float)Math.Min(0.05f, Time.deltaTime * 60) * transform.lossyScale.x;
+        Debug.Log("After scale " + moveDir);
+        rb.MovePosition(rb.position + moveDir);
+        
     }
 
     public void EndForcedAnim()

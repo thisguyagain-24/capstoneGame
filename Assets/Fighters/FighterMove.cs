@@ -160,6 +160,10 @@ public class FighterMove : MonoBehaviour
     public void moveHit(Hitbox hb)
     {
         fighter.opponent?.SubHealth(hb.damage);
+        if (fighter.opponent)
+        {
+            fighter.opponent.knockbackStrength = 5;
+        }
         fighter.opponent?.EnableHitstun(hitstop, hitstun);
     }
 
