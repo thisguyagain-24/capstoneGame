@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MenuButtons
   - fighter
+  - icon
   layers:
   - Default
   - TransparentFX

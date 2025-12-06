@@ -140,12 +140,11 @@ public class Player : MonoBehaviour
                         break;
                 }
             } 
-            
-            if (charSelectMenu)
-            {
-                Debug.Log(direction);
-                charSelectMenu?.UpdateSelected(direction);
-            }
+        }
+        if (charSelectMenu)
+        {
+            Debug.Log(direction);
+            charSelectMenu?.UpdateSelected(direction,playerNum);
         }
     }
 

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using JetBrains.Annotations;
 using Unity.Burst;
 using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
@@ -13,19 +12,16 @@ public class FightSceneManager : MonoBehaviour
 
     public GameObject[] healthBarOuter = new GameObject[2];
 
-    public GameObject[] healthBarInner = new GameObject[2];
-
     public Fighter[] fighters = new Fighter[2];
 
     public readonly int rounds = 2;
 
     public int roundsElapsed = 0;
 
-    public double healthBarScale;
+    public Vector3 healthBarScale;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
 
         foreach (GameObject f in GameObject.FindGameObjectsWithTag("fighter"))
         {
@@ -33,14 +29,11 @@ public class FightSceneManager : MonoBehaviour
             fighters[_f.playerNum] = _f;
             Debug.Log("got fighter " + _f);
             _f.FindFightSceneManager();
-
         }
-        
-        healthBarScale = healthBarSprite[0].transform.localScale.x;
 
-        
-
+        healthBarScale = healthBarSprite[0].transform.localScale;
     }
+
 // switch to getting fighter itself later
     public void PlayerDamageUpdate(int playerNum) {
 
@@ -55,7 +48,7 @@ public class FightSceneManager : MonoBehaviour
 
         double healthPercent = fighters[playerNum].currHealth / fighters[playerNum].maxHealth;
 
-        barMid.localScale = new Vector3((float)healthPercent,1,1) * (float)healthBarScale;
+        barMid.localScale = new Vector3((float)healthPercent * (float)healthBarScale.x,healthBarScale.y,healthBarScale.z);
 
         barEnd.localPosition = new Vector3(barMid.localPosition.x + barMid.GetComponent<SpriteRenderer>().bounds.size.x, barEnd.localPosition.y, barEnd.localPosition.z);
 
@@ -63,7 +56,6 @@ public class FightSceneManager : MonoBehaviour
 
     public void GuiHealthDie(int playerNum) {
         healthBarSprite[playerNum].SetActive(false);
-        healthBarInner[playerNum].SetActive(false);
         healthBarOuter[playerNum].SetActive(false);
     }
 
