@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         {
             inVec.x *= -1;
         }
-        fighter.OnMove(GetDirection(inVec.x, inVec.y));
+        fighter.OnMovementInput(GetDirection(inVec.x, inVec.y));
     }
 
     void OnLightAttack(InputValue value)

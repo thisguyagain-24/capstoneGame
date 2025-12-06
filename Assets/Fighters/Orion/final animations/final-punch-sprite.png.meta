@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: final-punch-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 60
+        width: 768
+        height: 1044
+      alignment: 9
+      pivot: {x: 0.43208155, y: 0.021407196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5391321cec345aa86172ef61192114
+      internalID: 1027190398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-punch-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 60
+        width: 752
+        height: 1044
+      alignment: 9
+      pivot: {x: 0.4379378, y: 0.01877757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9ffd7646d704ea2bf6f44d008db99c
+      internalID: 1834744446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-punch-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2543
+        y: 60
+        width: 798
+        height: 1055
+      alignment: 9
+      pivot: {x: 0.41743305, y: 0.02119281}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96aa17c63558f43ffb8edb874d8cd6e8
+      internalID: -207627287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-punch-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 3703
+        y: 60
+        width: 854
+        height: 1071
+      alignment: 9
+      pivot: {x: 0.38748577, y: 0.02065584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8beb13b7984b848e08008490ad10549f
+      internalID: 224393123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +229,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final-punch-sprite_0: 1027190398
+      final-punch-sprite_1: 1834744446
+      final-punch-sprite_2: -207627287
+      final-punch-sprite_3: 224393123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4794349de9e5747de8b18b646de2a7db
+guid: 68253ad6aadc14d3db1afc2a9580698d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,85 +136,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final-crouch-sprite_0
+      name: final-crouchidle-orion_0
       rect:
         serializedVersion: 2
-        x: 223
-        y: 60
-        width: 768
-        height: 1081
-      alignment: 9
-      pivot: {x: 0.42822918, y: 0.0172965}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d0f53c1c01934698b2fd8d170834c3e
-      internalID: -681009938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: final-crouch-sprite_1
-      rect:
-        serializedVersion: 2
-        x: 1383
-        y: 60
-        width: 730
-        height: 1010
-      alignment: 9
-      pivot: {x: 0.45740682, y: 0.016907917}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00508bcf8291341d4a8461b3089841f3
-      internalID: -15075012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: final-crouch-sprite_2
-      rect:
-        serializedVersion: 2
-        x: 2534
+        x: 237
         y: 62
-        width: 781
-        height: 1041
-      alignment: 9
-      pivot: {x: 0.438751, y: 0.017508434}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 663d840ea6c274134857750d8193ab16
-      internalID: -1190819288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: final-crouch-sprite_4
-      rect:
-        serializedVersion: 2
-        x: 3709
-        y: 62
-        width: 733
+        width: 719
         height: 734
       alignment: 9
-      pivot: {x: 0.44452944, y: 0.024250997}
+      pivot: {x: 0.4416126, y: 0.026988827}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfb98e8b1a73a4a3f82a67ccdda5f4eb
-      internalID: -1107472216
+      spriteID: ac11e2effd8af44998556b629df5788e
+      internalID: 1005785065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-crouchidle-orion_2
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 59
+        width: 735
+        height: 763
+      alignment: 9
+      pivot: {x: 0.45200163, y: 0.027191171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85719176dca5945fcbc62028fc70f315
+      internalID: -1020647706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-crouchidle-orion_4
+      rect:
+        serializedVersion: 2
+        x: 2557
+        y: 60
+        width: 717
+        height: 760
+      alignment: 9
+      pivot: {x: 0.44286054, y: 0.025324862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d459f00837d4344ba321d0273f96f1
+      internalID: -344316067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-crouchidle-orion_6
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 60
+        width: 722
+        height: 758
+      alignment: 9
+      pivot: {x: 0.4416798, y: 0.028576462}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1043eb75bea14384aeebbdfa2d695f8
+      internalID: -872321091
       vertices: []
       indices: 
       edges: []
@@ -230,12 +230,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      final-crouch-sprite_0: -681009938
-      final-crouch-sprite_1: -15075012
-      final-crouch-sprite_2: -1190819288
-      final-crouch-sprite_3: 92915608
-      final-crouch-sprite_4: -1107472216
-      final-crouch-sprite_5: 408481045
+      final-crouchidle-orion_0: 1005785065
+      final-crouchidle-orion_1: 1945454498
+      final-crouchidle-orion_2: -1020647706
+      final-crouchidle-orion_3: -2083670015
+      final-crouchidle-orion_4: -344316067
+      final-crouchidle-orion_5: 1671711577
+      final-crouchidle-orion_6: -872321091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

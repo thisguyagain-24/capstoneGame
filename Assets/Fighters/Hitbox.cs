@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitboxScript : MonoBehaviour
+public class Hitbox : MonoBehaviour
 {
     public FighterMove move;
     public MoveFrame frame;
     public BoxCollider2D _collider;
     public double damage;
+    public guardType guard;
     public string hurtboxString;
 
     void Start()
@@ -79,7 +80,7 @@ public class HitboxScript : MonoBehaviour
                 hurtbox = string.Join("/", ReverseArr(hurtbox.Split('/')));
 
                 Debug.Log(hitbox + " HAS HIT " + hurtbox);
-                move.processHit(frame, damage);
+                move.processHit(this);
             }
         }
     }
@@ -126,5 +127,12 @@ public class HitboxScript : MonoBehaviour
     {
         Array.Reverse(str);
         return str;
+    }
+
+    public enum guardType
+    {
+        low,
+        mid,
+        high
     }
 }

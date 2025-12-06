@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Unity.Mathematics;
+using System;
 
 public static class Util
 {
@@ -58,5 +59,19 @@ public static class Util
         Vector3 absScale3 = math.abs(v);
         Vector2 absScale2 = new Vector2(absScale3.x, absScale3.y);
         return absScale2;
+    }
+
+    public static bool EnumInList<TOne, TTwo>(TOne val, TTwo[] list)
+        where TOne : Enum
+        where TTwo : Enum
+    {
+        foreach(TTwo e in list)
+        {
+            if(val.Equals(e))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

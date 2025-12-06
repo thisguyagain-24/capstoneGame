@@ -87,23 +87,21 @@ public class FighterMove : MonoBehaviour
             {
                 mf.active = true;
             }
-            Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
+            //Debug.Log("P" + fighter.playerNum + " STARTING " + transform.name);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (active)
+        if (active && !fighter.inForcedAnim)
         {
-            if (!fighter.inHitstop)
-            {
-                IterateFrames();
-            }
+            IterateFrames();
         }
     }
 
     public void IterateFrames(){
+        //Debug.Log("Iterate P" + fighter.playerNum);
         framesElapsed += Time.deltaTime * 60;
         //Debug.Log(framesElapsed);
         if(keys[currentKey].duration <= framesElapsed)
@@ -117,7 +115,7 @@ public class FighterMove : MonoBehaviour
     {
         keys[currentKey].gameObject.SetActive(false);
         currentKey++;
-        Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
+        //Debug.Log("P" + fighter.playerNum + transform.parent.name + "   MOVING TO KEYFRAME " + currentKey);
         if(currentKey >= keys.Length)
         {
             fighter.DoneMove();
@@ -129,13 +127,49 @@ public class FighterMove : MonoBehaviour
         }
     }
 
-    public void processHit(MoveFrame frame, double _damage)
+    public void processHit(Hitbox hb)
     {
-        //if(fighter.opponent?.blocking)
-        fighter.EnableHitstop(hitstop);
+        impact(hb);
+        if(fighter.opponent?.hiBlocking == false && fighter.opponent?.lowBlocking == false)
+        {
+            moveHit(hb);
+        }
+        else
+        {
+            if(hb.guard == Hitbox.guardType.low && fighter.opponent?.lowBlocking == false)
+            {
+                moveHit(hb);
+            }
+            else if(hb.guard == Hitbox.guardType.high && fighter.opponent?.hiBlocking == false)
+            {
+                moveHit(hb);
+            }
+            else
+            {
+                moveBlock(hb);
+            }
+        }  
+    }
+
+    public void impact(Hitbox hb)
+    {
+        fighter.EnableForcedAnim(hitstop);
+        disableFrames(hb.frame.uniqueHitNumber);
+    }
+
+    public void moveHit(Hitbox hb)
+    {
+        fighter.opponent?.SubHealth(hb.damage);
+        if (fighter.opponent)
+        {
+            fighter.opponent.knockbackStrength = 5;
+        }
         fighter.opponent?.EnableHitstun(hitstop, hitstun);
-        fighter.opponent?.SubHealth(_damage);
-        disableFrames(frame.uniqueHitNumber);
+    }
+
+    public void moveBlock(Hitbox hb)
+    {
+        fighter.opponent?.EnableBlockstun(hitstop, blockstun);
     }
     
     private void disableFrames(int hitNum)
