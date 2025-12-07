@@ -13,10 +13,14 @@ public class CharSelect : MonoBehaviour
 
     public int rowSelected = 0;
     public int colSelected = 0;
-    public int selectedButton = 0;
+    public int[] selectedButton;
+    public int[] prevselected = {0,0};
 
     public Vector3 defaultSize;
     public Color defaultClr;
+
+    public GameObject[] p1Icons;
+    public GameObject[] p2Icons;
 
     public Player[] players = new Player[2];
 
@@ -30,7 +34,7 @@ public class CharSelect : MonoBehaviour
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
         }
-
+        selectedButton = new int[]{0,0};
         UsableButtonsArray[0, 0] = CharacterButtons[0];
         UsableButtonsArray[0, 1] = CharacterButtons[1];
         UsableButtonsArray[1, 0] = CharacterButtons[2];
@@ -48,38 +52,33 @@ public class CharSelect : MonoBehaviour
         {
             case 4:
                 colSelected = Math.Abs((colSelected - 1) % UsableButtonsArray.GetLength(0));
-                Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
                 break;
             case 6:
                 colSelected = Math.Abs((colSelected + 1) % UsableButtonsArray.GetLength(0));
-                Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
                 break;
             case 2:
                 rowSelected = Math.Abs((rowSelected + 1) % UsableButtonsArray.GetLength(0));
-                Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
                 break;
             case 8:
                 rowSelected = Math.Abs((rowSelected - 1) % UsableButtonsArray.GetLength(0));
-                Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
                 break;
         }
 
-        if (playerNum == 0) {
+        Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
+        Debug.Log("Hello " + playerNum);
+        Debug.Log(selectedButton.Length);
 
-            if (colSelected == 0 && rowSelected == 0){
-                selectedButton = 0;
-            } else if (colSelected == 1 && rowSelected == 0) {
-                selectedButton = 1;
-            } else if (colSelected == 0 && rowSelected == 1) {
-                selectedButton = 2;
-            } else {
-                selectedButton = 3;
-            }
-
+        if (colSelected == 0 && rowSelected == 0){
+            selectedButton[playerNum] = 0;
+        } else if (colSelected == 1 && rowSelected == 0) {
+            selectedButton[playerNum] = 1;
+        } else if (colSelected == 0 && rowSelected == 1) {
+            selectedButton[playerNum] = 2;
+        } else {
+            selectedButton[playerNum] = 3;
         }
 
-
-        GuiUpdateSelected();
+        GuiUpdateSelected(playerNum);
     }
 
     public void MenuCursorEnter(int playerNum) {        
@@ -99,9 +98,14 @@ public class CharSelect : MonoBehaviour
         }
     }
 
-    public void GuiUpdateSelected() {
-        ClearHighlight();
-        PickHighlight();
+    public void GuiUpdateSelected(int playerNum) {
+        //ClearHighlight();
+        //PickHighlight();
+
+        prevselected[playerNum] = selectedButton[playerNum];
+
+        ClearPlayerIcon(playerNum);
+        PickPlayerIcon(playerNum);
     }
 
     public void PickHighlight() {
@@ -126,6 +130,31 @@ public class CharSelect : MonoBehaviour
             
         }
     }
+
+    public void PickPlayerIcon(int playerNum) {
+        if (playerNum == 0) {
+            p1Icons[selectedButton[playerNum]].SetActive(true);
+        } else {
+            p2Icons[selectedButton[playerNum]].SetActive(true);
+        }
+    }
+
+    public void ClearPlayerIcon(int playerNum) {
+        if (playerNum == 0) {
+            foreach (var item in p1Icons)
+            {
+                item.SetActive(false);
+            }
+        } else {
+            foreach (var item in p2Icons)
+            {
+                item.SetActive(false);
+            }
+        }
+    }
+
+
+
 
     public void ClearHighlight() {
         
