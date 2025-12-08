@@ -33,6 +33,7 @@ public class CharSelect : MonoBehaviour
             Player _p = p.GetComponent<Player>();
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
+            GuiUpdateSelected(_p.playerNum);
         }
         selectedButton = new int[]{0,0};
         UsableButtonsArray[0, 0] = CharacterButtons[0];
