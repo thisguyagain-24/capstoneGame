@@ -63,11 +63,11 @@ public class CharSelect : MonoBehaviour
                 rowSelected = Math.Abs((rowSelected - 1) % UsableButtonsArray.GetLength(0));
                 break;
         }
-
+        /*/
         Debug.Log(colSelected.ToString() + " " + rowSelected.ToString());
         Debug.Log("Hello " + playerNum);
         Debug.Log(selectedButton.Length);
-
+        //*/
         if (colSelected == 0 && rowSelected == 0){
             selectedButton[playerNum] = 0;
         } else if (colSelected == 1 && rowSelected == 0) {
@@ -82,7 +82,7 @@ public class CharSelect : MonoBehaviour
     }
 
     public void MenuCursorEnter(int playerNum) {        
-        players[playerNum].MakeCharacter(0);
+        players[playerNum].MakeFighter();
 
         if (players[0].fighter && players[1].fighter) {
             players[0].fighter.transform.localPosition = new Vector3(-150, -310, 1);
@@ -110,7 +110,7 @@ public class CharSelect : MonoBehaviour
 
     public void PickHighlight() {
 
-        Debug.Log("picking highlight");
+        //Debug.Log("picking highlight");
 
         GameObject o = UsableButtonsArray[rowSelected, colSelected];
 
@@ -158,7 +158,7 @@ public class CharSelect : MonoBehaviour
 
     public void ClearHighlight() {
         
-        Debug.Log("unhighlight");
+        //Debug.Log("unhighlight");
         
         foreach (var button in UsableButtonsArray)
         {

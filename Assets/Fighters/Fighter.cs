@@ -11,7 +11,7 @@ public class Fighter : MonoBehaviour
 {
     public double maxHealth;
     public double currHealth;
-    
+
     public double incomingDamageModifier = 1;
 
     public int playerNum;
