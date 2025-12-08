@@ -45,29 +45,26 @@ public class Player : MonoBehaviour
 
     public void FindUIDirector()
     {
-        try
-        {
+        try {
             titleMenu = GameObject.Find("Canvas").GetComponent<TitleMenu>();
-        }
-        catch
-        { 
-             
-        }
-        try
-        {
+        } catch{ }
+        try {
             mainMenu = GameObject.Find("EventSystem").GetComponent<MainMenu>();
-        }
-        catch 
-        { 
-            
-        }
-        try
-        {
+            if (mainMenu)
+            {
+                titleMenu = null;
+            }
+        } catch { }
+        try {
             charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
-        }
-        catch { 
-            
-        } try{
+            if (charSelectMenu)
+            {
+                mainMenu = null;
+            }
+        } catch {
+
+        }  
+        try{
             fightSceneManager = GameObject.Find("fightScene").GetComponent<FightSceneManager>();
         } catch {
             
@@ -148,7 +145,7 @@ public class Player : MonoBehaviour
         }
         if (charSelectMenu)
         {
-            Debug.Log(direction);
+            //Debug.Log(direction);
             charSelectMenu?.UpdateSelected(direction,playerNum);
         }
     }
@@ -159,6 +156,7 @@ public class Player : MonoBehaviour
         if (mainMenu) {
             mainMenu?.MenuCursorEnter();
         } else if (charSelectMenu) {
+            Debug.Log("Player " + playerNum + " Has char select");
             charSelectMenu?.MenuCursorEnter(playerNum);
         }
     }
@@ -182,8 +180,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnSpawnKnight(InputValue value)
+    void OnSpawnFighter(InputValue value)
     {
+        MakeFighter();
+    }
+    #endregion
+
+    public void MakeFighter() {
         if (!fighter)
         {
             fighter = Instantiate(characters[playerNum], transform).GetComponent<Fighter>();
@@ -192,33 +195,6 @@ public class Player : MonoBehaviour
             fighter.playerNum = playerNum;
             fighter.tag = "fighter";
         }
-    }
-    #endregion
-
-    public void MakeCharacter(int characternum) {
-        OnSpawnKnight(new InputValue());
-        /*
-            if (!fighter)
-            {
-                fighter = Instantiate(characters.ToArray()[0], this.transform).GetComponent<Fighter>();
-                fighter.playerNum = playerNum;
-            }
-            */
-    }
-
-    private int ProcessInput(Vector2 input)
-    {
-        if (input.magnitude < deadzone)
-        {
-            return 5;
-        }
-
-        if (pInput.devices[0].name == "Keyboard")
-        {
-
-        }
-
-        return 0;
     }
 
     public int GetDirection(float x, float y) {

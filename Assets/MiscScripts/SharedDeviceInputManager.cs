@@ -59,6 +59,11 @@ public class SharedDeviceInputManager : UnityEngine.InputSystem.PlayerInputManag
     /// </summary>
     private static int playerIndex = 0;
 
+    public void setIndex(int _i)
+    {
+        playerIndex = _i;
+    }
+
     /// <summary>
     /// Set the player's control scheme based on their index
     /// </summary>

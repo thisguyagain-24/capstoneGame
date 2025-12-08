@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-
     public GameObject SettingsMenu;
-
 
     public GameObject[] menuButtons;
 
@@ -33,78 +31,56 @@ public class MainMenu : MonoBehaviour
         }
 
         for (int i = 0; i < menuButtons.Length; i++) {
-
             menuButtonsConverted[i] = menuButtons[i].GetComponent<SpriteRenderer>();
-
             Debug.Log(menuButtonsConverted[i]);
         }
 
         PickHighlight();
-
     }
 
     void VersusSelected() 
     {
-
         Debug.Log("versus selected");
-
-        SceneManager.LoadScene("charSelect");
+        if(GameObject.FindGameObjectsWithTag("Player").Length == 2)
+        {
+            SceneManager.LoadScene("charSelect");
+        }
 
         // play sound effect, play animation, then load versus scene
-
         // hmmmmm sfx and animation can probably be in their own reusable function once im putting those in
-
     }
 
     void StorySelected() 
     {
-
         Debug.Log("story selected");
-
         // popup that tells you its not ready yet
-
     }
 
     void SettingsSelected() 
     {
-
         Debug.Log("settings selected");
-
         // load settings menu
-
     }
 
     void ReturnToTitle() {
-
         // play sound effect, play animation, then load title menu
-
         SceneManager.LoadScene("startMenu");
-
     }
 
 
     public void MenuCursorUpDown() {
-
         RowSelected = !RowSelected;
-
         PickHighlight();
-
     }
 
     public void MenuCursorLeftRight() {
-
         MenuSelected = !MenuSelected;
-
         PickHighlight();
-
     }
 
     public void MenuCursorEnter() {
-
         // god im bad at my job this solution sucks
-
         PickHighlight();
-
         switch (currentSelected) {
             case 0:
                 VersusSelected();
@@ -122,11 +98,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PickHighlight() {
-
-/*         if (menuButtonsConverted[0] == null) {
-
-            return; 
-            
+        /*         
+        if (menuButtonsConverted[0] == null) {
+            return;
         } */
 
         menuButtonsConverted[currentSelected].color = baseColor;

@@ -70,7 +70,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "SpawnKnight",
+                    "name": "SpawnFighter",
                     "type": "Button",
                     "id": "dba64a1c-e8c4-468b-8919-3b2bf64c0b8a",
                     "expectedControlType": "",
@@ -351,7 +351,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";WASD",
-                    "action": "SpawnKnight",
+                    "action": "SpawnFighter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -362,7 +362,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",
-                    "action": "SpawnKnight",
+                    "action": "SpawnFighter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -403,6 +403,15 @@
                     "name": "SwitchInput",
                     "type": "Button",
                     "id": "36239f32-4cdc-42cf-843b-0fe3df6721ce",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "534072b2-c897-48e0-95d4-4cf2fc16c639",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -770,6 +779,28 @@
                     "processors": "",
                     "groups": ";Arrows",
                     "action": "SwitchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ad6c55f-08d8-45fa-9490-8fe366336842",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";WASD",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c286df5a-80d8-4f77-a68b-6f5373ce6e59",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
+                    "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
