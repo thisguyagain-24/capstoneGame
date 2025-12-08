@@ -381,7 +381,7 @@ public class Fighter : MonoBehaviour
         Vector2 moveDir = Vector2.left;
         float lerped = (forcedAnimDuration-forcedAnimElapsed)/forcedAnimDuration;
         moveDir *= lerped * (float)Math.Min(0.05f, Time.deltaTime * 60) * transform.lossyScale.x;
-        Debug.Log("After scale " + moveDir);
+        //Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
         
     }
