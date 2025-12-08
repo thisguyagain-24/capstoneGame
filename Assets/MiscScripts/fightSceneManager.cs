@@ -76,9 +76,12 @@ public class FightSceneManager : MonoBehaviour
 #region Menu
 
     public void PauseMenuHandler() {
+
+        pause = !pause;
+        
         if(pause){
-
-
+            Debug.Log("PAUSE");
+            Time.timeScale = 0;
         }
 
     }

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public TitleMenu titleMenu;
     public MainMenu mainMenu;
     public CharSelect charSelectMenu;
+    public FightSceneManager fightSceneManager;
 
     public GameObject testKnight;
     public List<GameObject> characters;
@@ -65,6 +66,10 @@ public class Player : MonoBehaviour
             charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
         }
         catch { 
+            
+        } try{
+            fightSceneManager = GameObject.Find("fightScene").GetComponent<FightSceneManager>();
+        } catch {
             
         }
     }
@@ -115,7 +120,6 @@ public class Player : MonoBehaviour
     void OnPause(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
-
     }
     #endregion
 
