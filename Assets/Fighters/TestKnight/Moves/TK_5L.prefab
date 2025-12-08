@@ -623,7 +623,7 @@ MonoBehaviour:
   inputDirection: 040000000500000006000000070000000800000009000000
   btn: 0
   hitstop: 10
-  hitstun: 10
+  hitstun: 1
   blockstun: 10
   keys:
   - {fileID: 4624171028569854237}
@@ -1272,7 +1272,7 @@ MonoBehaviour:
   move: {fileID: 0}
   frame: {fileID: 0}
   _collider: {fileID: 0}
-  damage: 10
+  damage: 40
   guard: 2
   hurtboxString: 
 --- !u!1 &6839623020982344781
