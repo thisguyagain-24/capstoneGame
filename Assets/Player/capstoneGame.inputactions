@@ -365,6 +365,17 @@
                     "action": "SpawnFighter",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "496460d4-4e0b-432e-a307-e8db93a6be52",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
+                    "action": "SpawnFighter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -775,6 +786,17 @@
                     "name": "",
                     "id": "5e44f7d0-3acf-495a-bef8-7f9d67b36858",
                     "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Arrows",
+                    "action": "SwitchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3dbdf2fa-a45c-48aa-9a8e-1815712d1bf8",
+                    "path": "<Keyboard>/0",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",

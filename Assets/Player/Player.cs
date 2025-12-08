@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         try {
             charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
         } catch { }  
-        try{
+        try {
             fightSceneManager = GameObject.Find("fightScene").GetComponent<FightSceneManager>();
         } catch { }
     }
