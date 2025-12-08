@@ -372,7 +372,6 @@ public class Fighter : MonoBehaviour
         if (forcedAnimDuration <= forcedAnimElapsed)
         {
             EndForcedAnim();
-
             knockbackStrength = 0;
         }
     }
@@ -380,7 +379,7 @@ public class Fighter : MonoBehaviour
     private void IterateKnockback()
     {
         Vector2 moveDir = Vector2.left;
-        float lerped = forcedAnimElapsed/forcedAnimElapsed;
+        float lerped = (forcedAnimDuration-forcedAnimElapsed)/forcedAnimDuration;
         moveDir *= lerped * (float)Math.Min(0.05f, Time.deltaTime * 60) * transform.lossyScale.x;
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
