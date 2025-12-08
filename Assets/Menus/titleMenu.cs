@@ -41,7 +41,7 @@ public class TitleMenu : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!AnimationDone)
         {
@@ -56,7 +56,9 @@ public class TitleMenu : MonoBehaviour
 
             MainLogo.transform.localPosition = Vector3.Lerp(MainLogo.transform.localPosition, new Vector3(-4, 173, 0), 0.1f);
 
-            MainFramesToAnimationEnd -= Time.deltaTime / 0.02;
+            //MainFramesToAnimationEnd -= Time.deltaTime / 0.02;
+
+            MainFramesToAnimationEnd --;
 
             return;
         }
@@ -67,7 +69,9 @@ public class TitleMenu : MonoBehaviour
 
             TapeLogo.transform.localScale = Vector3.Lerp(TapeLogo.transform.localScale, new Vector3(32,32,32), 0.8f);
 
-            TapeFramesToAnimationEnd-= Time.deltaTime / 0.02;
+            //TapeFramesToAnimationEnd-= Time.deltaTime / 0.02;
+
+            TapeFramesToAnimationEnd --;
 
             return;
         }
@@ -76,7 +80,9 @@ public class TitleMenu : MonoBehaviour
 
             SubLogo.transform.localPosition = Vector3.Lerp(SubLogo.transform.localPosition, new Vector3(-10,0,1), 0.1f);
 
-            SubFramesToAnimationEnd-= Time.deltaTime / 0.02;
+            //SubFramesToAnimationEnd-= Time.deltaTime / 0.02;
+
+            SubFramesToAnimationEnd --;
 
             return;
         }
