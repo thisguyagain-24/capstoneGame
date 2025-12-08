@@ -20,6 +20,8 @@ public class FightSceneManager : MonoBehaviour
 
     public Vector3 healthBarScale;
 
+    public bool pause = false;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -35,15 +37,13 @@ public class FightSceneManager : MonoBehaviour
         healthBarScale = healthBarSprite[0].transform.localScale;
     }
 
+#region GameplayUI
     public double CalcGuiHealth(int _fighter) {
         return fighters[_fighter].currHealth - (fighters[_fighter].maxHealth / 20);
     }
-
 // switch to getting fighter itself later
     public void PlayerDamageUpdate(int playerNum) {
-
         UpdateGUIHealth(playerNum);
-
     }
 
     public void UpdateGUIHealth(int playerNum) {
@@ -71,6 +71,19 @@ public class FightSceneManager : MonoBehaviour
         healthBarOuter[playerNum].SetActive(false);
     }
 
+#endregion
+
+#region Menu
+
+    public void PauseMenuHandler() {
+        if(pause){
+
+
+        }
+
+    }
+
+#endregion
     // Update is called once per frame
     void Update()
     {

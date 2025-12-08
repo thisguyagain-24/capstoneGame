@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
     void OnPause(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
+
     }
     #endregion
 
