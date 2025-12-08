@@ -50,25 +50,13 @@ public class Player : MonoBehaviour
         } catch{ }
         try {
             mainMenu = GameObject.Find("EventSystem").GetComponent<MainMenu>();
-            if (mainMenu)
-            {
-                titleMenu = null;
-            }
         } catch { }
         try {
             charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
-            if (charSelectMenu)
-            {
-                mainMenu = null;
-            }
-        } catch {
-
-        }  
+        } catch { }  
         try{
             fightSceneManager = GameObject.Find("fightScene").GetComponent<FightSceneManager>();
-        } catch {
-            
-        }
+        } catch { }
     }
 
     // Update is called once per frame

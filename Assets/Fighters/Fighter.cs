@@ -363,6 +363,7 @@ public class Fighter : MonoBehaviour
 
     public void IterateForcedAnim()
     {
+        Debug.Log("DELTA " + Time.deltaTime * 60);
         forcedAnimElapsed += Math.Min(0.05f, Time.deltaTime * 60);
         if(knockbackStrength != 0)
         {
