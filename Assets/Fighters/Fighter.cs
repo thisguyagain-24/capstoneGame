@@ -75,6 +75,7 @@ public class Fighter : MonoBehaviour
     public void Die()
     {
         fightSceneManager?.GuiHealthDie(playerNum);
+        fightSceneManager?.RoundEnd(playerNum);
     }
 
     // Start is called before the first frame update
@@ -352,6 +353,18 @@ public class Fighter : MonoBehaviour
         movementSprites.SetActive(false);
         blockStunObj.SetActive(true);
         EnableForcedAnim(stopDur + stunDir);
+    }
+
+    public void EnableVictory(float stopDur) {
+        EnableForcedAnim(stopDur);
+    }
+
+    public void EnableLoss(float stopDur) {
+        EnableForcedAnim(stopDur);
+    }
+
+    public void EnableRoundStart(float stopDur){
+        EnableForcedAnim(stopDur);
     }
 
     public void EnableForcedAnim(float _dur)

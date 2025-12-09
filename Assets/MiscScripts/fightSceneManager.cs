@@ -30,6 +30,8 @@ public class FightSceneManager : MonoBehaviour
     public bool pause = false;
     public Vector3 baseSize;
 
+    public bool canTheyDoStuff; // yayyy i get one silly variable name
+
     // Start is called before the first frame update
     void Start(){
 
@@ -91,14 +93,32 @@ public class FightSceneManager : MonoBehaviour
     
     public void PlayerDamageUpdate(int playerNum) {
         UpdateGUIHealth(playerNum);
-
-        if (fighters[playerNum].currHealth <= 0) {
-
-            fighters[playerNum].Die();
-        }
     }
 
-    public void RoundEnd() {
+    public void RoundEnd(int loserNum) {
+
+        canTheyDoStuff = false;
+
+        Fighter loser = fighters[loserNum];
+        loser.lives --;
+
+        fighters[loserNum].EnableLoss(10f);
+        fighters[(loserNum+1)%2].EnableVictory(10f);
+
+        fighters[0].transform.localPosition = new Vector3(-150, -310, 1);
+        fighters[1].transform.localPosition = new Vector3(150, -310, 1);
+
+        RoundStart();
+
+    }
+
+    public void RoundStart() {
+
+        foreach (var fighter in fighters)
+        {
+            fighter.currHealth = fighter.maxHealth;
+            fighter.EnableRoundStart(10);
+        }
 
         
     }
