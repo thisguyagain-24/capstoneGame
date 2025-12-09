@@ -81,24 +81,20 @@ public class FightSceneManager : MonoBehaviour
         healthBarSprite[playerNum].SetActive(false);
         healthBarOuter[playerNum].SetActive(false);
     }
-
 #endregion
 
 #region Gameplay
 
-    
     public void PlayerDamageUpdate(int playerNum) {
         UpdateGUIHealth(playerNum);
 
         if (fighters[playerNum].currHealth <= 0) {
-
             fighters[playerNum].Die();
         }
     }
 
     public void RoundEnd() {
 
-        
     }
 
 #endregion
