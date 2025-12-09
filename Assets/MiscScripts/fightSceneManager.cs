@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Unity.Burst;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -85,12 +83,10 @@ public class FightSceneManager : MonoBehaviour
         healthBarSprite[playerNum].SetActive(false);
         healthBarOuter[playerNum].SetActive(false);
     }
-
 #endregion
 
 #region Gameplay
 
-    
     public void PlayerDamageUpdate(int playerNum) {
         UpdateGUIHealth(playerNum);
     }
