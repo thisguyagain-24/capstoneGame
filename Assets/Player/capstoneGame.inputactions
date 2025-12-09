@@ -207,7 +207,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Arrows;WASD",
+                    "groups": ";WASD",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
