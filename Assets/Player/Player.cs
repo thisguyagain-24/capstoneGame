@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
             charSelectMenu = GameObject.Find("CharSelect").GetComponent<CharSelect>();
         } catch { }  
         try {
-            fightSceneManager = GameObject.Find("fightScene").GetComponent<FightSceneManager>();
+            fightSceneManager = GameObject.Find("fightSceneManager").GetComponent<FightSceneManager>();
         } catch { }
     }
 
@@ -105,6 +105,8 @@ public class Player : MonoBehaviour
     void OnPause(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
+        Debug.Log(fightSceneManager);
+        fightSceneManager?.PauseMenuHandler();
     }
     #endregion
 
@@ -136,6 +138,9 @@ public class Player : MonoBehaviour
             //Debug.Log(direction);
             charSelectMenu?.UpdateSelected(direction,playerNum);
         }
+        if (fightSceneManager) {
+            fightSceneManager?.PauseUpdateSelected(direction);
+        }
     }
 
     void OnSubmit(InputValue value)
@@ -146,6 +151,8 @@ public class Player : MonoBehaviour
         } else if (charSelectMenu) {
             Debug.Log("Player " + playerNum + " Has char select");
             charSelectMenu?.MenuCursorEnter(playerNum);
+        } else if (fightSceneManager){
+            fightSceneManager?.PauseCursorSelected();
         }
     }
 
