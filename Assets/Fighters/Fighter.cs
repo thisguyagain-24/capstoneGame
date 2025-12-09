@@ -123,7 +123,7 @@ public class Fighter : MonoBehaviour
         {
             IterateForcedAnim();
         }
-        else
+        else if(fightSceneManager.canTheyDoStuff)
         {
             CheckSide();
             if (inputDirection == 0)
@@ -364,7 +364,7 @@ public class Fighter : MonoBehaviour
     public void IterateForcedAnim()
     {
         //forcedAnimElapsed += Math.Min(0.05f, Time.deltaTime * 60);
-        Debug.Log("DELTA " + Time.deltaTime * 60);
+        //Debug.Log("DELTA " + Time.deltaTime * 60);
         forcedAnimElapsed += Time.deltaTime * 60;
         if(knockbackStrength != 0)
         {
