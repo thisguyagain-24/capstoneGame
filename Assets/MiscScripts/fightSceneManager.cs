@@ -58,10 +58,6 @@ public class FightSceneManager : MonoBehaviour
     public double CalcGuiHealth(int _fighter) {
         return fighters[_fighter].currHealth - (fighters[_fighter].maxHealth / 20);
     }
-// switch to getting fighter itself later
-    public void PlayerDamageUpdate(int playerNum) {
-        UpdateGUIHealth(playerNum);
-    }
 
     public void UpdateGUIHealth(int playerNum) {
 
@@ -91,6 +87,21 @@ public class FightSceneManager : MonoBehaviour
 #endregion
 
 #region Gameplay
+
+    
+    public void PlayerDamageUpdate(int playerNum) {
+        UpdateGUIHealth(playerNum);
+
+        if (fighters[playerNum].currHealth <= 0) {
+
+            fighters[playerNum].Die();
+        }
+    }
+
+    public void RoundEnd() {
+
+        
+    }
 
 #endregion
 
