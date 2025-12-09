@@ -38,9 +38,14 @@ public class FighterMove : MonoBehaviour
     public float framesElapsed;
     public bool active;
 
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
+
+    System.Random random;
     // Start is called before the first frame update
     void Start()
     {
+        random = new System.Random();
         if (!inputDirection.Any(n => n >= 1 && n <= 9))
         {
             print("Move has no valid direction!");
@@ -79,6 +84,11 @@ public class FighterMove : MonoBehaviour
     {
         if (!active)
         {
+            if(audioClips.Length > 0)
+            {
+                audioSource.clip = audioClips[random.Next(0, audioClips.Length)];
+                audioSource.Play();
+            }
             currentKey = 0;
             framesElapsed = 0;
             active = true;
@@ -94,7 +104,7 @@ public class FighterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (active && !fighter.inForcedAnim)
+        if (active && !fighter.canTheyDoStuff)
         {
             IterateFrames();
         }
@@ -153,6 +163,7 @@ public class FighterMove : MonoBehaviour
 
     public void impact(Hitbox hb)
     {
+        hb.frame.playHitSound(random);
         fighter.EnableForcedAnim(hitstop);
         disableFrames(hb.frame.uniqueHitNumber);
     }

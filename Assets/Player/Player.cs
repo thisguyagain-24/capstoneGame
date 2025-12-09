@@ -93,12 +93,14 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Universal: " + value.Get().ToString());
         fighter.OnUniversal();
+        fighter.SetAltColors(false);
         //pInput.SwitchCurrentActionMap("UI"); //Switching action maps for test
     }
 
     void OnSpecial(InputValue value)
     {
         Debug.Log("Player " + playerNum + " Input Special: " + value.Get().ToString());
+        fighter.SetAltColors(true);
         fighter.OnSpecial();
     }
 

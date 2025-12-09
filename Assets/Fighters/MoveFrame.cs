@@ -13,6 +13,9 @@ public class MoveFrame : MonoBehaviour
     public int uniqueHitNumber;
     public bool active;
 
+    public  AudioSource audioSource;
+    public AudioClip[] audioClips;
+
     void Start()
     {
         if (hitboxes.Length == 0)
@@ -30,6 +33,15 @@ public class MoveFrame : MonoBehaviour
             }
         }
         
+    }
+
+    public void playHitSound(System.Random rand)
+    {
+        if(audioClips.Length > 0)
+        {
+            audioSource.clip = audioClips[rand.Next(0, audioClips.Length)];
+            audioSource.Play();
+        }
     }
 
     // Update is called once per frame
