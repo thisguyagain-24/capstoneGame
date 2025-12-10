@@ -265,6 +265,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Knight
+  fighterFaces:
+  - {fileID: 21300000, guid: 3abbc29790cbd5ca98dbfe87ad8d9832, type: 3}
+  - {fileID: 21300000, guid: bae846f3ab0c89e75993e9b74b17cb61, type: 3}
+  - {fileID: 21300000, guid: e14b6bd02083395b4b9ef4f38be0b8ac, type: 3}
+  - {fileID: 21300000, guid: 3b545227dd03a5e5ba47c1e1ed7407c8, type: 3}
+  - {fileID: 21300000, guid: e338024dfbd937b56950136a938e178a, type: 3}
   maxHealth: 100
   currHealth: 100
   incomingDamageModifier: 1

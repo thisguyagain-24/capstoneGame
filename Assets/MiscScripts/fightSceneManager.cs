@@ -347,8 +347,8 @@ public class FightSceneManager : MonoBehaviour
             GuiFaceReset(1);
         }
 
-        foreach (Player p in players) {
-            Debug.Log(p);
+        foreach (Player p in players)
+        {
             if (p.fighter.activeMove) {
                 GuiFaceChanger(p.playerNum, 1);
             }
