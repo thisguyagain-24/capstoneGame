@@ -960,6 +960,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4796610252282279460}
     m_Modifications:
+    - target: {fileID: 2258523780075407330, guid: 5bd486d7e65074230b343f0ee176c754, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1847794
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258523780075407330, guid: 5bd486d7e65074230b343f0ee176c754, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.15636706
+      objectReference: {fileID: 0}
     - target: {fileID: 3888933679514462540, guid: 5bd486d7e65074230b343f0ee176c754, type: 3}
       propertyPath: m_Name
       value: OR_5L
@@ -1003,6 +1011,10 @@ PrefabInstance:
     - target: {fileID: 5605629170316831671, guid: 5bd486d7e65074230b343f0ee176c754, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557557277249377160, guid: 5bd486d7e65074230b343f0ee176c754, type: 3}
+      propertyPath: damage
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
