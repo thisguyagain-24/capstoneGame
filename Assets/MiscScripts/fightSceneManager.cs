@@ -59,6 +59,7 @@ public class FightSceneManager : MonoBehaviour
             players[_p.playerNum] = _p;
             _p.fighter.FindFightSceneManager();
             GuiFaceReset(_p.playerNum);
+            _p.fighter.CheckSide();
         }
 
         baseSize = pauseButtons[0].transform.localScale;

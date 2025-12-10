@@ -443,8 +443,8 @@ MonoBehaviour:
   inputDirection: 040000000500000006000000070000000800000009000000010000000200000003000000
   btn: 0
   hitstop: 5
-  hitstun: 10
-  blockstun: 10
+  hitstun: 18
+  blockstun: 16
   keys:
   - {fileID: 4624171028569854237}
   - {fileID: 3267514030637453905}
