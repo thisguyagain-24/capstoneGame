@@ -133,7 +133,10 @@ MonoBehaviour:
   titleMenu: {fileID: 0}
   mainMenu: {fileID: 0}
   charSelectMenu: {fileID: 0}
+  fightSceneManager: {fileID: 0}
   testKnight: {fileID: 2958377416964620577, guid: d47e161d0c7944151a3aa9e23db2ad5c, type: 3}
   characters:
-  - {fileID: 2958377416964620577, guid: d47e161d0c7944151a3aa9e23db2ad5c, type: 3}
   - {fileID: 2958377416964620577, guid: 9aa53463216054248a9119b56e5b75e9, type: 3}
+  - {fileID: 2958377416964620577, guid: d47e161d0c7944151a3aa9e23db2ad5c, type: 3}
+  - {fileID: 2958377416964620577, guid: 91b36dda26c9844739226f4d9c519a71, type: 3}
+  currControlSceheme: 
