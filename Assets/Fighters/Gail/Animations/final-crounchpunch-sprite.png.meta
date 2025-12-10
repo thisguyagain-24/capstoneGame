@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 05181047b90094d0f8b92fc2de0cd049
+guid: 07a4d613b74b2420ebceda7a449d2f44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -136,106 +136,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final-idlecrouch-sprite_0
+      name: final-crounchpunch-sprite_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 193
-        width: 1660
-        height: 1289
+        x: 139
+        y: 63
+        width: 1777
+        height: 1419
       alignment: 9
-      pivot: {x: 0.6449345, y: 0.028532598}
+      pivot: {x: 0.89953804, y: 0.06932967}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 567bb6a178dd84292a7b558a3ac52ce0
-      internalID: -1584002945
+      spriteID: 2e8db4b00085943e18070bbf3642ffdb
+      internalID: 2139527412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final-idlecrouch-sprite_1
+      name: final-crounchpunch-sprite_1
       rect:
         serializedVersion: 2
-        x: 2228
-        y: 200
-        width: 1628
-        height: 1254
+        x: 2559
+        y: 64
+        width: 1739
+        height: 1459
       alignment: 9
-      pivot: {x: 0.6786208, y: 0.027682034}
+      pivot: {x: 0.93361, y: 0.06455348}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a90feb69826a4594b29761c00df4556
-      internalID: 2043886633
+      spriteID: b625f8d7d424a4498bd67271ddf7cdcc
+      internalID: 1334837575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final-idlecrouch-sprite_2
+      name: final-crounchpunch-sprite_2
       rect:
         serializedVersion: 2
-        x: 4456
-        y: 245
-        width: 1638
-        height: 1197
+        x: 4985
+        y: 86
+        width: 2152
+        height: 1429
       alignment: 9
-      pivot: {x: 0.64994556, y: 0.03892233}
+      pivot: {x: 0.7626066, y: 0.048999954}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b24c99e31dcf6418ab23dd869d3731a6
-      internalID: -1537092619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: final-idlecrouch-sprite_3
-      rect:
-        serializedVersion: 2
-        x: 6703
-        y: 221
-        width: 1665
-        height: 1212
-      alignment: 9
-      pivot: {x: 0.6176186, y: 0.022066714}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84db5a7c132d2496ea935345d13b8392
-      internalID: -1129952910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: final-idlecrouch-sprite_4
-      rect:
-        serializedVersion: 2
-        x: 8922
-        y: 218
-        width: 1635
-        height: 1145
-      alignment: 9
-      pivot: {x: 0.6348546, y: 0.018967368}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b3ea4ea959484ab9a71d38ee0a13d59
-      internalID: 1040829399
+      spriteID: 25fbeb15176314eb398645e4d5b2b09f
+      internalID: 255804737
       vertices: []
       indices: 
       edges: []
@@ -251,11 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      final-idlecrouch-sprite_0: -1584002945
-      final-idlecrouch-sprite_1: 2043886633
-      final-idlecrouch-sprite_2: -1537092619
-      final-idlecrouch-sprite_3: -1129952910
-      final-idlecrouch-sprite_4: 1040829399
+      final-crounchpunch-sprite_0: 2139527412
+      final-crounchpunch-sprite_1: 1334837575
+      final-crounchpunch-sprite_2: 255804737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

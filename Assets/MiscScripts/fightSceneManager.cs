@@ -202,10 +202,7 @@ public class FightSceneManager : MonoBehaviour
 
         GuiHealthReset();
 
-        if(roundsElapsed <= 1)
-        {
-            roundsTxt[roundsElapsed].SetActive(true);    
-        }
+        roundsTxt[roundsElapsed].SetActive(true);   
         
         animationTimeRemaining = 120;
         inRoundStart = true;
