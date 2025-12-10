@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aba688752faf543fb837f0a8176cd68e, type: 3}
   - {fileID: 8300000, guid: 92568cd1b250447078fdacd089b97143, type: 3}
   - {fileID: 8300000, guid: 6939d9da27bbf461c8956688520bcfe8, type: 3}
-  randomsIntros:
+  randomIntros:
   - {fileID: 8300000, guid: 55f8fa1bd3aee4d10a38184776749552, type: 3}
   - {fileID: 8300000, guid: f82c78806d07145769c4f1d6b416306e, type: 3}
   - {fileID: 8300000, guid: 8a91c9994076649688ad1e6f7083650b, type: 3}

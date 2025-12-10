@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.ExceptionServices;
 using System.Security;
+using System.Threading;
 using System.Timers;
 using Unity.Burst;
 using UnityEditor.Build.Player;
@@ -65,6 +66,7 @@ public class FightSceneManager : MonoBehaviour
 
         healthBarScale = healthBarSprite[0].transform.localScale;
 
+        //MatchStartQuip();
         RoundStart();
     }
 
@@ -230,6 +232,8 @@ public class FightSceneManager : MonoBehaviour
             p.fighter.lives = p.fighter.maxLives;
             p.fighter.currHealth = p.fighter.maxHealth;
             UnPauseGame();
+
+            //MatchStartQuip();
             RoundStart(); 
         }
     }
@@ -256,6 +260,76 @@ public class FightSceneManager : MonoBehaviour
         PauseUpdateGui();
         pauseMenu.SetActive(true);
     }
+
+    public void MatchStartQuip(){
+        Debug.Log("Match start");
+        Debug.Log(players[0].fighter.fighterName);
+        if(players[0].fighter.fighterName == "Orion"){
+            if(players[1].fighter.fighterName == "Orion"){
+                Debug.Log("Orion v orion intro");
+                //Orion VS orion, play random
+                if(players[0].fighter.randomIntros.Length > 0)
+                {
+                    players[0].fighter.audioSource.clip = players[0].fighter.randomIntros[new System.Random().Next(0, players[0].fighter.randomIntros.Length)];
+                    players[0].fighter.audioSource.Play();
+                    while (players[0].fighter.audioSource.isPlaying) { }
+                }
+            
+                WaitAndDoSomething();
+
+                if(players[1].fighter.randomIntros.Length > 0)
+                {
+                    players[1].fighter.audioSource.clip = players[1].fighter.randomIntros[new System.Random().Next(0, players[1].fighter.randomIntros.Length)];
+                    players[1].fighter.audioSource.Play();
+                    while (players[1].fighter.audioSource.isPlaying) { }
+                }
+            }else{
+                Debug.Log("orion vs gail intro");
+                //Orion vs Gail, play label question
+                players[0].fighter.audioSource.clip = players[0].fighter.labelMakerQuestion;
+                players[0].fighter.audioSource.Play();
+                while (players[0].fighter.audioSource.isPlaying) { }
+
+                WaitAndDoSomething(); 
+
+                players[1].fighter.audioSource.clip = players[1].fighter.labelMakerAnswer;
+                players[1].fighter.audioSource.Play();
+                while (players[1].fighter.audioSource.isPlaying) { }
+            }
+        }else if(players[0].fighter.fighterName == "Gail"){
+            if(players[1].fighter.fighterName == "Orion"){
+                //Gail vs Orion, play camera question
+                Debug.Log("Gail vs Orion intro");
+                players[0].fighter.audioSource.clip = players[0].fighter.labelMakerQuestion;
+                players[0].fighter.audioSource.Play();
+                while (players[0].fighter.audioSource.isPlaying) { }
+
+                WaitAndDoSomething();
+
+                players[1].fighter.audioSource.clip = players[1].fighter.labelMakerAnswer;
+                players[1].fighter.audioSource.Play();
+                while (players[1].fighter.audioSource.isPlaying) { }
+            }else{
+                Debug.Log("Gail vs gail intro");
+                //Gail vs Gail, play camera question
+                players[0].fighter.audioSource.clip = players[0].fighter.labelMakerQuestion;
+                players[0].fighter.audioSource.Play();
+                while (players[0].fighter.audioSource.isPlaying) { }
+
+                WaitAndDoSomething();
+
+                players[1].fighter.audioSource.clip = players[1].fighter.labelMakerAnswer;
+                players[1].fighter.audioSource.Play();
+                while (players[1].fighter.audioSource.isPlaying) { }
+            }
+        }
+    }
+
+    IEnumerator WaitAndDoSomething()
+        {
+            Debug.Log("Starting to wait...");
+            yield return new WaitForSeconds(2f);
+        }
 
     public void UnPauseGame() {
         paused = false;

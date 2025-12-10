@@ -85,7 +85,7 @@ public class Fighter : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip walkies;
     public AudioClip[] victoryClips;
-    public AudioClip[] randomsIntros;
+    public AudioClip[] randomIntros;
     public AudioClip labelMakerQuestion;
     public AudioClip labelMakerAnswer;
 
@@ -136,14 +136,13 @@ public class Fighter : MonoBehaviour
         {
             findOpponent();
         }
-
+        CheckSide();
         if (canTheyDoStuff)
         {
             IterateForcedAnim();
         }
         else
         {
-            CheckSide();
             if (inputDirection == 0)
             {
                 Debug.LogError("P" + playerNum + " HAS INVALID INPUT DIRECTION");
