@@ -115,6 +115,28 @@
                 },
                 {
                     "name": "",
+                    "id": "0b8cfe2d-d5bf-42d3-9a65-4eb73363b6dd",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "314f2ff5-851b-4bf0-89ee-4e147f2ea7ba",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "64d1a901-73cf-4f69-8b72-fb314bcff015",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -159,6 +181,17 @@
                 },
                 {
                     "name": "",
+                    "id": "73e69728-c8cb-47e6-9984-7d63f4ca65c3",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ed0983dd-ab31-4c7b-970e-fc6095b9a743",
                     "path": "<Keyboard>/h",
                     "interactions": "",
@@ -175,6 +208,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",
+                    "action": "Universal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52055873-d67d-4994-a55e-7c06b7813d52",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Universal",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -203,11 +247,33 @@
                 },
                 {
                     "name": "",
+                    "id": "12f52c3e-4377-4ab1-b576-2f27d5a775d8",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9d92b642-cb98-4230-954b-61a0eda84a81",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": ";WASD",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f2b04f1-d5c4-4a98-9f64-2c9f688cf0c0",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -273,7 +339,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -284,7 +350,7 @@
                     "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -340,6 +406,61 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "9ae9a7cc-60c6-4852-8fb1-f48bd6677cc4",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "2d2026d4-f3b4-4d32-ac5f-512e681119c8",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "2cb8bb35-f869-4b25-8301-a1861fe41333",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ceac1e63-17e8-4089-9647-ef34bb846836",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "df9186e1-e1b4-4bf9-861c-6954612ebd10",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -697,7 +818,7 @@
                 {
                     "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
@@ -741,7 +862,7 @@
                 {
                     "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
@@ -822,6 +943,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Arrows",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5afd961-6602-4e16-8c04-393d165aa2bc",
+                    "path": "<HID::Padix Co. Ltd. USB,2-axis 8-button gamepad>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Joystick",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false

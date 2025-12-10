@@ -50,7 +50,7 @@ public class FightSceneManager : MonoBehaviour
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
             Player _p = p.GetComponent<Player>();
-            Debug.Log("FOUND PLAYER " + _p.playerNum);
+            //Debug.Log("FOUND PLAYER " + _p.playerNum);
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
             _p.fighter.FindFightSceneManager();
@@ -70,15 +70,15 @@ public class FightSceneManager : MonoBehaviour
 
     public void UpdateGUIHealth(int playerNum) {
 
-        Debug.Log("hello GUIhealth");
+        //debug.Log("hello GUIhealth");
 
         Transform barEnd = healthBarOuter[playerNum].transform;
         Transform barMid = healthBarSprite[playerNum].transform;
 
         double healthPercent = CalcGuiHealth(playerNum) / players[playerNum].fighter.maxHealth;
 
-        Debug.Log(playerNum + "GUIhealth " + CalcGuiHealth(playerNum));
-        Debug.Log(playerNum + "realhealth " + players[playerNum].fighter.currHealth);
+        //Debug.Log(playerNum + "GUIhealth " + CalcGuiHealth(playerNum));
+        //Debug.Log(playerNum + "realhealth " + players[playerNum].fighter.currHealth);
 
         if (healthPercent<=0){
             barMid.localScale = new Vector3((float)healthPercent * (float)0,healthBarScale.y,healthBarScale.z);
@@ -114,7 +114,7 @@ public class FightSceneManager : MonoBehaviour
         faceResetTimer = 100;
 
         faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[face];
-        Debug.Log(playerNum);
+        //Debug.Log(playerNum);
 
     }
 
@@ -122,7 +122,7 @@ public class FightSceneManager : MonoBehaviour
 
         faceResetTimer = 100;
 
-        Debug.Log(playerNum);
+        //Debug.Log(playerNum);
         faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[3];
     
     }
@@ -152,7 +152,7 @@ public class FightSceneManager : MonoBehaviour
         animationTimeRemaining = 120;
         inRoundEnd = true;
 
-        Debug.Log("Round Ended");
+        //Debug.Log("Round Ended");
         foreach(Player p in players){
             p.fighter.DisableActiveMove();
             p.fighter.movementSprites.SetActive(true);
@@ -171,7 +171,7 @@ public class FightSceneManager : MonoBehaviour
 
         foreach (Player p in players)
         {
-            Debug.Log(p.fighter.maxHealth);
+            //Debug.Log(p.fighter.maxHealth);
             p.fighter.currHealth = p.fighter.maxHealth;
             p.fighter.EnableRoundStart(140);
 
@@ -191,12 +191,12 @@ public class FightSceneManager : MonoBehaviour
         animationTimeRemaining = 120;
         inRoundStart = true;
 
-        Debug.Log("Round Started");
+        //Debug.Log("Round Started");
 
     }
 
     public void GameOver(int _loserNum) {
-        Debug.Log("Game Ended with" + players[_loserNum].fighter + "loss");
+        //Debug.Log("Game Ended with" + players[_loserNum].fighter + "loss");
 
         GameEndDialog[(_loserNum+1)%2].SetActive(true);
         StaticGameEndDialog.SetActive(true);
@@ -231,7 +231,7 @@ public class FightSceneManager : MonoBehaviour
 
     public void PauseGame() {
         paused = true;
-        Debug.Log("PAUSE");
+        //Debug.Log("PAUSE");
         Time.timeScale = 0;
         players[0].pInput.SwitchCurrentActionMap("UI");
         PauseUpdateGui();
@@ -240,14 +240,14 @@ public class FightSceneManager : MonoBehaviour
 
     public void UnPauseGame() {
         paused = false;
-        Debug.Log("UNPAUSE");
+        //Debug.Log("UNPAUSE");
         Time.timeScale = 1;
         players[0].pInput.SwitchCurrentActionMap("Player");
         pauseMenu.SetActive(false);
     }
 
     public void PauseUpdateSelected(int direction){
-        Debug.Log("direction " + direction);
+        //Debug.Log("direction " + direction);
         switch (direction)
         {
             case 2:
@@ -261,7 +261,7 @@ public class FightSceneManager : MonoBehaviour
     }
 
     public void PauseCursorSelected(){
-        Debug.Log("selected button " + selectedButton);
+        //Debug.Log("selected button " + selectedButton);
         if(selectedButton == 0){
             if(inGameOver){
                 HandleReset();
@@ -331,12 +331,12 @@ public class FightSceneManager : MonoBehaviour
             roundsTxt[roundsElapsed].SetActive(false);
             inRoundStart = false;
 
-            Debug.Log("RoundStart End");
+            //Debug.Log("RoundStart End");
 
         } else if (animationTimeRemaining <= 0 && inRoundEnd) {
             inRoundEnd = false;
             RoundStart();
-            Debug.Log("RoundEnd End");
+            //Debug.Log("RoundEnd End");
 
         } else if (animationTimeRemaining <= 0 && inGameOver){
 

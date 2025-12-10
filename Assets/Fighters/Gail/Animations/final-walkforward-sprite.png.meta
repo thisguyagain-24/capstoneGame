@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: final-walkforward-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 68
+        width: 1231
+        height: 1425
+      alignment: 9
+      pivot: {x: 0.4714646, y: -0.009446521}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8535d3a6d0a240a4a46e5bb50aed01a
+      internalID: -733143640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walkforward-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 139
+        width: 1150
+        height: 1365
+      alignment: 9
+      pivot: {x: 0.528509, y: -0.059289586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e25aa1d52de4bf0b352abbd9ce2d4b
+      internalID: 4986585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walkforward-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 125
+        width: 1117
+        height: 1374
+      alignment: 9
+      pivot: {x: 0.53564084, y: -0.05051301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccee41e180e8844449d9a76364f01a83
+      internalID: -1300474154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walkforward-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 4721
+        y: 120
+        width: 1095
+        height: 1377
+      alignment: 9
+      pivot: {x: 0.54491115, y: -0.047612973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48b9e4b79ba6460ab448438aa272831
+      internalID: -1488398143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-walkforward-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 6257
+        y: 134
+        width: 1124
+        height: 1342
+      alignment: 9
+      pivot: {x: 0.54791933, y: -0.06014996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b64c5b247b84b739a49a3e189b04b6
+      internalID: 650142562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final-walkforward-sprite_0: -733143640
+      final-walkforward-sprite_1: 4986585
+      final-walkforward-sprite_2: -1300474154
+      final-walkforward-sprite_3: -1488398143
+      final-walkforward-sprite_4: 650142562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
