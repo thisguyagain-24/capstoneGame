@@ -65,6 +65,7 @@ public class FightSceneManager : MonoBehaviour
 
         healthBarScale = healthBarSprite[0].transform.localScale;
 
+        RoundStart();
     }
 
 #region GameplayUI
@@ -179,6 +180,7 @@ public class FightSceneManager : MonoBehaviour
 
         foreach (Player p in players) {
             p.fighter.transform.localScale = new Vector3(800,800,1);
+            p.fighter.CheckSide();
         }
 
         if (activeKaboom) {
@@ -198,6 +200,7 @@ public class FightSceneManager : MonoBehaviour
             healthBarOuter[p.fighter.playerNum].SetActive(true);
 
             GuiFaceReset(p.playerNum);
+            
         }
 
         GuiHealthReset();
