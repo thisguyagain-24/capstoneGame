@@ -124,7 +124,7 @@ public class Fighter : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!opponent)
         {

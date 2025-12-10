@@ -86,10 +86,10 @@ public class CharSelect : MonoBehaviour
         players[playerNum].MakeFighter();
 
         if (players[0].fighter && players[1].fighter) {
-            players[0].fighter.transform.localPosition = new Vector3(-150, -310, 1);
+            players[0].fighter.transform.localPosition = new Vector3(-200, -310, 1);
             players[0].fighter.transform.localScale = new Vector3(800, 800, 0);
             
-            players[1].fighter.transform.localPosition = new Vector3(150, -310, 1);
+            players[1].fighter.transform.localPosition = new Vector3(200, -310, 1);
             players[1].fighter.transform.localScale = new Vector3(800, 800, 0);
             
             players[0].pInput.SwitchCurrentActionMap("Player");

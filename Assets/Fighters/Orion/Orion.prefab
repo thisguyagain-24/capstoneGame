@@ -135,8 +135,12 @@ MonoBehaviour:
   currHealth: 100
   incomingDamageModifier: 1
   playerNum: 0
-  maxLives: 0
-  lives: 0
+  maxLives: 2
+  lives: 2
+  maxTension: 0
+  tension: 0
+  maxBurst: 0
+  burst: 0
   forwardWalkSpeed: 1.5
   backWalkSpeed: 1.5
   animator: {fileID: 7928871342359774883}
