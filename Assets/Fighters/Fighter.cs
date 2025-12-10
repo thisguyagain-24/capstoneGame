@@ -199,8 +199,8 @@ public class Fighter : MonoBehaviour
     public void WalkForward()
     {
         Vector2 moveDir = Vector2.right;
-        
-        moveDir *= forwardWalkSpeed * Time.deltaTime * 60 * transform.lossyScale.x;
+        Debug.Log("Moving Forward " + forwardWalkSpeed);
+        moveDir *= forwardWalkSpeed * Time.deltaTime * transform.lossyScale.x;
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
 
@@ -214,7 +214,8 @@ public class Fighter : MonoBehaviour
     {
         //Vector2 moveDir = leftSide ? Vector2.left : Vector2.right;
         Vector2 moveDir = Vector2.left;
-        moveDir *= backWalkSpeed * Time.deltaTime * 60 * transform.lossyScale.x;
+        Debug.Log("Moving Backward " + backWalkSpeed);
+        moveDir *= backWalkSpeed * Time.deltaTime * transform.lossyScale.x;
         Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
         
@@ -423,7 +424,7 @@ public class Fighter : MonoBehaviour
     {
         Vector2 moveDir = Vector2.left;
         float lerped = (forcedAnimDuration-forcedAnimElapsed)/forcedAnimDuration;
-        moveDir *= lerped * Time.deltaTime * 60 * transform.lossyScale.x;
+        moveDir *= lerped * Time.deltaTime * transform.lossyScale.x;
         //Debug.Log("After scale " + moveDir);
         rb.MovePosition(rb.position + moveDir);
         

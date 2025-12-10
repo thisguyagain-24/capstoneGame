@@ -143,8 +143,8 @@ MonoBehaviour:
   playerNum: 0
   maxLives: 2
   lives: 2
-  forwardWalkSpeed: 1.5
-  backWalkSpeed: 1.5
+  forwardWalkSpeed: 1
+  backWalkSpeed: 1
   animator: {fileID: 7928871342359774883}
   inputDirection: 0
   crouching: 0
