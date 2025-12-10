@@ -50,6 +50,7 @@ public class FightSceneManager : MonoBehaviour
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
             Player _p = p.GetComponent<Player>();
+            Debug.Log("FOUND PLAYER " + _p.playerNum);
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
             _p.fighter.FindFightSceneManager();
@@ -294,7 +295,7 @@ public class FightSceneManager : MonoBehaviour
         pauseButtons[selectedButton].transform.localScale = baseSize;
     }
 
-    public void PlayerUISubmit(){
+    public void PlayerUISubmit() {
         if(paused){
             PauseCursorSelected();
         }else{
@@ -304,7 +305,7 @@ public class FightSceneManager : MonoBehaviour
         }
     }
 
-    public void InvokeEndMenu(){ //hi
+    public void InvokeEndMenu() { //hi
         //pause = true;
 
 
@@ -338,6 +339,7 @@ public class FightSceneManager : MonoBehaviour
             Debug.Log("RoundEnd End");
 
         } else if (animationTimeRemaining <= 0 && inGameOver){
+
         }
 
         if(faceResetTimer <= 0) {
@@ -345,10 +347,10 @@ public class FightSceneManager : MonoBehaviour
             GuiFaceReset(1);
         }
 
-        foreach (var player in players)
-        {
-            if (player.fighter.activeMove) {
-                GuiFaceChanger(player.playerNum, 1);
+        foreach (Player p in players) {
+            Debug.Log(p);
+            if (p.fighter.activeMove) {
+                GuiFaceChanger(p.playerNum, 1);
             }
         }
 
