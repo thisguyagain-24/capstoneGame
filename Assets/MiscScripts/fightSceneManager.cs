@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.ExceptionServices;
+using System.Timers;
 using Unity.Burst;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,7 +24,6 @@ public class FightSceneManager : MonoBehaviour
     public GameObject StaticGameEndDialog;
 
     public Player[] players = new Player[2];
-    public Fighter[] fighters = new Fighter[2];
 
     public int selectedButton = 0;
     public GameObject[] pauseButtons;
@@ -35,7 +35,7 @@ public class FightSceneManager : MonoBehaviour
 
     public Vector3 healthBarScale;
 
-    public bool pause = false;
+    public bool paused = false;
     public Vector3 baseSize;
 
     public bool canTheyDoStuff; // yayyy i get one silly variable name
@@ -43,20 +43,12 @@ public class FightSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
 
-        foreach (GameObject f in GameObject.FindGameObjectsWithTag("fighter"))
-        {
-            Fighter _f = f.GetComponent<Fighter>();
-            fighters[_f.playerNum] = _f;
-            Debug.Log("got fighter " + _f);
-            _f.FindFightSceneManager();
-
-        }
-
         foreach (GameObject p in GameObject.FindGameObjectsWithTag("Player"))
         {
             Player _p = p.GetComponent<Player>();
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
+            _p.fighter.FindFightSceneManager();
         }
 
         baseSize = pauseButtons[0].transform.localScale;
@@ -66,7 +58,7 @@ public class FightSceneManager : MonoBehaviour
 
 #region GameplayUI
     public double CalcGuiHealth(int _fighter) {
-        return fighters[_fighter].currHealth - (fighters[_fighter].maxHealth / 20);
+        return players[_fighter].fighter.currHealth - (players[_fighter].fighter.maxHealth / 20);
     }
 
     public void UpdateGUIHealth(int playerNum) {
@@ -76,10 +68,10 @@ public class FightSceneManager : MonoBehaviour
         Transform barEnd = healthBarOuter[playerNum].transform;
         Transform barMid = healthBarSprite[playerNum].transform;
 
-        double healthPercent = CalcGuiHealth(playerNum) / fighters[playerNum].maxHealth;
+        double healthPercent = CalcGuiHealth(playerNum) / players[playerNum].fighter.maxHealth;
 
         Debug.Log(playerNum + "GUIhealth " + CalcGuiHealth(playerNum));
-        Debug.Log(playerNum + "realhealth " + fighters[playerNum].currHealth);
+        Debug.Log(playerNum + "realhealth " + players[playerNum].fighter.currHealth);
 
         if (healthPercent<=0){
             barMid.localScale = new Vector3((float)healthPercent * (float)0,healthBarScale.y,healthBarScale.z);
@@ -123,41 +115,40 @@ public class FightSceneManager : MonoBehaviour
 
         canTheyDoStuff = false;
 
-        Fighter loser = fighters[loserNum];
+        Fighter loser = players[loserNum].fighter;
         loser.lives --;
 
-        fighters[loserNum].EnableLoss(120f);
-        fighters[(loserNum+1)%2].EnableVictory(120f);
+        players[loserNum].fighter.EnableLoss(120f);
+        players[(loserNum+1)%2].fighter.EnableVictory(120f);
 
         animationTimeRemaining = 120;
         inRoundEnd = true;
 
         Debug.Log("Round Ended");
-
-        foreach (var fighter in fighters)
-        {
-            fighter.DisableActiveMove();
-            fighter.movementSprites.SetActive(true);
-            if (fighter.lives == 0) {
+        foreach(Player p in players){
+            p.fighter.DisableActiveMove();
+            p.fighter.movementSprites.SetActive(true);
+            if (p.fighter.lives == 0) {
+                players[0].pInput.SwitchCurrentActionMap("UI");
                 inGameOver = true;
-                GameOver(fighter.playerNum);
+                GameOver(p.fighter.playerNum);
             }
         }
 
     }
 
     public void RoundStart() {
-        fighters[0].transform.localPosition = new Vector3(-300, -310, 1);
-        fighters[1].transform.localPosition = new Vector3(300, -310, 1);
+        players[0].fighter.transform.localPosition = new Vector3(-300, -310, 1);
+        players[1].fighter.transform.localPosition = new Vector3(300, -310, 1);
 
-        foreach (var fighter in fighters)
+        foreach (Player p in players)
         {
-            Debug.Log(fighter.maxHealth);
-            fighter.currHealth = fighter.maxHealth;
-            fighter.EnableRoundStart(140);
+            Debug.Log(p.fighter.maxHealth);
+            p.fighter.currHealth = p.fighter.maxHealth;
+            p.fighter.EnableRoundStart(140);
 
-            healthBarSprite[fighter.playerNum].SetActive(true);
-            healthBarOuter[fighter.playerNum].SetActive(true);
+            healthBarSprite[p.fighter.playerNum].SetActive(true);
+            healthBarOuter[p.fighter.playerNum].SetActive(true);
         }
 
         GuiHealthReset();
@@ -172,7 +163,7 @@ public class FightSceneManager : MonoBehaviour
     }
 
     public void GameOver(int _loserNum) {
-        Debug.Log("Game Ended with" + fighters[_loserNum] + "loss");
+        Debug.Log("Game Ended with" + players[_loserNum].fighter + "loss");
 
         GameEndDialog[(_loserNum+1)%2].SetActive(true);
         StaticGameEndDialog.SetActive(true);
@@ -180,11 +171,14 @@ public class FightSceneManager : MonoBehaviour
     }
 
     public void HandleReset() {
-        foreach (var fighter in fighters)
+        roundsElapsed = 0;
+        foreach (Player p in players)
         {
-            fighter.lives = fighter.maxLives;
-            fighter.currHealth = fighter.maxHealth;
-            fighter.burst = fighter.maxBurst;
+            inRoundEnd = false;
+            p.fighter.lives = p.fighter.maxLives;
+            p.fighter.currHealth = p.fighter.maxHealth;
+            p.fighter.burst = p.fighter.maxBurst;
+            UnPauseGame();
             RoundStart(); 
         }
     }
@@ -194,21 +188,30 @@ public class FightSceneManager : MonoBehaviour
 #region Menu
 
     public void PauseMenuHandler() {
-        pause = !pause;
-        if(pause){
-            Debug.Log("PAUSE");
-            Time.timeScale = 0;
-            players[0].pInput.SwitchCurrentActionMap("UI");
-            PauseUpdateGui();
-            pauseMenu.SetActive(true);
-        }else if (pause && !inGameOver){
-            Debug.Log("UNPAUSE");
-            Time.timeScale = 1;
-            players[0].pInput.SwitchCurrentActionMap("Player");
-            pauseMenu.SetActive(false);
-        } else if (pause && inGameOver){
-            Debug.Log("FORCE EXIT");
+        
+        if (paused && !inGameOver){
+
+        } else if (paused){
+
         }
+
+    }
+
+    public void PauseGame() {
+        paused = true;
+        Debug.Log("PAUSE");
+        Time.timeScale = 0;
+        players[0].pInput.SwitchCurrentActionMap("UI");
+        PauseUpdateGui();
+        pauseMenu.SetActive(true);
+    }
+
+    public void UnPauseGame() {
+        paused = false;
+        Debug.Log("UNPAUSE");
+        Time.timeScale = 1;
+        players[0].pInput.SwitchCurrentActionMap("Player");
+        pauseMenu.SetActive(false);
     }
 
     public void PauseUpdateSelected(int direction){
@@ -228,13 +231,28 @@ public class FightSceneManager : MonoBehaviour
     public void PauseCursorSelected(){
         Debug.Log("selected button " + selectedButton);
         if(selectedButton == 0){
-            PauseMenuHandler();
+            if(inGameOver){
+                HandleReset();
+            }else{
+                UnPauseGame();
+            }
+        }else if(selectedButton == 1){
+            Time.timeScale = 1;
+            foreach(Player p in players){
+                Destroy(p.fighter.gameObject);
+            
+                p.pInput.SwitchCurrentActionMap("UI");
+            }
+            SceneManager.LoadScene("mainMenu",LoadSceneMode.Single);
+        }
+        
+        /*
         } else if (selectedButton == 0 && inGameOver){
             HandleReset();
         } else if (selectedButton == 1) {
             Time.timeScale = 1;
             SceneManager.LoadScene("mainMenu",LoadSceneMode.Single);
-        }
+        }*/
     }
 
     public void PauseUpdateGui(){
@@ -245,8 +263,25 @@ public class FightSceneManager : MonoBehaviour
         pauseButtons[selectedButton].transform.localScale = baseSize;
     }
 
+    public void PlayerUISubmit(){
+        if(paused){
+            PauseCursorSelected();
+        }else{
+            if(inGameOver){
+                InvokeEndMenu();
+            }
+        }
+    }
+
     public void InvokeEndMenu(){ //hi
-        PauseMenuHandler();
+        //pause = true;
+
+
+        GameEndDialog[0].SetActive(false);
+        GameEndDialog[1].SetActive(false);
+        StaticGameEndDialog.SetActive(false);
+
+        PauseGame();
     }
 
 #endregion
