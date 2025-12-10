@@ -13,9 +13,9 @@ public class MainMenu : MonoBehaviour
 
     public GameObject[] row2;
 
-    public Color highlightColor = new(1, 1, 1, 0.5f);
+    public Color highlightColor = new(1, 1, 1, 1);
 
-    public Color baseColor = new(1, 1, 1, 1);
+    public Color baseColor = new(0.5f, 0.5f, 0.5f, 1);
 
     public bool RowSelected = false;
     public bool MenuSelected = false;
@@ -109,7 +109,7 @@ public class MainMenu : MonoBehaviour
         UpdateSelection();
 
         menuButtonsConverted[currentSelected].color = highlightColor;
-        menuButtonsConverted[currentSelected].transform.localScale = new Vector3(10,10,0);
+        menuButtonsConverted[currentSelected].transform.localScale = new Vector3(15,15,0);
     }
 
     private void UpdateSelection(){
