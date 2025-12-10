@@ -177,6 +177,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: daa33c66cb0ce4ccab0fc16d7ea30b0d, type: 3}
   audioSource: {fileID: 3298794560449121478}
   walkies: {fileID: 8300000, guid: 1abf41364a72f4b77840722f67c4d57f, type: 3}
+  victoryClips:
+  - {fileID: 8300000, guid: a3d4ecd286fc24df0928b6a7bed6eca2, type: 3}
 --- !u!50 &3694808128071681748
 Rigidbody2D:
   serializedVersion: 4

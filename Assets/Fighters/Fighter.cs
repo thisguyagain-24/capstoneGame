@@ -84,6 +84,7 @@ public class Fighter : MonoBehaviour
     public AudioClip[] ouchAudioClips;
     public AudioSource audioSource;
     public AudioClip walkies;
+    public AudioClip[] victoryClips;
 
     public void Die()
     {
@@ -364,6 +365,14 @@ public class Fighter : MonoBehaviour
             audioSource.Play();
         }
         EnableForcedAnim(stopDur + stunDir);
+    }
+
+    public void playVictorySound(){
+        if(victoryClips.Length > 0)
+        {
+            audioSource.clip = victoryClips[new System.Random().Next(0, victoryClips.Length)];
+            audioSource.Play();
+        }
     }
     
     public void EnableBlockstun(float stopDur, float stunDir)
