@@ -96,9 +96,9 @@ public class FightSceneManager : MonoBehaviour
         for (int i = 0; i < healthBarSprite.Length; i++ )
         {
             GameObject bar = healthBarSprite[i];
-            GameObject outerbar = healthBarSprite[i];
+            GameObject outerbar = healthBarOuter[i];
 
-            Transform barMid = bar.GetComponent<Transform>();
+            Transform barMid = bar.transform;
             barMid.localScale = new Vector3(healthBarScale.x,healthBarScale.y,healthBarScale.z);
 
             outerbar.transform.localPosition = new Vector3(barMid.localPosition.x + barMid.GetComponent<SpriteRenderer>().bounds.size.x, outerbar.transform.localPosition.y, outerbar.transform.localPosition.z);
