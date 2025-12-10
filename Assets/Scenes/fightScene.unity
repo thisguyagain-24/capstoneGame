@@ -201,6 +201,8 @@ MonoBehaviour:
   - {fileID: 1409078099}
   - {fileID: 1796776973}
   faceResetTimer: 0
+  kaboom: {fileID: 4601575295371516138, guid: e489263cef1ee4c8388cecd82888bd94, type: 3}
+  activeKaboom: {fileID: 0}
 --- !u!1 &119991299
 GameObject:
   m_ObjectHideFlags: 0

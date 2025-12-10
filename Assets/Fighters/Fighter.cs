@@ -388,6 +388,7 @@ public class Fighter : MonoBehaviour
     }
 
     public void EnableVictory(float stopDur) {
+        playVictorySound();
         EnableForcedAnim(stopDur);
     }
 

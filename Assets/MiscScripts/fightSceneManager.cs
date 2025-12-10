@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.ExceptionServices;
+using System.Security;
 using System.Timers;
 using Unity.Burst;
 using UnityEditor.Build.Player;
@@ -43,6 +44,9 @@ public class FightSceneManager : MonoBehaviour
 
     public SpriteRenderer[] faceZones;
     public int faceResetTimer = 0;
+
+    public GameObject kaboom;
+    public GameObject activeKaboom;
 
     // Start is called before the first frame update
     void Start(){
@@ -163,9 +167,24 @@ public class FightSceneManager : MonoBehaviour
             }
         }
 
+        activeKaboom = Instantiate(kaboom, new Vector3 (0,0,0), new Quaternion(0,0,0,0));
+        activeKaboom.transform.localScale = new Vector3(400, 400, 0);
+        activeKaboom.transform.localPosition = loser.transform.localPosition;
+
+        loser.transform.localScale = new Vector3(0,0,0);
+
     }
 
     public void RoundStart() {
+
+        foreach (Player p in players) {
+            p.fighter.transform.localScale = new Vector3(800,800,1);
+        }
+
+        if (activeKaboom) {
+            Destroy(activeKaboom);
+        }
+        
         players[0].fighter.transform.localPosition = new Vector3(-300, -310, 1);
         players[1].fighter.transform.localPosition = new Vector3(300, -310, 1);
 
