@@ -83,7 +83,7 @@ public class CharSelect : MonoBehaviour
     }
 
     public void MenuCursorEnter(int playerNum) {        
-        players[playerNum].MakeFighter();
+        players[playerNum].MakeFighter(selectedButton[playerNum]);
 
         if (players[0].fighter && players[1].fighter) {
             players[0].fighter.transform.localPosition = new Vector3(-200, -310, 1);

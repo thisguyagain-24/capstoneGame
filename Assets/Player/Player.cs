@@ -192,14 +192,14 @@ public class Player : MonoBehaviour
 
     void OnSpawnFighter(InputValue value)
     {
-        MakeFighter();
+        MakeFighter(playerNum);
     }
     #endregion
 
-    public void MakeFighter() {
+    public void MakeFighter(int selectedFighter) {
         if (!fighter)
         {
-            fighter = Instantiate(characters[playerNum], transform).GetComponent<Fighter>();
+            fighter = Instantiate(characters[selectedFighter], transform).GetComponent<Fighter>();
             fighter.transform.SetParent(transform);
             fighter.transform.localScale = new Vector3(4,4,4);
             fighter.playerNum = playerNum;
