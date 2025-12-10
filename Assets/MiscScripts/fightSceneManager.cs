@@ -111,7 +111,7 @@ public class FightSceneManager : MonoBehaviour
 
     public void GuiFaceChanger(int playerNum, int face) {
 
-        faceResetTimer = 160;
+        faceResetTimer = 100;
 
         faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[face];
         Debug.Log(playerNum);
@@ -120,7 +120,7 @@ public class FightSceneManager : MonoBehaviour
 
     public void GuiFaceReset(int playerNum) {
 
-        faceResetTimer = 160;
+        faceResetTimer = 100;
 
         Debug.Log(playerNum);
         faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[3];
