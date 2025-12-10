@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2344e45922f9419786751e7673e31ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fighterName: Knight
   maxHealth: 100
   currHealth: 100
   incomingDamageModifier: 1
@@ -293,12 +294,15 @@ MonoBehaviour:
   defaultHurtbox: {fileID: 581521040131394120}
   hitStunObj: {fileID: 9098062848929468620}
   blockStunObj: {fileID: 766552556673255039}
-  inForcedAnim: 0
+  canTheyDoStuff: 0
   forcedAnimDuration: 0
   forcedAnimElapsed: 0
   opponent: {fileID: 0}
   fightSceneManager: {fileID: 0}
   knockbackStrength: 0
+  ouchAudioClips: []
+  audioSource: {fileID: 0}
+  walkies: {fileID: 0}
 --- !u!50 &3694808128071681748
 Rigidbody2D:
   serializedVersion: 4

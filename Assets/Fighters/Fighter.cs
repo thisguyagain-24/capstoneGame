@@ -9,27 +9,27 @@ using Unity.VisualScripting;
 
 public class Fighter : MonoBehaviour
 {
+    public String fighterName;
+    
     public double maxHealth;
+    
+    [HideInInspector]
     public double currHealth;
 
     public double incomingDamageModifier = 1;
-
+    
+    [HideInInspector]
     public int playerNum;
 
     public int maxLives;
     public int lives;
-
-    public int maxTension;
-    public int tension;
-
-    public int maxBurst;
-    public int burst;
 
     public float forwardWalkSpeed;
     public float backWalkSpeed;
 
     public Animator animator;
 
+    [HideInInspector]
     public int inputDirection;
 
     [HideInInspector]
@@ -47,9 +47,12 @@ public class Fighter : MonoBehaviour
     [HideInInspector]
     public bool blockstun;
 
+    [HideInInspector]
     public bool hiBlocking;
+    [HideInInspector]
     public bool lowBlocking;
 
+    [HideInInspector]
     public bool leftSide;
 
     public GameObject movementSprites;
@@ -63,13 +66,17 @@ public class Fighter : MonoBehaviour
     public GameObject blockStunObj;
 
     public bool canTheyDoStuff;
+    [HideInInspector]
     public float forcedAnimDuration;
+    [HideInInspector]
     public float forcedAnimElapsed;
     
+    [HideInInspector]
     public Fighter opponent;
 
     public FightSceneManager fightSceneManager;
 
+    [HideInInspector]
     public float knockbackStrength;
 
     public AudioClip[] ouchAudioClips;
