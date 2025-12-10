@@ -162,8 +162,11 @@ public class FightSceneManager : MonoBehaviour
 
         GuiHealthReset();
 
-        roundsTxt[roundsElapsed].SetActive(true);
-
+        if(roundsElapsed <= 1)
+        {
+            roundsTxt[roundsElapsed].SetActive(true);    
+        }
+        
         animationTimeRemaining = 120;
         inRoundStart = true;
 
@@ -184,7 +187,6 @@ public class FightSceneManager : MonoBehaviour
         {
             fighter.lives = fighter.maxLives;
             fighter.currHealth = fighter.maxHealth;
-            fighter.burst = fighter.maxBurst;
             RoundStart(); 
         }
     }
