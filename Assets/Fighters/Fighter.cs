@@ -113,7 +113,7 @@ public class Fighter : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!opponent)
         {
@@ -124,7 +124,7 @@ public class Fighter : MonoBehaviour
         {
             IterateForcedAnim();
         }
-        else if(fightSceneManager.canTheyDoStuff)
+        else
         {
             CheckSide();
             if (inputDirection == 0)

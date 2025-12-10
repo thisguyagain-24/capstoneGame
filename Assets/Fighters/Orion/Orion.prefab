@@ -132,8 +132,8 @@ MonoBehaviour:
   currHealth: 100
   incomingDamageModifier: 1
   playerNum: 0
-  maxLives: 0
-  lives: 0
+  maxLives: 2
+  lives: 2
   maxTension: 0
   tension: 0
   maxBurst: 0
@@ -163,6 +163,7 @@ MonoBehaviour:
   forcedAnimElapsed: 0
   opponent: {fileID: 0}
   fightSceneManager: {fileID: 0}
+  knockbackStrength: 0
 --- !u!50 &3694808128071681748
 Rigidbody2D:
   serializedVersion: 4

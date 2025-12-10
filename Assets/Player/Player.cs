@@ -106,7 +106,12 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player " + playerNum + " Input Pause: " + value.Get().ToString());
         Debug.Log(fightSceneManager);
-        fightSceneManager?.PauseMenuHandler();
+        if (fightSceneManager && fightSceneManager.inGameOver == true) {
+            fightSceneManager?.InvokeEndMenu();
+        } else if (fightSceneManager && fightSceneManager.inGameOver == false) {
+            fightSceneManager?.PauseMenuHandler();
+        }
+        
     }
     #endregion
 
@@ -151,9 +156,9 @@ public class Player : MonoBehaviour
         } else if (charSelectMenu) {
             Debug.Log("Player " + playerNum + " Has char select");
             charSelectMenu?.MenuCursorEnter(playerNum);
-        } else if (fightSceneManager){
+        } else if (fightSceneManager && fightSceneManager.inGameOver == false){
             fightSceneManager?.PauseCursorSelected();
-        }
+        } 
     }
 
     void OnCancel(InputValue value)
