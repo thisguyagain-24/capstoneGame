@@ -62,7 +62,7 @@ public class Fighter : MonoBehaviour
     public GameObject hitStunObj;
     public GameObject blockStunObj;
 
-    public bool inForcedAnim;
+    public bool canTheyDoStuff;
     public float forcedAnimDuration;
     public float forcedAnimElapsed;
     
@@ -71,6 +71,10 @@ public class Fighter : MonoBehaviour
     public FightSceneManager fightSceneManager;
 
     public float knockbackStrength;
+
+    public AudioClip[] ouchAudioClips;
+    public AudioSource audioSource;
+    public AudioClip walkies;
 
     public void Die()
     {
@@ -120,7 +124,7 @@ public class Fighter : MonoBehaviour
             findOpponent();
         }
 
-        if (inForcedAnim)
+        if (canTheyDoStuff)
         {
             IterateForcedAnim();
         }
@@ -260,7 +264,7 @@ public class Fighter : MonoBehaviour
     public void OnLight()
     {
         //SetAltColors(true);
-        if (!inForcedAnim && !(activeMove ? activeMove.active : false)){
+        if (!canTheyDoStuff && !(activeMove ? activeMove.active : false)){
             //Debug.Log("P" + playerNum + " Light");
             foreach (FighterMove fm in moves)
             {
@@ -283,7 +287,7 @@ public class Fighter : MonoBehaviour
 
     public void OnHeavy()
     {
-        if (!inForcedAnim && !(activeMove ? activeMove.active : false)){
+        if (!canTheyDoStuff && !(activeMove ? activeMove.active : false)){
             Debug.Log("P" + playerNum + " Heavy");
             foreach (FighterMove fm in moves)
             {
@@ -344,6 +348,12 @@ public class Fighter : MonoBehaviour
         DisableActiveMove();
         movementSprites.SetActive(false);
         hitStunObj.SetActive(true);
+        audioSource.Stop();
+        if(ouchAudioClips.Length > 0)
+        {
+            audioSource.clip = ouchAudioClips[new System.Random().Next(0, ouchAudioClips.Length)];
+            audioSource.Play();
+        }
         EnableForcedAnim(stopDur + stunDir);
     }
     
@@ -369,7 +379,7 @@ public class Fighter : MonoBehaviour
 
     public void EnableForcedAnim(float _dur)
     {
-        inForcedAnim = true;
+        canTheyDoStuff = true;
         forcedAnimElapsed = 0;
         forcedAnimDuration = _dur;
     }
@@ -403,7 +413,7 @@ public class Fighter : MonoBehaviour
 
     public void EndForcedAnim()
     {
-        inForcedAnim = false;
+        canTheyDoStuff = false;
         if (!activeMove) 
         {
             //Ending stun as receiving player
@@ -424,6 +434,10 @@ public class Fighter : MonoBehaviour
         foreach(SpriteRenderer r in renderers)
         {
             r.material.SetFloat("_InvertColors", _invert);
+        }
+        foreach(AudioChorusFilter acf in GetComponentsInChildren<AudioChorusFilter>(true))
+        {
+            acf.enabled = invert;
         }
     }
 }
