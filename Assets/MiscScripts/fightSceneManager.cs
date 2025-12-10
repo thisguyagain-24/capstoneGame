@@ -345,10 +345,10 @@ public class FightSceneManager : MonoBehaviour
             GuiFaceReset(1);
         }
 
-        foreach (var player in players)
+        foreach (Player p in players)
         {
-            if (player.fighter.activeMove) {
-                GuiFaceChanger(player.playerNum, 1);
+            if (p.fighter.activeMove) {
+                GuiFaceChanger(p.playerNum, 1);
             }
         }
 
