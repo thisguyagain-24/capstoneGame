@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -134,7 +134,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: final-idlecrouch-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 193
+        width: 1660
+        height: 1289
+      alignment: 9
+      pivot: {x: 0.9236223, y: 0.051279757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567bb6a178dd84292a7b558a3ac52ce0
+      internalID: -1584002945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-idlecrouch-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 200
+        width: 1628
+        height: 1254
+      alignment: 9
+      pivot: {x: 0.94877803, y: 0.0484661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a90feb69826a4594b29761c00df4556
+      internalID: 2043886633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-idlecrouch-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 4456
+        y: 245
+        width: 1638
+        height: 1197
+      alignment: 9
+      pivot: {x: 0.9423208, y: 0.011705237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24c99e31dcf6418ab23dd869d3731a6
+      internalID: -1537092619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-idlecrouch-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 6703
+        y: 221
+        width: 1665
+        height: 1212
+      alignment: 9
+      pivot: {x: 0.91503614, y: 0.032818887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84db5a7c132d2496ea935345d13b8392
+      internalID: -1129952910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-idlecrouch-sprite_4
+      rect:
+        serializedVersion: 2
+        x: 8922
+        y: 218
+        width: 1635
+        height: 1145
+      alignment: 9
+      pivot: {x: 0.93374425, y: 0.03603942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3ea4ea959484ab9a71d38ee0a13d59
+      internalID: 1040829399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +250,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final-idlecrouch-sprite_0: -1584002945
+      final-idlecrouch-sprite_1: 2043886633
+      final-idlecrouch-sprite_2: -1537092619
+      final-idlecrouch-sprite_3: -1129952910
+      final-idlecrouch-sprite_4: 1040829399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

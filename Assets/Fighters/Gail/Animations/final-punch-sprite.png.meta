@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -134,7 +134,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: final-punch-sprite_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 38
+        width: 1213
+        height: 1423
+      alignment: 9
+      pivot: {x: 0.46198592, y: -0.011986081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e497b89c5ba40cc9e7abb945bace39
+      internalID: 616136930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-punch-sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 44
+        width: 1361
+        height: 1397
+      alignment: 9
+      pivot: {x: 0.42484972, y: -0.016719397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffa9066f3e1c446eb49006fa1deb1de
+      internalID: -222538934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final-punch-sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 83
+        width: 1478
+        height: 1367
+      alignment: 9
+      pivot: {x: 0.39418057, y: -0.046799786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4549fab836544d5af9a0ad0e9ad4be
+      internalID: 54360149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +208,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final-punch-sprite_0: 616136930
+      final-punch-sprite_1: -222538934
+      final-punch-sprite_2: 54360149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
