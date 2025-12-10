@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Runtime.ExceptionServices;
 using System.Timers;
 using Unity.Burst;
+using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,6 +41,9 @@ public class FightSceneManager : MonoBehaviour
 
     public bool canTheyDoStuff; // yayyy i get one silly variable name
 
+    public SpriteRenderer[] faceZones;
+    public int faceResetTimer = 0;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -49,11 +53,13 @@ public class FightSceneManager : MonoBehaviour
             _p.FindUIDirector();
             players[_p.playerNum] = _p;
             _p.fighter.FindFightSceneManager();
+            GuiFaceReset(_p.playerNum);
         }
 
         baseSize = pauseButtons[0].transform.localScale;
 
         healthBarScale = healthBarSprite[0].transform.localScale;
+
     }
 
 #region GameplayUI
@@ -101,12 +107,33 @@ public class FightSceneManager : MonoBehaviour
         healthBarSprite[playerNum].SetActive(false);
         healthBarOuter[playerNum].SetActive(false);
     }
+
+    public void GuiFaceChanger(int playerNum, int face) {
+
+        faceResetTimer = 160;
+
+        faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[face];
+        Debug.Log(playerNum);
+
+    }
+
+    public void GuiFaceReset(int playerNum) {
+
+        faceResetTimer = 160;
+
+        Debug.Log(playerNum);
+        faceZones[playerNum].GetComponent<SpriteRenderer>().sprite = players[playerNum].fighter.fighterFaces[3];
+    
+    }
+
+
 #endregion
 
 #region Gameplay
 
     public void PlayerDamageUpdate(int playerNum) {
         UpdateGUIHealth(playerNum);
+        GuiFaceChanger(playerNum,2);
     }
 
     public void RoundEnd(int loserNum) {
@@ -149,6 +176,8 @@ public class FightSceneManager : MonoBehaviour
 
             healthBarSprite[p.fighter.playerNum].SetActive(true);
             healthBarOuter[p.fighter.playerNum].SetActive(true);
+
+            GuiFaceReset(p.playerNum);
         }
 
         GuiHealthReset();
@@ -177,7 +206,6 @@ public class FightSceneManager : MonoBehaviour
             inRoundEnd = false;
             p.fighter.lives = p.fighter.maxLives;
             p.fighter.currHealth = p.fighter.maxHealth;
-            p.fighter.burst = p.fighter.maxBurst;
             UnPauseGame();
             RoundStart(); 
         }
@@ -308,5 +336,19 @@ public class FightSceneManager : MonoBehaviour
 
         } else if (animationTimeRemaining <= 0 && inGameOver){
         }
+
+        if(faceResetTimer <= 0) {
+            GuiFaceReset(0);
+            GuiFaceReset(1);
+        }
+
+        foreach (var player in players)
+        {
+            if (player.fighter.activeMove) {
+                GuiFaceChanger(player.playerNum, 1);
+            }
+        }
+
+        faceResetTimer --;
     }
 }

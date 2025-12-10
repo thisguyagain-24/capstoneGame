@@ -130,6 +130,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterName: Gail
+  fighterFaces:
+  - {fileID: 21300000, guid: 3e5e8e68b13458d19ac4d62490fb217a, type: 3}
+  - {fileID: 21300000, guid: a09652fc8eb0a856ab63fd7224e24736, type: 3}
+  - {fileID: 21300000, guid: f167df78348fd12bc906bac65f55f6ea, type: 3}
+  - {fileID: 21300000, guid: 9a38e42c344accf96ac9058a424b44c7, type: 3}
+  - {fileID: 21300000, guid: ec321aac56865b039b3782c1cc104954, type: 3}
   maxHealth: 100
   currHealth: 100
   incomingDamageModifier: 1
