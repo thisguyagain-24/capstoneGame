@@ -10,6 +10,8 @@ using Unity.VisualScripting;
 public class Fighter : MonoBehaviour
 {
     public String fighterName;
+
+    public Sprite[] fighterFaces;
     
     public double maxHealth;
     
