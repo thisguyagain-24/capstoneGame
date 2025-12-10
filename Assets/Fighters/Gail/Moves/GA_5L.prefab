@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 5543603521933698001}
   hurtboxes:
   - {fileID: 3725194185274965872}
+  - {fileID: 7042763290484488396}
   uniqueHitNumber: 0
   active: 0
   audioSource: {fileID: 4520288201006776811}
@@ -722,8 +723,10 @@ MonoBehaviour:
   duration: 8
   hitboxes:
   - {fileID: 8899371935602089146}
+  - {fileID: 3250358152006159894}
   hurtboxes:
   - {fileID: 5168354046282243343}
+  - {fileID: 1872259265271339007}
   uniqueHitNumber: 0
   active: 0
   audioSource: {fileID: 5964542740757079579}
@@ -912,6 +915,7 @@ MonoBehaviour:
   - {fileID: 4831827657621293177}
   hurtboxes:
   - {fileID: 7237426598290838941}
+  - {fileID: 7037606750795697879}
   uniqueHitNumber: 0
   active: 0
   audioSource: {fileID: 1637542629432084153}
@@ -1161,9 +1165,10 @@ MonoBehaviour:
   hitstun: 10
   blockstun: 10
   keys:
-  - {fileID: 0}
   - {fileID: 3267514030637453905}
-  - {fileID: 0}
+  - {fileID: 6197491978934061035}
+  - {fileID: 1337231382537580509}
+  - {fileID: 533182488203571663}
   hitboxes: []
   hurtboxes: []
   currentKey: 0
@@ -1754,10 +1759,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
-  hitboxes:
-  - {fileID: 0}
+  hitboxes: []
   hurtboxes:
   - {fileID: 6208557038474302912}
+  - {fileID: 827106425997825458}
   uniqueHitNumber: 0
   active: 0
   audioSource: {fileID: 7141035915677578381}
