@@ -85,6 +85,9 @@ public class Fighter : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip walkies;
     public AudioClip[] victoryClips;
+    public AudioClip[] randomsIntros;
+    public AudioClip labelMakerQuestion;
+    public AudioClip labelMakerAnswer;
 
     public void Die()
     {

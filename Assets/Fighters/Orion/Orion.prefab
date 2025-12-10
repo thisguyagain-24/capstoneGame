@@ -184,6 +184,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aba688752faf543fb837f0a8176cd68e, type: 3}
   - {fileID: 8300000, guid: 92568cd1b250447078fdacd089b97143, type: 3}
   - {fileID: 8300000, guid: 6939d9da27bbf461c8956688520bcfe8, type: 3}
+  randomsIntros:
+  - {fileID: 8300000, guid: 55f8fa1bd3aee4d10a38184776749552, type: 3}
+  - {fileID: 8300000, guid: f82c78806d07145769c4f1d6b416306e, type: 3}
+  - {fileID: 8300000, guid: 8a91c9994076649688ad1e6f7083650b, type: 3}
+  - {fileID: 8300000, guid: 993078e7fa6904bf39a8ff8ebcd820fa, type: 3}
+  labelMakerQuestion: {fileID: 8300000, guid: 5e11439bf933c4ff19d0e277962df3fb, type: 3}
+  labelMakerAnswer: {fileID: 8300000, guid: 9fda9eabb72b849c988295a54671f010, type: 3}
 --- !u!50 &3694808128071681748
 Rigidbody2D:
   serializedVersion: 4

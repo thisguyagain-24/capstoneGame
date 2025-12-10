@@ -95,6 +95,10 @@ public class CharSelect : MonoBehaviour
             players[0].pInput.SwitchCurrentActionMap("Player");
             players[1].pInput.SwitchCurrentActionMap("Player");
 
+            if(players[0].fighter.name == players[1].fighter.name){
+                players[1].fighter.SetAltColors(true);
+            }
+
             SceneManager.LoadScene("fightScene");
         }
     }
